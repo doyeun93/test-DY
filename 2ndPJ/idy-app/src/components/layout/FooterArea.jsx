@@ -84,7 +84,7 @@ function FooterArea() {
                   },100);
                 });
               }}>
-                <img src="./image/samie5.png" alt="탑버튼" />
+                <img src={process.env.PUBLIC_URL+"/image/samie5.png" } alt="탑버튼" />
               </a>
             </button>
           </div>

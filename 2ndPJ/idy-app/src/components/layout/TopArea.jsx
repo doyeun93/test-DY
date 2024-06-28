@@ -37,7 +37,6 @@ function TopArea(props) {
   }; /////// enterKey ///////////////////
 
   const goSearch = txt => {
-    console.log("나는 검색하러 간다");
     goNav("search",{state:{keyword:txt}})
   }; /////////////// goSearch //////////
 
@@ -45,7 +44,7 @@ function TopArea(props) {
         <section id="top-area">
           <header className="topbox">
               <a className="logo" href="#" >
-              <img src="./image/logo.jpg" alt="로고이미지" 
+              <img src={process.env.PUBLIC_URL+"/image/logo.jpg"} alt="로고이미지" 
                 onClick={(e) => {e.preventDefault(); 
                 goNav("/")}}/>
               </a>
