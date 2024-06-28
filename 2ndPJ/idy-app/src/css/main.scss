@@ -1,0 +1,518 @@
+body {
+  overflow-x: hidden;
+}
+
+#main-area {
+  height: auto;
+}
+
+/* 요리초보가이드 구역 */
+.header-top {
+  height: 250px;
+}
+.header-text {
+  display: flex;
+  position: relative;
+  height: 80px;
+  padding: 6% 8%;
+  gap: 1.1%;
+  box-sizing: content-box;
+
+  img {
+    position: relative;
+    height: 72%;
+    top: 21%;
+    left: 0.7%;
+  }
+}
+.header-text > li:nth-child(2) {
+  font-size: 1.6rem;
+  color: #15a775;
+  margin-top: 1.3%;
+}
+.header-text > li:last-child {
+  font-size: 1.2rem;
+  margin-top: 2.3%;
+  padding-left: 73%;
+  z-index: 99;
+}
+
+.header-text > li:last-child::after {
+  content: "";
+  display: inline-block;
+  position: relative;
+  right: 22%;
+  bottom: 89%;
+  width: 150%;
+  height: 120%;
+  background-color: #15a77446;
+  border: solid 1px #15a775;
+  border-radius: 30px;
+  z-index: -1;
+}
+
+.header-title {
+  display: flex;
+  position: absolute;
+  top: 20%;
+  padding-left: 8%;
+}
+.header-title > li:first-child {
+  font-size: 4rem;
+}
+
+/* 가로스크롤 이미지 구역 */
+.header-img {
+  height: calc(750px + 3000px);
+}
+.header-slide {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 750px;
+}
+.header-slide ul {
+  position: relative;
+  left: 0;
+  display: flex;
+  width: calc(100vw + 3000px);
+
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: 0.4s ease-out;
+}
+.header-slide ul li {
+  position: relative;
+  flex: 1;
+  text-align: center;
+}
+
+.header-slide ul li img {
+  position: relative;
+  top: 46%;
+  transform: translateY(-40%);
+  width: 65%;
+  border-radius: 30px;
+}
+.header-slide span {
+  position: absolute;
+  display: inline;
+  width: 328px;
+  height: 100px;
+  top: 78%;
+  left: 20%;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+/*  요리 연구소 구역 */
+.lab-top {
+  height: 90px;
+  padding-top: 4%;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.lab-top > ul > li:first-child {
+  font-size: 4rem;
+  margin-left: 5%;
+}
+
+.lab-top > ul > li:nth-child(2) > img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  left: 20%;
+  margin-top: -2.5%;
+  cursor: pointer;
+  transform: rotateY(180deg);
+
+  &:hover {
+    animation: labani 0.9s ease infinite;
+  }
+}
+
+@keyframes labani {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  40% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  50% {
+    transform: scale3d(0.85, 1.15, 1);
+  }
+  65% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  75% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.lab-top > ul > li:last-child {
+  width: 7%;
+  height: 0%;
+  margin-right: 7%;
+  border: solid 1px #d4d4d4;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 3.2;
+}
+
+// 이미드 슬라이드 구역 //
+.lab-img {
+  position: absolute;
+  width: auto;
+  height: auto;
+}
+
+.lab-img2 {
+  position: relative;
+  width: auto;
+  height: auto;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+.lab-img2 img:hover {
+  transform: scale(1.1, 1.1);
+  transition: 0.3s ease-in-out;
+}
+
+.lab-img2 img {
+  transition: 0.3s ease-in-out;
+}
+
+.lab-tit {
+  width: auto;
+  height: 60px;
+
+  span {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+    padding: 5%;
+  }
+}
+
+.lab-cate {
+  font-size: 1.4rem;
+  height: 70px;
+  padding-top: 13%;
+
+  span {
+    padding: 0.7%;
+    border-radius: 13px;
+  }
+}
+.lab-type {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.1rem;
+
+  li {
+    width: 28%;
+    padding: 1.3% 0.6%;
+    border: 1px solid #f3f3f3;
+    border-radius: 18px;
+  }
+}
+
+.sol {
+  .lab-type > li {
+    background-color: #fff;
+  }
+  .lab-cate > span {
+    background-color: #fb9622;
+    color: #fff;
+  }
+}
+.rec {
+  .lab-type > li {
+    background-color: #e1e1e1;
+  }
+  .lab-cate > span {
+    background-color: #15a775;
+    color: #fff;
+  }
+}
+
+/* 요리해요 구역 */
+
+.cook-top {
+  height: 100px;
+  padding-top: 2%;
+}
+.cook-title {
+  padding-top: 2%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cook-title > li:first-child img {
+  margin-left: 124%;
+}
+.cook-title > li:nth-child(2) {
+  font-size: 4rem;
+  margin-right: 60%;
+}
+
+.cook-title > li:last-child {
+  width: 7%;
+  height: auto;
+  margin-right: 7%;
+  border: solid 1px #d4d4d4;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 3.2;
+}
+
+.cook-bottom {
+  width: 82%;
+  height: 7%;
+  margin-left: 8.8%;
+  margin-top: 7%;
+  border-radius: 40px;
+  background-color: #fbb9bf;
+}
+.cook-bottom > img {
+  position: absolute;
+  margin-top: -3.4%;
+  margin-left: 4.7%;
+}
+.cook-food {
+  display: flex;
+  gap: 43%;
+}
+
+.cook-food > p {
+  margin-top: 1.2%;
+  margin-left: 23%;
+  color: white;
+  font-size: 1.7rem;
+}
+.cook-food > a {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  margin-top: 1.3%;
+  color: white;
+  font-size: 1.4rem;
+
+  img {
+    margin-left: 5px;
+  }
+}
+.cook-food > a::before {
+  content: " ｜ ";
+  display: inline-block;
+  margin-right: 24px;
+}
+
+/* 이벤트 구역 */
+
+#event-area {
+  padding-top: 5%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.event-box > ul {
+  display: flex;
+  align-items: center;
+}
+.event-box > ul > li:nth-child(2) {
+  font-size: 4rem;
+}
+
+.event-btn {
+  width: 35%;
+  height: 23%;
+  margin-left: 5%;
+  border: solid 1px #d4d4d4;
+  border-radius: 30px;
+
+  a {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+}
+
+.event-ban img:hover {
+  animation: ban-ani 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  cursor: pointer;
+}
+
+@keyframes ban-ani {
+  0%,
+  100% {
+    transform: rotate(0deg);
+
+    transform-origin: 50% 100%;
+  }
+  10% {
+    transform: rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+    transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+    transform: rotate(4deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  90% {
+    transform: rotate(2deg);
+  }
+}
+
+/****************** 미디어쿼리 ******************/
+@media screen and (max-width: 1280px) {
+  .header-text {
+    padding: 8% 8%;
+  }
+
+  .header-text > li:nth-child(2) {
+    margin-top: 3.3%;
+    letter-spacing: 1.3px;
+  }
+
+  .header-text > li:last-child {
+    margin-top: 3.3%;
+    padding-left: 71%;
+  }
+
+  .header-slide span {
+    top: 75%;
+    left: 18%;
+  }
+
+  .lab-top > ul > li:nth-child(2) > img {
+    left: 25%;
+  }
+  .lab-cate {
+    padding-top: 23%;
+  }
+  .cook-img {
+    padding-top: 8%;
+  }
+  .cook-title > li:first-child img {
+    margin-left: 122%;
+  }
+  .cook-title > li:nth-child(2) {
+    margin-right: 47%;
+  }
+  .cook-bottom {
+    margin-top: 1%;
+  }
+  .cook-bottom > img {
+    margin-top: -5.1%;
+  }
+  .cook-food {
+    gap: 30%;
+  }
+  .cook-food > p {
+    margin-top: 1.7%;
+  }
+  .event-box > ul {
+    display: block;
+  }
+  .event-btn {
+    width: 62%;
+  }
+  .event-ban > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .header-text {
+    padding: 14% 8%;
+  }
+  .header-text > li:nth-child(2) {
+    margin-left: 2%;
+    margin-top: 5.3%;
+  }
+  .header-text > li:last-child {
+    margin-top: 6.3%;
+    padding-left: 49%;
+  }
+  .header-slide span {
+    top: 72%;
+    left: 17%;
+  }
+  .lab-top > ul > li:nth-child(2) > img {
+    left: 37%;
+  }
+
+  .lab-top > ul > li:last-child {
+    width: 17%;
+  }
+
+  .cook-title {
+    padding-top: 4%;
+  }
+
+  .cook-title > li:first-child img {
+    margin-left: 8%;
+  }
+
+  .cook-title > li:nth-child(2) {
+    margin-right: 29%;
+  }
+
+  .cook-title > li:last-child {
+    width: 20%;
+    height: 0%;
+  }
+
+  .cook-img {
+    padding-top: 14%;
+    height: 300px;
+  }
+  .cook-food{
+    gap : 5%;
+  }
+    
+  .cook-food > p {
+    margin-top : 3.3%;
+    margin-left : 26%;
+  }
+  .cook-bottom {
+    width: 86%;
+    margin-left: 7.6%;
+  }  
+  .cook-bottom > img {
+    margin-top : -8.9%;
+    margin-left: 1.7%; 
+  }
+}
+
+@media screen and  (max-width:480px) {
+
+
+  
+}

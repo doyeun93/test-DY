@@ -1,0 +1,28 @@
+@font-face {
+    font-family: myFont;
+    src: url(../../src/static/fonts/DoHyeon-Regular.woff) format("woff");
+}
+
+#header-area{
+    max-width: 1920px;
+    /* height: 1200px; */
+    background-color: #fffae847;
+    background-image: url(../../public/image/bg_pattern.png);
+}
+
+#lab-area{
+    height: 1100px;
+    
+}
+
+#cook-area{
+    height: 1000px;
+    background-image: url(../../public/image/bg_pattern_green.png);
+    background-color: #f6fff647;
+}
+#event-area{
+    height: 250px;
+}
+#footer-area{
+    height: 250px;
+}

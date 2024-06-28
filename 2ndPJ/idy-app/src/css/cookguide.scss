@@ -1,0 +1,103 @@
+.guide-top{
+    height: 210vh;
+}
+
+.guide-title{
+    height: 250px;
+    
+    span{
+        position: relative;
+        top: 65%;
+        left: 10%;
+        font-size: 4rem;
+    }
+}
+// 정렬 구역
+/* 정렬박스 */
+.gsortbx{
+    display: flex;
+    padding-bottom: 15px;
+    overflow: hidden;
+    justify-content: flex-end;
+    margin-right: 15%;
+}
+.gsel{
+    
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    letter-spacing: 1px;
+}
+.gsel:focus{
+    outline: none;
+}
+
+// 이미지 구역
+.guide-mid{
+    max-width: 70vw;
+    margin: 0 auto;
+    padding-top: 2%;
+}
+.guide-mid > ul {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 4%;
+    text-align: right;
+   
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 13px;
+        cursor: pointer;
+       
+    }
+
+    span{
+      font-size: 1.6rem; 
+    }
+}
+
+.guide-imgbox{
+    overflow: hidden;
+    position: relative;
+}
+
+.guide-mid >ul >li:hover .guide-info{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.guide-info{
+    opacity: 0;
+    padding: 45px 2px;
+    transform: translateY(-100%);
+    transition: all .8s;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.342);
+
+    p:first-child{
+        color: #fff;
+        font-size: 1.5rem;
+        margin-top: 5%;
+        text-align: center;
+    }
+    p:last-child{
+        color: #fff;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+}
+
+// .guide-mid > ul> img::after{
+//     position: absolute;
+//     background: url(../../public/image/ic_scrap.png) no-repeat center / 100% 100%;
+    
+// }
+
