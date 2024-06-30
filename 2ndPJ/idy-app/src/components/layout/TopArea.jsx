@@ -71,7 +71,7 @@ function TopArea(props) {
             <div className="log">
               <ul>
                 <li>
-                  <a href="#">로그인</a>
+                  <Link to="login">로그인</Link>
                 </li>
                 <li style={{marginLeft:"auto", marginRight:"16px"}}>
                 {/* 검색입력박스 */}
