@@ -2,18 +2,25 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { gnbData } from '../data/gnb';
-import "../../css/top_area.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import "../../css/top_area.scss";
 
 import $ from 'jquery';
+import { ShowMenu } from '../modules/Showmenu';
 
 
 function TopArea(props) {
 
   const goNav = useNavigate();
 
+  // 햄버거버튼
+  const showMenu = (e) =>{
+    $(".hbox").fadeToggle(300);
+    $(e.currentTarget).toggleClass("on");
+    console.log("나와라");
 
+  }
    // 1. 검색창 보이기 함수
    const showSearch = (e) => {
     e.preventDefault();
@@ -67,7 +74,8 @@ function TopArea(props) {
                   }
                 </li>)}
               </ul>
-              <button className="ham"></button>
+              <button className="ham" type="button" onClick={showMenu}></button>
+              {/* <ShowMenu /> */}
             </nav>
             <div className="log">
               <ul>

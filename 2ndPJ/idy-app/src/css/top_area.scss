@@ -113,13 +113,17 @@
     background-color: transparent;
     border: none;
     font-size: 40px;
-    color: #555;
+    color: #15a775;
     transform: scaleX(1.5);
     display: none;
     z-index: 1;
   }
   .ham::before {
     content: '≡';
+  }
+  .hbox{
+    width: auto;
+    height: auto;
   }
   
   /* 로그인 영역 */
