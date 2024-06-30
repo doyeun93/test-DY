@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/test-DY/2ndPJ/idy-app/build/static/css/main.23cf366e.css",
-    "main.js": "/test-DY/2ndPJ/idy-app/build/static/js/main.1ad08166.js",
+    "main.css": "/test-DY/2ndPJ/idy-app/build/static/css/main.3b447703.css",
+    "main.js": "/test-DY/2ndPJ/idy-app/build/static/js/main.ca5de023.js",
     "static/media/DoHyeon-Regular.woff": "/test-DY/2ndPJ/idy-app/build/static/media/DoHyeon-Regular.e6625971835bbc1bda75.woff",
     "static/media/bg_pattern.png": "/test-DY/2ndPJ/idy-app/build/static/media/bg_pattern.d539959836c553884345.png",
     "static/media/bg_pattern_pink.png": "/test-DY/2ndPJ/idy-app/build/static/media/bg_pattern_pink.596f89254b86afd6e134.png",
     "static/media/bg_pattern_green.png": "/test-DY/2ndPJ/idy-app/build/static/media/bg_pattern_green.2f4434a6a410ff4f6589.png",
     "index.html": "/test-DY/2ndPJ/idy-app/build/index.html",
-    "main.23cf366e.css.map": "/test-DY/2ndPJ/idy-app/build/static/css/main.23cf366e.css.map",
-    "main.1ad08166.js.map": "/test-DY/2ndPJ/idy-app/build/static/js/main.1ad08166.js.map"
+    "main.3b447703.css.map": "/test-DY/2ndPJ/idy-app/build/static/css/main.3b447703.css.map",
+    "main.ca5de023.js.map": "/test-DY/2ndPJ/idy-app/build/static/js/main.ca5de023.js.map"
   },
   "entrypoints": [
-    "static/css/main.23cf366e.css",
-    "static/js/main.1ad08166.js"
+    "static/css/main.3b447703.css",
+    "static/js/main.ca5de023.js"
   ]
 }
