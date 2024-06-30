@@ -261,8 +261,11 @@ input:focus{
 width: 0%;
 }
 
-.log >ul >li:last-child{
-margin-right: -41px;
+.log > ul >li:first-child{
+  display: none;
+}
+.log > ul >li:last-child{
+  margin-right: -41px;
 }
 
 .searchingGnb {	
