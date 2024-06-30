@@ -67,6 +67,7 @@ function TopArea(props) {
                   }
                 </li>)}
               </ul>
+              <button className="ham"></button>
             </nav>
             <div className="log">
               <ul>
