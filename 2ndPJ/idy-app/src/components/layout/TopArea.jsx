@@ -74,7 +74,7 @@ function TopArea(props) {
                 <li>
                   <Link to="login">로그인</Link>
                 </li>
-                <li style={{marginLeft:"auto", marginRight:"16px"}}>
+                <li style={{color:"#15a775"}}>
                 {/* 검색입력박스 */}
                 <div className="searchingGnb" >
                   {/* 검색버튼 돋보기 아이콘 */}

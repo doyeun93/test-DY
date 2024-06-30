@@ -1,4 +1,34 @@
-.popup-example{
-    max-width: 1600px;
-    min-height: 1000px;
-}
+
+.popup-example {
+    text-align: center; 
+    margin-top: 20px; 
+  }
+  
+ 
+  .popup {
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: white; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    padding: 20px; 
+    border-radius: 5px; 
+    z-index: 1000; 
+    max-width: 80%; 
+  }
+  
+  
+  .popup-content {
+    position: relative; 
+  }
+  
+  
+  .close-btn {
+    position: absolute; 
+    top: 10px; 
+    right: 10px; 
+    cursor: pointer; 
+  }
+  
+  
