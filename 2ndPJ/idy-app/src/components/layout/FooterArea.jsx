@@ -56,17 +56,17 @@ function FooterArea() {
               <ul>
                 <li>
                   <a href="#">
-                    <img src="./image/logo_award.png" alt="로고어워즈" />
+                    <img src={process.env.PUBLIC_URL+"/image/logo_award.png"} alt="로고어워즈" />
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img src="./image/ic_insta.png" alt="인스타그램" />
+                    <img src={process.env.PUBLIC_URL+"/image/ic_insta.png"} alt="인스타그램" />
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img src="./image/ic_kakao.png" alt="카카오톡" />
+                    <img src={process.env.PUBLIC_URL+"/image/ic_kakao.png"} alt="카카오톡" />
                   </a>
                 </li>
 
