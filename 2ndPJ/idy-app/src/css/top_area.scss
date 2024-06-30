@@ -153,9 +153,15 @@ input:focus{
 
 
 /* 미디어쿼리 */
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1470px) {
+  .logo{
+    width: 210px;
+  }
   .top-gnb{
     width: 75%;
+  }
+  .bt-gnb {
+    line-height: 2;
   }
   .log {
     width: 31%;

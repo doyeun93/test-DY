@@ -213,7 +213,7 @@ body {
 .lab-cate {
   font-size: 1.4rem;
   height: 70px;
-  padding-top: 13%;
+  padding-top: 16%;
 
   span {
     padding: 0.7%;
@@ -388,9 +388,9 @@ body {
 }
 
 /****************** 미디어쿼리 ******************/
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1470px) {
   .header-text {
-    padding: 8% 8%;
+    padding: 4% 8%;
   }
 
   .header-text > li:nth-child(2) {
@@ -409,10 +409,15 @@ body {
   }
 
   .lab-top > ul > li:nth-child(2) > img {
-    left: 25%;
+    left: 21%;
+    margin-top: -4%;
   }
   .lab-cate {
     padding-top: 23%;
+  }
+
+  #cook-area{
+    height: 850px;
   }
   .cook-img {
     padding-top: 8%;
@@ -427,7 +432,7 @@ body {
     margin-top: 1%;
   }
   .cook-bottom > img {
-    margin-top: -5.1%;
+    margin-top: -4.4%;
   }
   .cook-food {
     gap: 30%;
