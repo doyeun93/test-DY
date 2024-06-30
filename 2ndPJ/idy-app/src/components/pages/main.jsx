@@ -9,12 +9,16 @@ import headerFn from '../func/header';
 import SwiperLab from '../plugin/SwiperLab';
 import Cookpic from '../modules/Cookpic';
 import { Link } from 'react-router-dom';
+import Popup from '../modules/Popup';
 
 function Main(props) {
     
   useLayoutEffect(() => {
     headerFn();
+    Popup();
   }, []);
+
+  
 
   // 코드 리턴구역 ////////////
     return (
