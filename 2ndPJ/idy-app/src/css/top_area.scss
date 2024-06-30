@@ -250,5 +250,24 @@ input:focus{
 .topbox.on .ham::before {
   content: "×";
 }
+
+.logo {	
+  width: 27%; }
+
+.logo img{
+  padding: 6% 10%; }
+
+#gnb{
+width: 0%;
+}
+
+.log >ul >li:last-child{
+margin-right: -41px;
+}
+
+.searchingGnb {	
+  left: -100%;
+	top: -13px;
+}
   
 }
