@@ -116,6 +116,7 @@
     color: #555;
     transform: scaleX(1.5);
     display: none;
+    z-index: 1;
   }
   .ham::before {
     content: '≡';
