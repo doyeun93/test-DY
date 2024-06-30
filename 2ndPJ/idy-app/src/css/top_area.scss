@@ -241,7 +241,9 @@ input:focus{
   
 }
 @media screen and  (max-width:480px) {
-
+  .top-gnb{
+    display: none;
+  }
   .ham {
     display: block;
 }
