@@ -523,9 +523,9 @@ body {
 @media screen and (max-width: 480px) {
   // 초보가이드 구역
   .header-text {
-    display: block; 
+    display: block;
     position: relative;
-    height: auto; 
+    height: auto;
     padding: 24% 2%;
   }
 
@@ -549,7 +549,72 @@ body {
     top: 33%;
   }
 
+  // 연구소 구역
+  .lab-top {
+    height: auto;
+    padding-top: 6%;
+  }
 
+  .lab-top ul {
+    height: auto;
+    display: block;
+  }
+
+  .lab-top > ul > li:nth-child(2) > img {
+    left: 57%;
+    margin-top: -21%;
+  }
+
+  .lab-top > ul > li:last-child {
+    width: 27%;
+    margin: 3% 5%;
+  }
+
+  #cook-area {
+    height: 700px;
+  }
+  .cook-top {
+    height: auto;
+    padding-bottom: 13%;
+  }
+
+  .cook-title {
+    height: auto;
+    justify-content: normal;
+  }
+  .cook-title > li:first-child img {
+    margin-left: 11%;
+  }
+
+  .cook-title > li:nth-child(2) {
+    margin-right: 17%;
+  }
+
+  .cook-title > li:last-child {
+    width: 23%;
+    margin-right: 0%;
+  }
+  .cook-img {
+    padding-top: 20%;
+    height: auto;
+  }
+
+  .cook-bottom {
+    margin-top: -36%;
+    width: 97%;
+    margin-left: 2%;
+  }
+  .cook-bottom > img {
+    margin-top: -28.4%;
+  }
+
+  .cook-food {
+    gap: 0%;
+  }
+  .cook-food > p {
+    margin-top: 2%;
+    margin-left: 7%;
+  }
 
   // 이벤트 구역
   #event-area {
