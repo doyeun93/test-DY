@@ -92,8 +92,8 @@ body {
 .header-slide ul li img {
   position: relative;
   top: 46%;
-  transform: translateY(-40%);
-  width: 65%;
+  transform: translateY(-46%);
+  width: 70%;
   border-radius: 30px;
 }
 .header-slide span {
@@ -526,7 +526,7 @@ body {
     display: block; 
     position: relative;
     height: auto; 
-    padding: 21% 2%;
+    padding: 24% 2%;
   }
 
   .header-text img {
@@ -538,11 +538,15 @@ body {
   }
 
   .header-text > li:last-child {
-      margin-top: -16.7%;
-      padding-left: 65%;
-    }
+    margin-top: 4.3%;
+    padding-left: 65%;
+    height: 52px;
+  }
+  .header-text > li:last-child::after {
+    width: 120%;
+  }
   .header-title {
-    top: 35%;
+    top: 33%;
   }
 
 
