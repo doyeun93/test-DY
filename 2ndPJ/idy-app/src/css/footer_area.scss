@@ -118,6 +118,31 @@
   }
 }
 @media screen and  (max-width:480px) {
+  #footer-area {
+   display: block;
+  }
+
+  .info-area {
+    padding: 5% 6%;
+  }
+
+  .footer-info {
+    line-height: 2;
+    width: auto;
+  }
+
+  .footer-social {
+    width: auto;
+  }
+
+  .footer-sns ul {
+    align-items: center;
+    gap: 4%;
+  }
+
+  .btn-top a > img {
+    animation:none;
+  }
 
 
   
