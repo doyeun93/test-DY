@@ -28,6 +28,12 @@
   
   .swiper-button-prev, .swiper-button-next {
     top: var(--swiper-navigation-top-offset, 41%);
-    color: #15a775;
+   
+  }
+  .swiper-button-prev{
+    background-image: url(../../../../build/image/ic_prev.png) !important;
 
-    }
+  }
+  .swiper-button-next {
+  background-image: url(../../../../build/image/ic_next.png) !important;
+  }
