@@ -412,7 +412,7 @@ body {
     left: 21%;
     margin-top: -4%;
   }
-  .lab-top>ul>li:last-child {
+  .lab-top > ul > li:last-child {
     height: 1%;
     width: 9%;
   }
@@ -420,7 +420,7 @@ body {
     padding-top: 23%;
   }
 
-  #cook-area{
+  #cook-area {
     height: 850px;
   }
   .cook-img {
@@ -502,26 +502,66 @@ body {
     padding-top: 14%;
     height: 300px;
   }
-  .cook-food{
-    gap : 5%;
+  .cook-food {
+    gap: 5%;
   }
-    
+
   .cook-food > p {
-    margin-top : 3.3%;
-    margin-left : 26%;
+    margin-top: 3.3%;
+    margin-left: 26%;
   }
   .cook-bottom {
     width: 86%;
     margin-left: 7.6%;
-  }  
+  }
   .cook-bottom > img {
-    margin-top : -8.9%;
-    margin-left: 1.7%; 
+    margin-top: -8.9%;
+    margin-left: 1.7%;
   }
 }
 
-@media screen and  (max-width:480px) {
+@media screen and (max-width: 480px) {
+  // 초보가이드 구역
+  .header-text {
+    display: block; 
+    position: relative;
+    height: auto; 
+    padding: 21% 2%;
+  }
+
+  .header-text img {
+    left: 5%;
+  }
+
+  .header-text > li:nth-child(2) {
+    margin-top: 4.3%;
+  }
+
+  .header-text > li:last-child {
+      margin-top: -16.7%;
+      padding-left: 65%;
+    }
+  .header-title {
+    top: 35%;
+  }
 
 
-  
+
+  // 이벤트 구역
+  #event-area {
+    display: block;
+  }
+  .event-box > ul {
+    display: flex;
+  }
+
+  .event-btn {
+    width: 20%;
+    margin-left: 76%;
+    border-radius: 15px;
+  }
+
+  .event-ban > img {
+    padding-top: 6%;
+  }
 }
