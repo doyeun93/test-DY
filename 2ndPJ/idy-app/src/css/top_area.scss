@@ -256,10 +256,10 @@ input:focus{
   }
   .ham {
     display: block;
-}
-.topbox.on .ham::before {
-  content: "×";
-}
+  }
+  .gnb.on .ham::before {
+    content: "×";
+  }
 
 .logo {	
   width: 27%; }
@@ -268,7 +268,7 @@ input:focus{
   padding: 6% 10%; }
 
 #gnb{
-width: 0%;
+  width: 0%;
 }
 
 .log > ul >li:first-child{
