@@ -124,7 +124,8 @@
   }
 
   .info-area {
-    padding: 5% 6%;
+    padding: 2% 6%;
+    margin-left: 4%;
   }
 
   .footer-info {
@@ -140,6 +141,7 @@
     padding: 0;
   }
   .footer-sns ul {
+    display: flex;
     align-items: center;
     gap: 4%;
   }
