@@ -199,7 +199,7 @@ input:focus{
   }
 }
 
-@media screen and (min-width:481px) and (max-width:767px) {
+@media screen and (max-width:767px) {
 
   .logo {
     width: 67px;
@@ -250,7 +250,7 @@ input:focus{
   }
   
 }
-@media screen and  (max-width:480px) {
+@media screen and  (max-width:450px) {
   .top-gnb{
     display: none;
   }
@@ -262,7 +262,7 @@ input:focus{
   }
 
 .logo {	
-  width: 27%; }
+  width: 150px; }
 
 .logo img{
   padding: 6% 10%; }

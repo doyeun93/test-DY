@@ -457,7 +457,7 @@ body {
   }
 }
 
-@media screen and (min-width: 481px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .header-text {
     padding: 14% 8%;
   }
@@ -520,7 +520,7 @@ body {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 450px) {
   // 초보가이드 구역
   .header-text {
     display: block;
@@ -583,11 +583,11 @@ body {
     justify-content: normal;
   }
   .cook-title > li:first-child img {
-    margin-left: 11%;
+    margin-left: 0%;
   }
 
   .cook-title > li:nth-child(2) {
-    margin-right: 17%;
+    margin-right: 10%;
   }
 
   .cook-title > li:last-child {
@@ -601,8 +601,8 @@ body {
 
   .cook-bottom {
     margin-top: -36%;
-    width: 97%;
-    margin-left: 2%;
+    width: 100%;
+    margin-left: 0%;
   }
   .cook-bottom > img {
     margin-top: -28.4%;
