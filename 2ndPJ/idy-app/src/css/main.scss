@@ -559,7 +559,9 @@ body {
     height: auto;
     display: block;
   }
-
+.lab-top > ul > li:first-child{
+  margin-left: 3%;
+}
   .lab-top > ul > li:nth-child(2) > img {
     left: 57%;
     margin-top: -21%;

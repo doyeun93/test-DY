@@ -15,14 +15,12 @@ function TopArea(props) {
   const goNav = useNavigate();
 
   // 햄버거버튼
-  const showMenu = (e) =>{
-    $(".ham").click(() =>{
-      $(e.Target).toggleClass("on");
-      console.log("나와라");
-
+  const ShowMenu = () => {
+    $(".ham").click((e) => {
+      $(e.target).toggleClass("on");
     });
-
   }
+
    // 1. 검색창 보이기 함수
    const showSearch = (e) => {
     e.preventDefault();
@@ -76,7 +74,7 @@ function TopArea(props) {
                   }
                 </li>)}
               </ul>
-              <button className="ham" type="button" onClick={showMenu}></button>
+              <button className="ham" type="button" onClick={ShowMenu}></button>
               {/* <ShowMenu /> */}
             </nav>
             <div className="log">
