@@ -17,7 +17,7 @@ function TopArea(props) {
   // 햄버거버튼
   const showMenu = (e) =>{
     $(".ham").click(() =>{
-      $(e.currentTarget).toggleClass("on");
+      $(e.Target).toggleClass("on");
       console.log("나와라");
 
     });

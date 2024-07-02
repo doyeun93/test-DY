@@ -262,13 +262,17 @@ input:focus{
   }
 
 .logo {	
-  width: 150px; }
+  position: static;
+   }
 
 .logo img{
-  padding: 6% 10%; }
+  padding: 11% 10%; }
 
 #gnb{
   width: 0%;
+}
+.log {
+  top: 26%;
 }
 
 .log > ul >li:first-child{
