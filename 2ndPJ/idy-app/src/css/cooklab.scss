@@ -1,104 +1,120 @@
-.cooklab-top{
-    height: 210vh;
+.cooklab-top {
+  height: 210vh;
 }
 
-.cooklab-title{
-    height: 250px;
-    span{
-        position: relative;
-        top: 65%;
-        left: 10%;
-        font-size: 4rem;
-    }
+.cooklab-title {
+  height: 250px;
+  span {
+    position: relative;
+    top: 65%;
+    left: 10%;
+    font-size: 4rem;
+  }
 }
-
 
 // 정렬 구역
 /* 정렬박스 */
-.lsortbx{
-    display: flex;
-    padding-bottom: 15px;
-    overflow: hidden;
-    justify-content: flex-end;
-    margin-right: 15%;
+.lsortbx {
+  display: flex;
+  padding-bottom: 15px;
+  overflow: hidden;
+  justify-content: flex-end;
+  margin-right: 15%;
 }
-.lsel{
-    
-    font-size: 1.1rem;
-    font-weight: bold;
-    border: none;
-    letter-spacing: 1px;
+.lsel {
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  letter-spacing: 1px;
 }
-.lsel:focus{
-    outline: none;
+.lsel:focus {
+  outline: none;
 }
 
 // 이미지 구역
-.lab-mid{
-    max-width: 70vw;
-    margin: 0 auto;
-    padding-top: 2%;
+.lab-mid {
+  max-width: 70vw;
+  margin: 0 auto;
+  padding-top: 2%;
 }
 .lab-mid > ul {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-gap: 4%;
-    text-align: right;
-   
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4%;
+  text-align: right;
 
-    img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 13px;
-        cursor: pointer;
-       
-    }
-
-    span{
-      font-size: 1.6rem; 
-    }
-}
-
-.lab-imgbox{
-    overflow: hidden;
-    position: relative;
-}
-
-.lab-mid >ul >li:hover .lab-info{
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.lab-info{
-    opacity: 0;
-    padding: 45px 2px;
-    transform: translateY(-100%);
-    transition: all .8s;
-    position: absolute;
+  img {
     width: 100%;
     height: 100%;
-    top:0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.342);
+    object-fit: cover;
+    border-radius: 13px;
+    cursor: pointer;
+  }
 
-    p:first-child{
-        color: #fff;
-        font-size: 1.5rem;
-        margin-top: 5%;
-        text-align: center;
-    }
-    p:last-child{
-        color: #fff;
-        font-size: 1.5rem;
-        text-align: center;
-    }
+  span {
+    font-size: 1.6rem;
+  }
+}
 
+.lab-imgbox {
+  overflow: hidden;
+  position: relative;
+}
+
+.lab-mid > ul > li:hover .lab-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lab-info {
+  opacity: 0;
+  padding: 45px 2px;
+  transform: translateY(-100%);
+  transition: all 0.8s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.342);
+
+  p:first-child {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-top: 5%;
+    text-align: center;
+  }
+  p:last-child {
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }
 
 // .lab-mid > ul> img::after{
 //     position: absolute;
 //     background: url(../../public/image/ic_scrap.png) no-repeat center / 100% 100%;
-    
-// }
 
+// }
+@media screen and (max-width: 450px) {
+  .lab-sort {
+    padding-top: 7%;
+  }
+  .lab-mid {
+    padding-top: 10%;
+  }
+
+  .lab-info {
+    padding: 0;
+  }
+  .lab-mid > ul span {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .lab-mid > ul {
+    grid-template-columns: repeat(2, 1fr);
+ }
+}
