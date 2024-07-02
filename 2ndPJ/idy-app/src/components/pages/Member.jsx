@@ -1,5 +1,8 @@
+//// 회원가입 페이지 컴포넌트 - member.jsx
+
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+
 
 // 회원가입 CSS 불러오기
 import "../../css/member.scss";
@@ -8,47 +11,26 @@ import "../../css/member.scss";
 import { initData } from "../func/mem_fn";
 
 
-function Member(props) {
-  // [회원가입 페이지 요구사항]
-  // 1. 각 입력항목별로 유효성 검사를 실행함
-  // 2. 상태체크를 통하여 적절한 유효성 검사시, 유효성 체크 에러 메시지를 출력한다
-  // 3. 유효성 검사 통과시 로컬스에 저장한다
-  // -> 특이사항 : 글자를 입력할 때 마다 검사 + submit버튼 작동시 검사
+function Member() {
+  // 라우터 이동 네비게이트
+  const goNav = useNavigate();
+  
 
-
-
-  /////// [상태관리 변수]  ////////////
-  // [1] 입력요소 상태변수
-
-  // 1. 아이디변수
   const [userId, setUserId] = useState("");
-  // 2. 비밀번호변수
   const [pwd, setPwd] = useState("");
-  // 3. 비밀번호확인변수
   const [chkPwd, setChkPwd] = useState("");
-  // 4. 사용자이름변수
   const [userName, setUserName] = useState("");
-  // 5. 이메일변수
   const [email, setEmail] = useState("");
 
 
-
-  // [2] 에러상태관리 변수
-  // -> 에러상태값 초기값은 에러아님(false)
-  // 1. 아이디변수
   const [userIdError, setUserIdError] = useState(false);
-  // 2. 비밀번호변수
   const [pwdError, setPwdError] = useState(false);
-  // 3. 비밀번호확인변수
   const [chkPwdError, setChkPwdError] = useState(false);
-  // 4. 사용자이름변수
   const [userNameError, setUserNameError] = useState(false);
-  // 5. 이메일변수
   const [emailError, setEmailError] = useState(false);
 
 
 
-  // [ 아이디관련 메시지 프리셋 ] ////
   const msgId = [
     // 1. 최소 5글자 이상 입력할 것
     "User ID must contain a minimum of 5 characters",
@@ -58,7 +40,7 @@ function Member(props) {
     "That's a great ID!",
   ];
 
-  // [ 기타 메시지 프리셋 ]
+
   const msgEtc = {
     // 비밀번호
     pwd: "5 to 15 digits in the form of special characters, characters, and numbers",
@@ -72,56 +54,31 @@ function Member(props) {
 
 
   // [3] 에러메시지 상태변수 : 초기값 msgId[0]
-  // -> 기본 메시지가 출력됨
   const [idMsg, setIdMsg] = useState(msgId[0]);
 
 
-  // [유효성 검사 함수] 
-  // 1. 아이디 유효성 검사
+  
   const changeUserId = e => {
     // 입력된 값 읽기
     let val = e.target.value;
 
-    // 1. 아이디 유효성 검사식(따옴표로 싸지 말것!)
+    // 아이디 유효성 검사식(따옴표로 싸지 말것!)
     const valid = /^[A-Za-z0-9+]{5,}$/;
-    // 유효성 검사방법 : 정규식.test(값)
+   
+    // 에러상태 분기하기
 
-    // 2. 입력값 확인 : e.target
-    // console.log(val);
-
-    // 3. 에러상태 분기하기
-    // 3-1. 에러 아닐 때(유효성 검사만 통과한 경우)
     if (valid.test(val)){
-        console.log("통과했지만..");
-        // 아이디 검사를 위해 기본 데이터 생성 호출
+  
         initData();
-        // 로컬스토리지에 "mem-data"가 없으면 초기세팅함
-
-        // 이제 중복 아이디 검사 실행함
-        // 1. 로컬스 변수 할당
+    
         let memData = localStorage.getItem("mem-data");
 
-        // 2. 로컬스 객체 변환(-> 문자형이므로 객체변환 필요)
         memData = JSON.parse(memData);
-        // -> 배열 데이터로 변환
-        // 주의 : JSON 파싱할 때 원본 형식이 제이슨 파일 형식으로 엄격하게 작성되어야 에러가 없음(마지막 , 불허용 등)
-
-        // 3. 배열이니까 현재 입력데이터의 아이디가 기존 배열 값으로 있는지 검사함
-        // -> 있으면 true, 없으면 false
-        
-        // [새로운 배열 메서드 : some()]
-        // ->  조건에 맞는 값이 하나만 나오면 true 처리함
-        // 비교참고) every()는 하나만 false이면 false 리턴
-        // let isT = memData.some(v=> {
-        //     console.log("돌아",v.uid);
-
-        //     return v.uid === val});
         
         
         let isT = memData.some((v) => v.uid === val);
-        
-        console.log("중복있어?",isT);
-        // 4. true일 경우 중복데이터 메시지 표시 
+      
+        // true일 경우 중복데이터 메시지 표시 
         if(isT){
             // 에러메세지 업데이트
             setIdMsg(msgId[1]);
@@ -129,20 +86,17 @@ function Member(props) {
             setUserIdError(true);
             
         } /// if ////
-        // 5. false일 경우 성공 메시지 표시
+        // false일 경우 성공 메시지 표시
         else{
         
             // 에러상태값 업데이트 : 에러가 아님(false)
             setUserIdError(false); 
         }
-        // 아이디 에러상태 업데이트(false)
-        // setUserIdError(false);
+     
     }
     
-    // 3-2. 에러일 때 : 유효성 검사 에러
+    // 에러일 때 : 유효성 검사 에러
     else{
-        console.log("에러");
-        
         // 에러메세지 업데이트
         setIdMsg(msgId[0]);
         // 아이디 에러상태 업데이트(true)
@@ -159,38 +113,35 @@ function Member(props) {
     // 입력된 값 읽기
     let val = e.target.value;
 
-    // 1. 비밀번호 유효성 검사식(따옴표로 싸지 말것!)
+    // 비밀번호 유효성 검사식(따옴표로 싸지 말것!)
     const valid = /^.*(?=^.{5,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
 
-    // 2. 입력값 확인 : e.target -> 이벤트가 발생한 요소
-    // console.log(val);
-
-    // 3. 에러에 따른 상태값 변경
+    // 에러에 따른 상태값 변경
     if (valid.test(val)) setPwdError(false);
     else setPwdError(true);
 
-    // 4. 기존입력값 반영하기
+    // 기존입력값 반영하기
     setPwd(val);
   }; ///////// changePwd 함수 //////////
 
 
 
-  // 3. 비밀번호확인 유효성 검사 ///////////
+  //  비밀번호확인 유효성 검사 ///////////
   const changeChkPwd = (e) => {
     // 입력된 값읽기
     let val = e.target.value;
     
-    // 1. 비밀번호 입력내용과 일치여부 확인
+    //  비밀번호 입력내용과 일치여부 확인
     if (pwd === val) setChkPwdError(false);
     else setChkPwdError(true);
 
-    // 2. 기존입력값 반영하기
+    //  기존입력값 반영하기
     setChkPwd(val);
   }; ///////// changeChkPwd 함수 //////////
 
 
 
-  // 4. 사용자이름 유효성 검사 ///////////
+  // 사용자이름 유효성 검사 ///////////
   const changeUserName = (e) => {
     // 입력된 값읽기
     let val = e.target.value;
@@ -205,23 +156,21 @@ function Member(props) {
 
 
 
-  // 5. 이메일 유효성 검사 ///////////
+  //  이메일 유효성 검사 ///////////
   const changeEmail = (e) => {
     // 입력된 값읽기
     let val = e.target.value;
     
-    // 1. 이메일 유효성 검사식(따옴표로 싸지 말것!)
+    // 이메일 유효성 검사식(따옴표로 싸지 말것!)
     const valid =
       /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
 
-    // 2. 입력값 확인 : e.target -> 이벤트가 발생한 요소
-    // console.log(val);
 
-    // 3. 에러에 따른 상태값 변경
+    //  에러에 따른 상태값 변경
     if (valid.test(val)) setEmailError(false);
     else setEmailError(true);
 
-    // 4. 기존입력값 반영하기
+    //  기존입력값 반영하기
     setEmail(val);
   }; ///////// changeEmail 함수 //////////
 
@@ -265,11 +214,7 @@ function Member(props) {
 
     // 2. 유효성검사 전체 통과시
     if(totalValid()){
-        console.log("모두통과! 저장!");
-
-        // [회원정보를 로컬스토리지에 저장하기]
-
-        // 1. 로컬스 체크함수 호출(없으면 생성)
+      
         initData();
 
         // 2. 로컬스 변수할당
@@ -297,6 +242,15 @@ function Member(props) {
         // 6. 로컬스에 반영하기 :  문자화해서 넣어야함
         localStorage.setItem("mem-data", JSON.stringify(memData));
 
+
+        // 7. 회원가입환영 메시지  + 로그인 페이지 이동 
+        // 버튼 텍스트에 환영메시지
+        document.querySelector(".sbtn").innerText = "Thank you for joining us!";
+        // 1초후 페이지 이동 : 라우터 Navigate로 이동함
+        setTimeout(()=>{
+            goNav("/login");
+        }, 1000); 
+
     } ///// if /////
     // 3. 불통과시
     else{
@@ -306,16 +260,6 @@ function Member(props) {
 
   }; /////////// onSubmit 함수 /////////////
 
-  // 최대수 테스트 
-  const arr = [{"idx":"100"}, {"idx":"77"}, {"idx":"3"}, {"idx":"44"}, {"idx":"5"}];
-  const newArr = arr.map(v =>v.idx);
-  // ... 배열변수  -> 스프레드 연산자로 배열값만 가져온다
-  const maxValue = Math.max(...newArr);
-  const minValue = Math.min(...newArr);
-//   const maxValue = Math.max("77","55","33");
-  console.log(newArr);
-  console.log("최대수:", maxValue);
-  console.log("최소수:", minValue);
 
   // 코드 리턴 구역
   return (
@@ -327,11 +271,13 @@ function Member(props) {
             <li>
                 {/* 1. 아이디 */}
               <label>ID : </label>
-              <input type="text" maxLength="20" placeholder="Please enter your ID" value={userId} onChange={changeUserId}/>
+              <input type="text" maxLength="20" placeholder="Please enter your ID" 
+              // defaultValue={gg} -> 기본으로 씀
+              value={userId} onChange={changeUserId}/>
               {
               /* 에러일 경우 메시지 출력 */
               // 조건문 && 출력요소
-              (userIdError && userId) &&(
+              userIdError &&(
               <div className="msg">
                 <small style={{color:"red", fontSize:"11px"}}>{idMsg}</small>
               </div>
@@ -342,7 +288,7 @@ function Member(props) {
               // 조건문 && 출력요소
               // 조건 추가 : userId가 입력 전일 때 안보임처리
               // userId가 입력전엔 false로 리턴됨
-                (!userIdError && userId) &&(
+                !userIdError && userId &&(
                 <div className="msg">
                     <small style={{color:"green", fontSize:"11px"}}>{msgId[2]}</small>
                 </div>
@@ -361,9 +307,7 @@ function Member(props) {
                {
               /* 에러일 경우 메시지 출력 */
               // 조건문 && 출력요소
-              // 조건 추가 : pwdError가 입력 전일 때 안보임처리
-              // pwd가 입력전엔 false로 리턴됨
-              (pwdError && pwd) &&(
+              pwdError &&(
               <div className="msg">
                 <small style={{color:"red", fontSize:"11px"}}>{msgEtc.pwd}</small>
               </div>
@@ -381,9 +325,7 @@ function Member(props) {
                {
               /* 에러일 경우 메시지 출력 */
               // 조건문 && 출력요소
-              // 조건 추가 : chkPwdError가 입력 전일 때 안보임처리
-              // chkPwd가 입력전엔 false로 리턴됨
-              (chkPwdError && chkPwd) &&(
+              chkPwdError &&(
               <div className="msg">
                 <small style={{color:"red", fontSize:"11px"}}>{msgEtc.confPwd}</small>
               </div>
@@ -396,9 +338,7 @@ function Member(props) {
               {
               /* 에러일 경우 메시지 출력 */
               // 조건문 && 출력요소
-              // 조건 추가 : userNameError가 입력 전일 때 안보임처리
-              // userName가 입력전엔 false로 리턴됨
-              (userNameError && userName) &&(
+             userNameError  &&(
               <div className="msg">
                 <small style={{color:"red", fontSize:"11px"}}>{msgEtc.req}</small>
               </div>
@@ -411,9 +351,7 @@ function Member(props) {
               {
               /* 에러일 경우 메시지 출력 */
               // 조건문 && 출력요소
-              // 조건 추가 : emailError가 입력 전일 때 안보임처리
-              // email이 입력전엔 false로 리턴됨
-              (emailError && email) &&(
+              emailError  &&(
               <div className="msg">
                 <small style={{color:"red", fontSize:"11px"}}>{msgEtc.email}</small>
               </div>

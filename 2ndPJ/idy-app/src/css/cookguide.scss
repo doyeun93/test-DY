@@ -101,3 +101,19 @@
     
 // }
 
+@media screen and (min-width: 768px) {
+    .guide-info > p  {
+        display: -webkit-box;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+    
+    .guide-mid > ul span {
+        display: -webkit-box;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;    
+    }
+    
+}
