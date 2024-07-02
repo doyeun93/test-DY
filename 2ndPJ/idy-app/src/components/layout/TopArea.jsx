@@ -82,7 +82,7 @@ function TopArea(props) {
             <div className="log">
               <ul>
                 <li>
-                  <Link to="login">로그인</Link>
+                  <Link to="/login">로그인</Link>
                 </li>
                 <li style={{color:"#15a775"}}>
                 {/* 검색입력박스 */}
