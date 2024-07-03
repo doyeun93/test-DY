@@ -14,7 +14,6 @@
 }
 
 .cooklab-text {
-  height: 60px;
   position: relative;
   border: solid 1px #e5e5e5;
   border-radius: 3.0625rem; 
@@ -34,8 +33,21 @@
   display: flex;
   justify-content: space-evenly;
 }
-.cooklab-text > ul >li {
-  font-size: 2rem;
+.cooklab-text > ul >li{
+  font-size: 1.6rem;
+  display: block;
+  width: 100%;
+  padding: 1rem 0;
+  color: #999;
+  text-align: center;
+}
+.cooklab-text > ul >li::before{ 
+  content: "";
+  display: inline-block;
+  width: 1.4rem;
+  height: 2rem;
+  background: url(../../public/image/ic_star_pink.png) no-repeat center / auto 100%;
+
 }
 
 
@@ -43,6 +55,7 @@
 /* 정렬박스 */
 .lsortbx {
   display: flex;
+  padding-top: 2rem;
   padding-bottom: 15px;
   overflow: hidden;
   justify-content: flex-end;

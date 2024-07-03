@@ -6,6 +6,7 @@ export const cookingData = [
         text : "뚝딱 완성 참치전",
         type1: "준비시간 : 10분",
         type2: "조리시간 : 5분", 
+        kind : "레시피",
     },
     
     {
@@ -15,6 +16,7 @@ export const cookingData = [
         text : "옥수수캔으로 고소하고 달콤한 이색 전",
         type1: "준비시간 : 10분",
         type2: "조리시간 : 20분",
+        kind : "레시피",
     
     },
 
@@ -25,6 +27,7 @@ export const cookingData = [
         text : "스크램블한 계란에 고슬고슬 밥 볶기",
         type1: "준비시간 : 10분",
         type2: "조리시간 : 10분",
+        kind : "레시피",
     
     },
     
@@ -35,6 +38,7 @@ export const cookingData = [
         text : "짜지 않고 먹기 편한 깐새우장 꿀팁",
         type1: "준비시간 : 10분",
         type2: "조리시간 : 20분",
+        kind : "레시피",
     
     },
    
@@ -46,6 +50,7 @@ export const cookingData = [
         text : "전자레인지로 조리해 손쉽게 만드는 법",
         type1: "준비시간 : 0분",
         type2: "조리시간 : 20분",
+        kind : "레시피",
     
     },
 
@@ -56,6 +61,7 @@ export const cookingData = [
         text : "잘게 찢은 팽이버섯 위에 계란물을 부어 초간단 완성!",
         type1: "준비시간 : 5분",
         type2: "조리시간 : 5분",
+        kind : "레시피",
        
     },
    

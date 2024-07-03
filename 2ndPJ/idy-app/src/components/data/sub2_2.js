@@ -6,6 +6,7 @@ export const solutionData = [
         text: "내가 한 요리는 왜 항상 타버리는 걸까?",
         type1: "# 요리기본",
         type2: "# 불조절", 
+        kind : "솔루션",
     },
     
     {
@@ -15,6 +16,7 @@ export const solutionData = [
         text: "딸기, 먹기도 좋고 예쁘게 써는 법 궁금한 사람!",
         type1: "# 딸기",
         type2: "# 과일",
+        kind : "솔루션",
     
     },
 
@@ -25,6 +27,7 @@ export const solutionData = [
         text: "도마별 특징과 이용 팁 배워가요!",
         type1: "# 조리도구",
         type2: "# 도마",
+        kind : "솔루션",
     
     },
     
@@ -35,6 +38,7 @@ export const solutionData = [
         text: "애매하게 남은 두부, 어떻게 보관할까?",
         type1: "# 두부",
         type2: "# 재료 보관",
+        kind : "솔루션",
     
     },
 
@@ -45,6 +49,7 @@ export const solutionData = [
         text : "어떤 간장 사야할까? 어떤 간장 써야할까?",
         type1: "# 요리 기본",
         type2: "# 간장",
+        kind : "솔루션",
     
     },
 
@@ -55,6 +60,7 @@ export const solutionData = [
         text : "집에 있는 도구로 쉽게 할 수 있는 계량 방법",
         type1: "# 요리 기본",
         type2: "# 계량",
+        kind : "솔루션",
     
     },
    
