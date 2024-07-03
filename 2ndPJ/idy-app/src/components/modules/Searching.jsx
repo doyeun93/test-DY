@@ -18,6 +18,7 @@ function Searching({ kword }) {
 
   const [kw, setKw] = useState(kword);
   const [sort, setSort] = useState("asc");
+  const [chk,setChk] = useState([true,true]);
 
   console.log(guideData);
   console.log(recipeData);
@@ -44,13 +45,13 @@ function Searching({ kword }) {
     if(
 
       (newVal.indexOf(key)!== -1) 
-    //   &&
+      &&
 
-    //   (
-    //     (chk[0] ? v.alignment == "hero" : false) ||
-    //     (chk[1] ? v.alignment == "comp" : false) ||
-    //     (chk[2] ? v.alignment == "villain" : false)
-    //   )
+      (
+        (chk[0] ? v.kind == "레시피" : false) ||
+        (chk[1] ? v.kind == "솔루션" : false) 
+   
+      )
       // true && (true || false || false)
       // -> &&문은 모두 true여야 true고 ||문은 하나만 true여도 true다
 
@@ -101,6 +102,54 @@ function Searching({ kword }) {
             />
           </div>
         </div>
+        {/* 1-2. 체크박스구역 */}
+        <div className="chkbx">
+            <ul>
+              <li>
+                {/* 타이틀 */}
+                <h2>
+                  전체
+                  <span className="spbtn">＋</span>
+                </h2>
+                {/* 체크박스리스트 */}
+                <ol>
+                  <li>
+                    레시피
+                    {/* 숨긴 체크박스 */}
+                    <input type="checkbox" id="recipe" className="chkhdn" 
+                    // 체크 박스 체크속성값을 훅(상태관리변수) 연결
+                    checked={chk[0]}
+                    // 체크 변경시 change 이벤트 발생
+                    onChange = {(e)=>{
+                      // 체크박스의 checked 속성은 체크시 ture, 불체크시 false 리턴
+                      console.log(e.target.checked);
+                      // 훅값 업데이트
+                      setChk([e.target.checked,chk[1]]);
+                    }}/>
+                    {/* 디자인노출 라벨 */}
+                    <label htmlFor="hero" className="chklb"></label>
+                  </li>
+                  <li>
+                    솔루션
+                    {/* 숨긴 체크박스 */}
+                    <input type="checkbox" id="solution" className="chkhdn" 
+                    // 체크 박스 체크속성값을 훅(상태관리변수) 연결
+                    checked={chk[1]}
+                     // 체크 변경시 change 이벤트 발생
+                     onChange = {(e)=>{
+                      // 체크박스의 checked 속성은 체크시 ture, 불체크시 false 리턴
+                      console.log(e.target.checked);
+                      // 훅값 업데이트
+                      setChk([e.target.checked,chk[0]]);
+                    }}/>
+                    {/* 디자인노출 라벨 */}
+                    <label htmlFor="comp" className="chklb"></label>
+                  </li>
+                </ol>
+              </li>
+            </ul>
+          </div>
+
         {/* 2. 결과리스트박스 */}
         <div className="listbx">
           {/* 2-1. 결과 타이틀 */}

@@ -73,43 +73,42 @@ input:focus {
 }
 
 /* 체크박스의 박스 */
-// .chkbx h2{
-//     margin: 15px 0 5px;
-// }
-// .spbtn{
-//     display: block;
-//     float: right;
-//     margin-right: 5px;
-//     font-size: 30px;
-//     line-height: 25px;
-//     cursor: pointer;
-// }
-// .chkbx ol>li{
-//     padding: 10px;
-//     font-size: 18px;
-//     font-weight: bold;
-// }
-// /* 체크박스 숨김 */
-// .chkbx input[type=checkbox]{
-//     display: none;
-// }
-// /* 체크박스 대신 label로 디자인 노출 */
-// .chklb{
-//     float: right;
-//     display: block;
-//     width: 20px;
-//     height: 20px;
-//     background-color: #ccc;
-// }
-// /* 체크박스 체크시 라벨디자인 변경 */
+.chkbx h2{
+    margin: 15px 0 11px;
+}
+.spbtn{
+    display: block;
+    float: right;
+    margin-right: 5px;
+    font-size: 30px;
+    line-height: 25px;
+    cursor: pointer;
+}
+.chkbx ol>li{
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+ /* 체크박스 대신 label로 디자인 노출 */
+.chklb{
+    float: right;
+    display: block;
+    width: 20px;
+    height: 20px;
+//     // background-color: #ccc;
+//     border: #ccc;
+}
+// // /* 체크박스 체크시 라벨디자인 변경 */
 // input:checked+.chklb{
-//     background-color: #0d6efd;
+//     background-color: #fff;
 //     text-align: center;
 //     font-weight: bold;
+//     color: #15a775;
 // }
 // input:checked+.chklb::before{
 //     content: '√';
-//     color: #fff;
+//     color: #15a775;
 //     line-height: 0;
 // }
 
