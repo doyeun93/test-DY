@@ -28,7 +28,7 @@ export default function CookLab() {
               <Link to="/cooklab">레시피</Link>
             </li>
             <li>
-              <Link to="/cooklabsol">솔루션</Link> 
+              <Link to="/cooksol">솔루션</Link> 
             </li>
           </ul>
         </div>

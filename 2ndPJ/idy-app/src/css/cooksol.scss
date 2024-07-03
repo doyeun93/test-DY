@@ -1,0 +1,165 @@
+/****************** 솔루션 구역 ******************/
+
+
+.cooksol-top {
+    height: 210vh;
+  }
+  
+  .cooksol-title {
+    height: 250px;
+    padding-bottom: 2rem;
+    span {
+      position: relative;
+      top: 65%;
+      left: 10%;
+      font-size: 4rem;
+    }
+  }
+
+
+
+  .cooksol-text {
+    position: relative;
+    border: solid 1px #e5e5e5;
+    border-radius: 3.0625rem; 
+  }     
+  
+  .cooksol-text::after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background-color: #e5e5e5;
+    content: '';
+  }
+  
+  .cooksol-text > ul {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .cooksol-text > ul >li{
+    font-size: 1.6rem;
+    display: block;
+    width: 100%;
+    padding: 1rem 0;
+    color: #999;
+    text-align: center;
+  }
+  .cooksol-text > ul >li::before{ 
+    content: "";
+    display: inline-block;
+    width: 1.4rem;
+    height: 2rem;
+    background: url(../../public/image/ic_star_pink.png) no-repeat center / auto 100%;
+  
+  }
+  
+  
+  // 정렬 구역
+  /* 정렬박스 */
+  .ssortbx {
+    display: flex;
+    padding-top: 2rem;
+    padding-bottom: 15px;
+    overflow: hidden;
+    justify-content: flex-end;
+    margin-right: 15%;
+  }
+  .ssel {
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    letter-spacing: 1px;
+  }
+  .ssel:focus {
+    outline: none;
+  }
+  
+  // 이미지 구역
+  .sol-mid {
+    max-width: 70vw;
+    margin: 0 auto;
+    padding-top: 2%;
+  }
+  .sol-mid > ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 4%;
+    text-align: right;
+  
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 13px;
+      cursor: pointer;
+    }
+  
+    span {
+      font-size: 1.6rem;
+    }
+  }
+  
+  .sol-imgbox {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .sol-mid > ul > li:hover .sol-info {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .sol-info {
+    opacity: 0;
+    padding: 45px 2px;
+    transform: translateY(-100%);
+    transition: all 0.8s;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.342);
+  
+    p:first-child {
+      color: #fff;
+      font-size: 1.5rem;
+      margin-top: 5%;
+      text-align: center;
+    }
+    p:last-child {
+      color: #fff;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+  
+  // .sol-mid > ul> img::after{
+  //     position: absolute;
+  //     background: url(../../public/image/ic_scrap.png) no-repeat center / 100% 100%;
+  
+  // }
+  @media screen and (max-width: 450px) {
+    .sol-sort {
+      padding-top: 7%;
+    }
+    .sol-mid {
+      padding-top: 10%;
+    }
+  
+    .sol-info {
+      padding: 0;
+    }
+    .sol-mid > ul span {
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    .sol-mid > ul {
+      grid-template-columns: repeat(2, 1fr);
+   }
+  }
