@@ -3,18 +3,57 @@
 
 .cookqna-top{
     height: 150vh;
-    background-image: url("../../public/image/bg_pattern_pink.png");
-    background-color: #fff3f363;
+    // background-image: url("../../public/image/bg_pattern_pink.png");
+    // background-color: #fff3f363;
 }
 
 .cookqna-title{
     height: 250px;
+    padding-bottom: 5%;
     span{
         position: relative;
         top: 85%;
         left: 10%;
         font-size: 4rem;
     }
+}
+
+.cookqna-text {
+  position: relative;
+  border: solid 1px #e5e5e5;
+
+  border-radius: 3.0625rem; 
+}     
+
+.cookqna-text::after {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background-color: #e5e5e5;
+  content: '';
+}
+
+.cookqna-text > ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+.cookqna-text > ul >li{
+  font-size: 1.6rem;
+  display: block;
+  width: 100%;
+  padding: 1rem 0;
+  color: #999;
+  text-align: center;
+}
+.cookqna-text > ul >li::before{ 
+  content: "";
+  display: inline-block;
+  width: 1.4rem;
+  height: 2rem;
+  background: url(../../public/image/ic_star_pink.png) no-repeat center / auto 100%;
+
 }
 
 /* 검색옵션박스 */

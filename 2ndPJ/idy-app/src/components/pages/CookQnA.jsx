@@ -8,6 +8,7 @@ import $ from "jquery";
 
 import "../../css/cookqna.scss";
 import "../../css/board_file.scss";
+import { Link } from "react-router-dom";
 
 
 export default function CookQnA() {
@@ -123,6 +124,16 @@ export default function CookQnA() {
       <section className="cookqna-top">
         <div className="cookqna-title">
           <span>질문있어요</span>
+        </div>
+        <div className="cookqna-text">
+          <ul>
+            <li>
+              <Link to="/cookcook">요리해요</Link>
+            </li>
+            <li>
+              <Link to="/cookqna">질문있어요</Link>
+            </li>
+          </ul>
         </div>
         <main className="cont">
           <div className="selbx">
