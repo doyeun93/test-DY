@@ -4,6 +4,7 @@ import { useState } from "react";
 import "../../css/cooklab.scss";
 import { recipeData } from "../data/sub2_1";
 import { Link } from "react-router-dom";
+import $ from "jquery";
 
 export default function CookLab() {
   // 정렬
@@ -15,6 +16,18 @@ export default function CookLab() {
     recipeData.sort((a, b) => (a.title > b.title ? -1 : a.title < b.title ? 1 : 0));
   }
 
+  
+  // const [lbar, setLbar] = useState(false);
+ 
+
+  // const labBar = () => {
+  //   setLbar(!lbar);
+  // }
+
+  const labBar = (e)=> {
+    $(e.currentTarget).toggleClass("on");
+  };
+
   //// 코드 리턴 구역
   return (
     <>
@@ -24,8 +37,8 @@ export default function CookLab() {
         </div>
         <div className="cooklab-text">
           <ul>
-            <li>
-              <Link to="/cooklab">레시피</Link>
+            <li onClick={labBar}>
+              <Link to="/cooklab" >레시피</Link>
             </li>
             <li>
               <Link to="/cooksol">솔루션</Link> 
