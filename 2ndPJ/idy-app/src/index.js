@@ -40,6 +40,7 @@ export default function MainComponent(props) {
           <Route path="cookevent" element={<CookEvent />} />
           <Route path="search" element={<SearchPage />} />
           <Route path="member" element={<Member />}/>
+          
 
         </Route>
         {/* Layout 루트 Route로 하위 Route를 감싼다! */}

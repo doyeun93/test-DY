@@ -4,9 +4,11 @@ import TopArea from "./TopArea";
 import MainArea from "./MainArea";
 import FooterArea from "./FooterArea";
 
+
 function Layout() {
   return (
     <>
+      
       {/* 1.상단영역 */}
       <TopArea />
       {/* 2.메인영역 */}
