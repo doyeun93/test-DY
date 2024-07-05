@@ -2,7 +2,7 @@
 
 
 .cookqna-top{
-    height: 150vh;
+    height: 160vh;
     // background-image: url("../../public/image/bg_pattern_pink.png");
     // background-color: #fff3f363;
 }
@@ -158,13 +158,6 @@
     text-align: left;
   }
   
-  /*
-     가상 클래스 중
-     :first-child - 첫번째 자식
-     :last-child - 두번째 자식
-     :nth-child(숫자) - 숫자번째 자식 (짝수 even, 홀수 odd 사용)
-     단, 자식 태그의 종류가 한가지 여야함~!!!!
-  */
   /*짝수번째 배경색 넣기*/
   .dtbl tbody tr:nth-child(even) td {
     /*even 짝수, odd 홀수*/

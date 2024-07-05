@@ -15,10 +15,9 @@ function TopArea(props) {
   const goNav = useNavigate();
 
   // 햄버거버튼
-  const ShowMenu = () => {
-    $(".ham").click((e) => {
-      $(e.target).toggleClass("on");
-    });
+  const ShowMenu = (e) => {
+    $(".ham").toggleClass("on");
+      $(e.target).show()
   }
 
    // 1. 검색창 보이기 함수

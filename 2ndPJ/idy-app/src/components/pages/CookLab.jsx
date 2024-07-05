@@ -19,11 +19,10 @@ export default function CookLab() {
   
   // const [lbar, setLbar] = useState(false);
  
-
   // const labBar = () => {
   //   setLbar(!lbar);
   // }
-
+ 
   const labBar = (e)=> {
     $(e.currentTarget).toggleClass("on");
   };

@@ -22,6 +22,7 @@ function Main(props) {
   // 코드 리턴구역 ////////////
     return (
         <>
+        
         {/* <!-- 요리초보가이드 --> */}
         <header id="header-area">
           <div className="header-top">

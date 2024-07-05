@@ -15,17 +15,11 @@ export default function CookQnA() {
   
   const [pageNum, setPageNum] = useState(1);
 
-  
   const totalCount = useRef(baseData.length);
-  console.log("전체개수:", totalCount);
-
   
   const unitSize = 8;
 
-  /*********************************************************** 
-          함수명 : bindList
-          기능 : 페이지별 리스트를 생성하여 바인딩함
-      ***********************************************************/
+  
   const bindList = () => {
    
     let orgData = baseData;
@@ -36,9 +30,9 @@ export default function CookQnA() {
     );
 
     // 3. 일부 데이터만 선택
-    // 시작번호 = (페이지번호 -1)*단위수
+    
     let sNum = (pageNum - 1) * unitSize;
-    // 끝번호 = (페이지번호)*단위수
+  
     let eNum = pageNum * unitSize;
     
     // 결과배열
