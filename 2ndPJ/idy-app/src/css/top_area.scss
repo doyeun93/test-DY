@@ -122,9 +122,10 @@
     content: '≡';
   }
   .hbox{
-    width: 450px;
+    max-width: 450px;
     height: auto;
     background-color: #fff;
+    
   }
   
   /* 로그인 영역 */

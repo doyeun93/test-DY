@@ -127,9 +127,9 @@ export default function CookCook(){
                 <main className="cont">
           <div className="selbx">
             <select name="cta" id="cta" className="cta">
-              <option value="tit">Title</option>
-              <option value="cont">Contents</option>
-              <option value="unm">Writer</option>
+              <option value="tit">제목</option>
+              <option value="cont">내용</option>
+              <option value="unm">작성자</option>
             </select>
             <select name="sel" id="sel" className="sel">
               <option value="0">최신순</option>
