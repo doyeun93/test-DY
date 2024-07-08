@@ -17,15 +17,15 @@ export default function CookLab() {
   }
 
   
-  // const [lbar, setLbar] = useState(false);
+  const [lbar, setLbar] = useState(false);
  
-  // const labBar = () => {
-  //   setLbar(!lbar);
-  // }
+  const labBar = () => {
+    setLbar(!lbar);
+  }
  
-  const labBar = (e)=> {
-    $(e.currentTarget).toggleClass("on");
-  };
+  // const labBar = (e)=> {
+  //   $(e.currentTarget).toggleClass("on");
+  // };
 
   //// 코드 리턴 구역
   return (
@@ -36,14 +36,14 @@ export default function CookLab() {
         </div>
         <div className="cooklab-text">
           <ul>
-            <li onClick={e =>{
-              e.preventDefault();
-              labBar(e);
-            }}>
-              <Link to="/cooklab" >레시피</Link>
+            <li 
+            // onClick={e =>{e.preventDefault();labBar(e);}}
+            >
+
+              {labBar && <Link to="/cooklab" >레시피</Link>}
             </li>
             <li>
-              <Link to="/cooksol">솔루션</Link> 
+              {labBar && <Link to="/cooksol">솔루션</Link> }
             </li>
           </ul>
         </div>

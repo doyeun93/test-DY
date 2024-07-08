@@ -7,7 +7,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import "../../css/top_area.scss";
 
 import $ from 'jquery';
-import { ShowMenu } from '../modules/Showmenu';
+
 
 
 function TopArea(props) {
@@ -16,6 +16,7 @@ function TopArea(props) {
 
   // 햄버거버튼
   const ShowMenu = (e) => {
+    e.preventDefault();
     $(".ham").toggleClass("on");
       $(".hbox").show();
   }
@@ -73,8 +74,12 @@ function TopArea(props) {
                   }
                 </li>)}
               </ul>
-              <button className="ham" type="button" onClick={ShowMenu}></button>
-              {/* <ShowMenu /> */}
+              <button className="ham" type="button" 
+              onClick={(e)=> {
+                e.preventDefault();
+                ShowMenu();
+                }}></button>
+            
             </nav>
             <div className="log">
               <ul>
