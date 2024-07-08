@@ -36,7 +36,10 @@ export default function CookLab() {
         </div>
         <div className="cooklab-text">
           <ul>
-            <li onClick={labBar}>
+            <li onClick={e =>{
+              e.preventDefault();
+              labBar(e);
+            }}>
               <Link to="/cooklab" >레시피</Link>
             </li>
             <li>
