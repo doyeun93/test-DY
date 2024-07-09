@@ -96,7 +96,7 @@
     height: 100%;
   }
   
-  .top-gnb > li:nth-child(1) ~ li:nth-child(-n+3)::after{
+  .top-gnb > li:nth-child(1) ~ li:nth-child(-n+4)::after{
     content: "";
     background:url(../../public/image/ic_star.png) no-repeat center;
     display: inline-block;

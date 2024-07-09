@@ -1,5 +1,9 @@
 export const gnbData = [
     {
+        txt:"새미네소개",
+        link:"/intro",
+    },
+    {
         txt:"요리초보가이드",
         link:"/cookguide",
     },

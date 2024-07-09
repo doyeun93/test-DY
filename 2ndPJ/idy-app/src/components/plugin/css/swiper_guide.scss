@@ -64,8 +64,23 @@ html, body {
 
   .htitle > span{
     position: absolute;
-    left: -51rem;
+    left: -53rem;
     z-index: 99;
     font-size: 2rem;
-    top: -21rem;
+    top: -18rem;
+    color: #393535;
+    opacity: 0;
+  }
+
+  .SwiperGuide:hover {
+  
+    background-color: #a3a3a317;
+    transition: .2s ease-in;
+  }
+
+
+  .SwiperGuide:hover .htitle > span{
+    opacity: 1;
+    transition: .2s ease-in;
+   
   }

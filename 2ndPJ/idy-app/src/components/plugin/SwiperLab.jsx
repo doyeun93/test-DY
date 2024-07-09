@@ -15,6 +15,7 @@ import "./css/swiper.scss";
 import { Navigation } from "swiper/modules";
 
 import { mainData } from "../data/mainarea";
+import { Link } from "react-router-dom";
 
 export default function SwiperLab() {
   // 불러 올 이미지 리스트
@@ -52,7 +53,9 @@ export default function SwiperLab() {
             <section className="lab-img">
               {/* 이미지영역 */}
               <div className="lab-img2">
+                <Link to="/cooklab">
                   <img src={process.env.PUBLIC_URL+`/image/${v.imgName}.jpg`} alt={v.title} />
+                </Link>
               </div>
               <section className={v.category=="솔루션"?"lab-text sol":"lab-text rec"}>
                 {/* 이미지 타이틀영역 */}

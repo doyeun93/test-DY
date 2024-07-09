@@ -6,6 +6,7 @@ import "./css/index.scss";
 
 import Main from "./components/pages/main";
 import Layout from "./components/layout/Layout";
+import Intro from "./components/pages/Intro";
 import CookGuide from "./components/pages/CookGuide";
 import CookLab from "./components/pages/CookLab";
 import CookSol from "./components/pages/CookSol";
@@ -32,6 +33,7 @@ export default function MainComponent(props) {
         -> path설정대신 index키워드를 쓰면 첫페이지로 구성됨 -> MainArea 컴포넌트 <Outlet/>에 출력된다!*/}
         
           <Route index element={<Main />} />
+          <Route path="intro" element={<Intro />} />
           <Route path="cookguide" element={<CookGuide />} />
           <Route path="cooklab" element={<CookLab />} />
           <Route path="cooksol" element={<CookSol />} />
