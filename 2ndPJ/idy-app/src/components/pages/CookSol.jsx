@@ -27,7 +27,7 @@ export default function CookSol() {
             <li>
               <Link to="/cooklab">레시피</Link>
             </li>
-            <li>
+            <li className="on">
               <Link to="/cooksol">솔루션</Link>
             </li>
           </ul>

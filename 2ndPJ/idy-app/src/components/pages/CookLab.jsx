@@ -23,10 +23,7 @@ export default function CookLab() {
     setLbar(!lbar);
   }
  
-  // const labBar = (e)=> {
-  //   $(e.currentTarget).toggleClass("on");
-  // };
-
+ 
   //// 코드 리턴 구역
   return (
     <>
@@ -36,9 +33,7 @@ export default function CookLab() {
         </div>
         <div className="cooklab-text">
           <ul>
-            <li 
-            // onClick={e =>{e.preventDefault();labBar(e);}}
-            >
+            <li className="on">
 
               {labBar && <Link to="/cooklab" >레시피</Link>}
             </li>

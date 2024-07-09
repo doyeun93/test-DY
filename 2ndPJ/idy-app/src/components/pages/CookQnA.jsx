@@ -124,7 +124,7 @@ export default function CookQnA() {
             <li>
               <Link to="/cookcook">요리해요</Link>
             </li>
-            <li>
+            <li className="on">
               <Link to="/cookqna">질문있어요</Link>
             </li>
           </ul>

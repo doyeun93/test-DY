@@ -116,7 +116,7 @@ export default function CookCook(){
                 </div>
                 <div className="cookcook-text">
                     <ul>
-                        <li>
+                        <li className="on">
                             <Link to="/cookcook">요리해요</Link>
                         </li>
                         <li>
