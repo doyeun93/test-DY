@@ -7,6 +7,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
+import './css/swiper_guide.scss';
+
 
 
 // import required modules
@@ -43,10 +45,14 @@ export default function SwiperGuide() {
       >
         {hData.map((v,i)=>
         <SwiperSlide key={i}>
+            <div className="header-slide">
             <Link to="/cookguide">
                 <img src={process.env.PUBLIC_URL+`/image/${v.imgName}.jpg`} alt="가이드 이미지" />
             </Link>
-            <span>{v.title}</span>
+            </div>
+            <div className="htitle">
+                <span>{v.title}</span>
+            </div>
         </SwiperSlide>
     
     )}

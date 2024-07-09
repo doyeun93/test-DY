@@ -53,7 +53,7 @@ export default function CookQnA() {
         <td>{i + 1 + sNum}</td>
         <td>
           <a href="#" data-idx="51">
-            {v.cont}
+            {v.tit}
           </a>
         </td>
         <td>{v.unm}</td>

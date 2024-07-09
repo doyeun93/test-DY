@@ -63,49 +63,50 @@ body {
 
 /* 가로스크롤 이미지 구역 */
 .header-img {
-  height: calc(750px + 3000px);
+  padding-top: 6%;
+  height: auto;
 }
-.header-slide {
-  position: sticky;
-  top: 0;
-  left: 0;
-  height: 750px;
-}
-.header-slide ul {
-  position: relative;
-  left: 0;
-  display: flex;
-  width: calc(100vw + 3000px);
+// .header-slide {
+//   position: sticky;
+//   top: 0;
+//   left: 0;
+//   height: 750px;
+// }
+// .header-slide ul {
+//   position: relative;
+//   left: 0;
+//   display: flex;
+//   width: calc(100vw + 3000px);
 
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  transition: 0.4s ease-out;
-}
-.header-slide ul li {
-  position: relative;
-  flex: 1;
-  text-align: center;
-}
+//   height: 100%;
+//   margin: 0;
+//   padding: 0;
+//   list-style: none;
+//   transition: 0.4s ease-out;
+// }
+// .header-slide ul li {
+//   position: relative;
+//   flex: 1;
+//   text-align: center;
+// }
 
-.header-slide ul li img {
-  position: relative;
-  top: 46%;
-  transform: translateY(-46%);
-  width: 70%;
-  border-radius: 30px;
-}
-.header-slide span {
-  position: absolute;
-  display: inline;
-  width: 328px;
-  height: 100px;
-  top: 78%;
-  left: 20%;
-  font-size: 1.6rem;
-  line-height: 1.2;
-}
+// .header-slide ul li img {
+//   position: relative;
+//   top: 46%;
+//   transform: translateY(-46%);
+//   width: 70%;
+//   border-radius: 30px;
+// }
+// .header-slide span {
+//   position: absolute;
+//   display: inline;
+//   width: 328px;
+//   height: 100px;
+//   top: 78%;
+//   left: 20%;
+//   font-size: 1.6rem;
+//   line-height: 1.2;
+// }
 
 /*  요리 연구소 구역 */
 .lab-top {
