@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import 'swiper/css';
+// import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
@@ -28,7 +28,7 @@ export default function SwiperGuide() {
   };
   return (
     <>
-      <Swiper
+      <Swiper 
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
@@ -47,7 +47,7 @@ export default function SwiperGuide() {
         <SwiperSlide key={i}>
             <div className="header-slide">
             <Link to="/cookguide">
-                <img src={process.env.PUBLIC_URL+`/image/${v.imgName}.jpg`} alt="가이드 이미지" />
+                <img  src={process.env.PUBLIC_URL+`/image/${v.imgName}.jpg` } alt="가이드 이미지" />
             </Link>
             </div>
             <div className="htitle">

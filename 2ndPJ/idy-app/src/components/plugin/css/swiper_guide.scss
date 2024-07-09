@@ -1,12 +1,12 @@
-// html, body {
-//   position: relative;
-//   height: 100%;
-// }
+html, body {
+  position: relative;
+  height: 100%;
+}
 
 
-.swiper {
-    width: 100%;
-    height: auto
+.SwiperGuide {
+    width: 55rem;
+    height: 50rem;
   }
   
   .swiper-slide {
@@ -17,13 +17,17 @@
     align-items: center;
   }
   
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+//   .swiper-slide img {
+//     display: block;
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//   }
   
+.header-slide > img{
+    width: 50%;
+}
+
   .autoplay-progress {
     position: absolute;
     right: 16px;
@@ -35,7 +39,7 @@
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    color: var(--swiper-theme-color);
+    color: #15a775;
   }
   
   .autoplay-progress svg {
@@ -47,7 +51,7 @@
     width: 100%;
     height: 100%;
     stroke-width: 4px;
-    stroke: var(--swiper-theme-color);
+    stroke: #15a775;
     fill: none;
     stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
     stroke-dasharray: 125.6;
@@ -55,5 +59,13 @@
   }
   
   .htitle{
+    position: relative;
+  }
 
+  .htitle > span{
+    position: absolute;
+    left: -51rem;
+    z-index: 99;
+    font-size: 2rem;
+    top: -21rem;
   }
