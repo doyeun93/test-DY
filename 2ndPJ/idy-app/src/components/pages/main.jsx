@@ -9,12 +9,13 @@ import headerFn from '../func/header';
 import SwiperLab from '../plugin/SwiperLab';
 import Cookpic from '../modules/Cookpic';
 import { Link } from 'react-router-dom';
+import SwiperGuide from '../plugin/SwiperGuide';
 
 
 function Main(props) {
     
   useLayoutEffect(() => {
-    headerFn(); 
+    // headerFn(); 
   }, []);
 
   
@@ -38,7 +39,7 @@ function Main(props) {
             </ul>
           </div>
           <div className="header-img">
-            <div className="header-slide">
+            {/* <div className="header-slide">
               <ul>
                 {headerdata.map((v,i) => (
                   <li key={i}>
@@ -49,7 +50,8 @@ function Main(props) {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
+            <SwiperGuide />
           </div>
         </header>
         
