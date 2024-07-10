@@ -59,7 +59,7 @@ export default function SwiperGuide() {
         }}
         onSlideChange={(swp) => {
           let ridx = swp.realIndex;
-          console.log(swp.slides[ridx]); // swiper.realIndex is the current slide index
+          // console.log(swp.slides[ridx]); // swiper.realIndex is the current slide index
           appearText(swp, ridx); // 글자 등장 함수호출
         }}
       >

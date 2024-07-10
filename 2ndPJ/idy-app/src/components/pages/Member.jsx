@@ -33,9 +33,9 @@ function Member() {
 
   const msgId = [
     // 1. 최소 5글자 이상 입력할 것
-    "User ID must contain a minimum of 5 characters",
+    "아이디를 최소 5글자 이상 입력해주세요",
     // 2. 이미 사용중인 아이디임
-    "This ID is already in use!",
+    "이미 사용중인 아이디입니다.",
     // 3. 훌륭한 아이디
     "That's a great ID!",
   ];
@@ -245,7 +245,7 @@ function Member() {
 
         // 7. 회원가입환영 메시지  + 로그인 페이지 이동 
         // 버튼 텍스트에 환영메시지
-        document.querySelector(".sbtn").innerText = "Thank you for joining us!";
+        document.querySelector(".sbtn").innerText = "반갑습니다 가입을 환영합니다!";
         // 1초후 페이지 이동 : 라우터 Navigate로 이동함
         setTimeout(()=>{
             goNav("/login");
@@ -254,7 +254,7 @@ function Member() {
     } ///// if /////
     // 3. 불통과시
     else{
-        alert("Change your input!");
+        alert("입력값을 확인해주세요");
 
     } ///// onSubmit 함수 ///////////////////
 

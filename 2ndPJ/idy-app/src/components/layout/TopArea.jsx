@@ -108,7 +108,7 @@ export const TopArea = memo(({loginMsg,loginSts,logoutFn,goPage}) =>{
                           logoutFn();
                         }}
                       >
-                        LOGOUT
+                        LOG OUT
                       </a>
                     </li>
                   </>

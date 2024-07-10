@@ -195,8 +195,8 @@ function Login() {
 
 
             // 4. 로그인 성공 메시지 버튼에 출력하기
-            document.querySelector(".sbtn").innerText = "Login Success!";
-            // document.querySelector(".sbtn").innerText = "로그인되었습니다!";
+            document.querySelector(".sbtn").innerText = "로그인되었습니다!";
+       
 
 
             // 5. 라우팅 페이지 이동
