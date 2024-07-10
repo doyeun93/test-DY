@@ -241,7 +241,7 @@ function Login() {
   return (
     <div className="outbx">
       <section className="membx" style={{ minHeight: "300px" }}>
-        <h2>LOG IN</h2>
+        <h2>로그인</h2>
         <form method="post" action="process.php">
           <ul>
             <li>
@@ -276,7 +276,7 @@ function Login() {
               }
             </li>
             <li style={{ overflow: "hidden" }}>
-              <button className="sbtn" onClick={onSubmit}>Submit</button>
+              <button className="sbtn" onClick={onSubmit}>로그인</button>
             </li>
           </ul>
         </form>

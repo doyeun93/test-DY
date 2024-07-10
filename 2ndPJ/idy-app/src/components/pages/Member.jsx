@@ -265,7 +265,8 @@ function Member() {
   return (
     <div className="outbx">
       <section className="membx">
-        <h2>Join Us</h2>
+        <h2>회원가입</h2>
+        <h1>함께 하는 순간을 기다리고 있었습니다 :-)</h1>
         <form action="process.php" method="post">
           <ul>
             <li>
@@ -359,10 +360,10 @@ function Member() {
               }
             </li>
             <li style={{ overflow: "hidden" }}>
-              <button className="sbtn" onClick={onSubmit}>Submit</button>
+              <button className="sbtn" onClick={onSubmit}>회원가입</button>
             </li>
             <li>
-              Are you already a Member?<Link to="/login">Log In</Link>
+              이미 회원이신가요?<Link to="/login">로그인하기</Link>
             </li>
           </ul>
         </form>

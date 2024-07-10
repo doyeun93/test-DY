@@ -2,7 +2,8 @@
 
 /* 최상위 부모박스 */
 .outbx {
-  margin: 8rem 0;
+  height: 80dvh;
+  margin: 11rem 0;
   padding: 25px;
 }
 /* 전체박스 */
@@ -15,10 +16,12 @@
 
   h2 {
     text-align: center;
-    text-decoration: underline;
-    text-decoration-style: double;
-    padding: 15px;
-    font-size: 30px;
+    padding: 35px;
+    font-size: 2.7rem;
+  }
+  h1{
+    text-align: center;
+    font-size: 1.3rem;
   }
 
   li {
@@ -44,16 +47,15 @@
     left: 31%;
     width: 50%;
     font-size: 14px;
-    /* outline: 1px dotted red; */
     padding: 5px 0;
   }
 
   .sbtn {
     padding: 15px;
-    background-color: #0d6efd;
+    background-color: #15a775;
     font-size: 20px;
     color: #fff;
-    border: 4px solid darkblue;
+    // border: 4px solid darkblue;
     float: right;
     margin-right: 9%;
     cursor: pointer;
