@@ -59,17 +59,29 @@ html, body {
   }
   
   .htitle{
-    position: relative;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    top: 50%;
+    translate: 0 -50%;
+
   }
 
   .htitle > span{
-    position: absolute;
-    left: -53rem;
+    position: relative;
+    display: inline-block;
+    width: 100%;
     z-index: 99;
-    font-size: 2rem;
-    top: -18rem;
+    font-size: 4vw;
     color: #393535;
     opacity: 0;
+    translate: 0 100%;
+    text-shadow: 
+    -1px 0 0 #fff,
+    1px 0 0 #fff,
+    0 -1px  0 #fff,
+    0 1px 0 #fff;
   }
 
   .SwiperGuide:hover {
@@ -79,8 +91,9 @@ html, body {
   }
 
 
-  .SwiperGuide:hover .htitle > span{
+  .htitle.on > span{
+    translate: 0 0;
     opacity: 1;
-    transition: .2s ease-in;
+    transition: .2s ease-in .5s;
    
   }

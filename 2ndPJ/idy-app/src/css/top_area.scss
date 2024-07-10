@@ -118,14 +118,40 @@
     display: none;
     z-index: 1;
   }
+  
   .ham::before {
     content: '≡';
   }
-  .ham.on .hbox{
-    max-width: 450px;
-    height: auto;
-    background-color: #fff;
 
+  .hbox{
+    position: fixed;
+    left: 100%;
+    width: 100vw;
+    height: 100dvh;
+    z-index: 999999;
+    background-color: #edc5ce;
+    transition: left .4s ease-in-out;
+  }
+  .htit{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    font-size: min(8vw,45px);
+  }
+  .htit li{
+    cursor: pointer;
+    text-align: center;
+    line-height: 2;
+  }
+  .cbtn{
+    position: absolute;
+    top: 2vw;
+    right: 4vw;
+    font-size: 5vw;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
   }
   
   /* 로그인 영역 */

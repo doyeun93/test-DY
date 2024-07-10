@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
-import "../../css/tt.scss";
+
 
 export function ShowMenu() {
+
   const goSub = (e) => {
+    document.querySelector(".ham").click();  
+  };
 
-
-    document.querySelector(".ham").click();
-    
+  const hideBox = () => {
+    document.querySelector(".hbox").style.left = "100%";
   };
 
   return (
     <>
       <div className="hbox">
+        <button className='cbtn' onClick={hideBox}>×</button>
         <nav className="hlist">
           <ul className="htit">
             <li onClick={goSub}>새미네소개</li>
