@@ -135,7 +135,6 @@ function Login() {
 
     // 2. 유효성검사 전체 통과시
     if (totalValid()) {
-      console.log("모두통과! 데이터 조회!");
 
       // [회원정보를 로컬스토리지에 저장하기]
 
@@ -227,7 +226,7 @@ function Login() {
 
     // 3. 불통과시
     else {
-      alert("Change your input!");
+      alert("가입하지 않았거나 비밀번호가 틀립니다. 로그인 정보를 확인해주세요");
     } ///// onSubmit 함수 ///////////////////
   }; /////////// onSubmit 함수 /////////////
 
@@ -246,7 +245,7 @@ function Login() {
           <ul>
             <li>
               <label>ID : </label>
-              <input id="user-id" type="text" maxLength="20" placeholder="Please enter your ID" value={userId} onChange={changeUserId} />
+              <input id="user-id" type="text" maxLength="20" placeholder="아이디를 입력해주세요" value={userId} onChange={changeUserId} />
               {
               /* 에러일 경우 메시지 출력 */
               // 조건문 && 출력요소
@@ -262,7 +261,7 @@ function Login() {
               <input
                 type="password"
                 maxLength="20"
-                placeholder="Please enter your Password"
+                placeholder="비밀번호를 입력해주세요"
                 value={pwd} onChange={changePwd}
               />
               {

@@ -272,7 +272,7 @@ function Member() {
             <li>
                 {/* 1. 아이디 */}
               <label>ID : </label>
-              <input type="text" maxLength="20" placeholder="Please enter your ID" 
+              <input type="text" maxLength="20" placeholder="아이디를 입력해주세요" 
               // defaultValue={gg} -> 기본으로 씀
               value={userId} onChange={changeUserId}/>
               {
@@ -302,7 +302,7 @@ function Member() {
               <input
                 type="password"
                 maxLength="20"
-                placeholder="Please enter your Password"
+                placeholder="비밀번호를 입력해주세요"
                 value={pwd} onChange={changePwd}
               />
                {
@@ -320,7 +320,7 @@ function Member() {
               <input
                 type="password"
                 maxLength="20"
-                placeholder="Please enter your Confirm Password"
+                placeholder="비밀번호를 한번 더 입력해주세요"
                 value={chkPwd} onChange={changeChkPwd}
               />
                {
@@ -335,7 +335,7 @@ function Member() {
             </li>
             <li>
               <label>User Name : </label>
-              <input type="text" maxLength="20" placeholder="Please enter your Name" value={userName} onChange={changeUserName} />
+              <input type="text" maxLength="20" placeholder="이름을 입력해주세요" value={userName} onChange={changeUserName} />
               {
               /* 에러일 경우 메시지 출력 */
               // 조건문 && 출력요소
@@ -348,7 +348,7 @@ function Member() {
             </li>
             <li>
               <label>Email : </label>
-              <input type="text" maxLength="50" placeholder="Please enter your Email" value={email} onChange={changeEmail} />
+              <input type="text" maxLength="50" placeholder="이메일을 입력해주세요" value={email} onChange={changeEmail} />
               {
               /* 에러일 경우 메시지 출력 */
               // 조건문 && 출력요소
