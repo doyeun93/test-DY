@@ -106,7 +106,7 @@
   // 햄버거 버튼
   .ham{
     position: absolute;
-    top: 5px;
+    // top: 5px;
     right: 10px;
     width: 50px;
     height: 50px;
@@ -129,7 +129,7 @@
     width: 100vw;
     height: 100dvh;
     z-index: 999999;
-    background-color: #edc5ce;
+    background-color: #fff;
     transition: left .4s ease-in-out;
   }
   .htit{
@@ -230,66 +230,41 @@ input:focus{
 }
 
 @media screen and (max-width:767px) {
-
-  .logo {
-    width: 67px;
-  }
-  .logo img {
-    width: 122%;
-    padding: 14% 8%;
-  }
-  #gnb {
-    width: 70%;
-  }
-  .top-gnb {
-    width: 84%; 
-  }
-  .top-gnb > li {
-    width: 21.3%;
-  }
-  .top-gnb > li > a {
-      font-size: 0.91rem;
-      width: 90%;
-  }
-  
-  .bt-gnb > li > a {
-    font-size: .9rem;
-  }
-
-  .searchingGnb {
-    left: -47px;
-    top: 21px;
-    width: 218px;
-    height: 40px;
-    padding: 0 0px;
-
-  }
-  .searchingGnb input {
-    width: 80%;
-    margin-left: 5px;
-  }
-  .log {
-    right: 1%;
-    display: block; 
-    width: 22%;
-    top: 12%;
-  }
-  .log > ul {
-    display: block; 
-    width: 56%;
-  }
-  
-}
-@media screen and  (max-width:450px) {
   .top-gnb{
     display: none;
   }
   .ham {
     display: block;
   }
-  .gnb.on .ham::before {
-    content: "×";
+  .logo img {
+    width: 100%;
+    padding: 17% 20%;
   }
+  .searchingGnb {
+    left: 147px;
+  }
+  .searchingGnb input {
+    width: 80%;
+    margin-left: 5px;
+  }
+  .log {
+    right: 40%;
+   
+  }
+  .log > ul {
+    gap: 20%;
+    width: 100%;
+  }
+
+  .log > ul > li:last-child {
+   margin-left: 0;
+   margin-right: 0; 
+}
+  
+}
+@media screen and  (max-width:450px) {
+  
+  
 
 .logo {	
   position: static;
@@ -302,19 +277,15 @@ input:focus{
   width: 0%;
 }
 .log {
-  top: 26%;
+  right: 51%;
+}
+.log > ul {
+  gap: 8%;
 }
 
-.log > ul >li:first-child{
-  display: none;
-}
-.log > ul >li:last-child{
-  margin-right: -41px;
-}
 
 .searchingGnb {
   left: -169px;
-  top: -6px;
 }
   
 }
