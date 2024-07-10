@@ -15,8 +15,7 @@ function TopArea(props) {
   const goNav = useNavigate();
 
   // 햄버거버튼
-  const ShowMenu = (e) => {
-    e.preventDefault();
+  const ShowMenu = () => {
     $(".ham").toggleClass("on");
       $(".hbox").show();
   }
