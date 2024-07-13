@@ -531,6 +531,9 @@ body {
 
 @media screen and (max-width: 450px) {
   // 초보가이드 구역
+  #header-area{
+    height: 100vh; 
+  }
   .header-text {
     display: block;
     position: relative;
@@ -547,15 +550,20 @@ body {
   }
 
   .header-text > li:last-child {
-    margin-top: 4.3%;
-    padding-left: 65%;
+    margin-top: -22.7%;
+    padding-left: 68%;
     height: 52px;
   }
   .header-text > li:last-child::after {
     width: 120%;
+    right: 105%;
+    bottom: -51%;
   }
   .header-title {
-    top: 33%;
+    top: 38%;
+  }
+  .header-img {
+    padding-top: 40%;
   }
 
   // 연구소 구역
