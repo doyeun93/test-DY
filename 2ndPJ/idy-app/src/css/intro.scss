@@ -2,7 +2,7 @@
 
 
 .intro-top{
-    height: 220vh;
+    height: 300vh;
     background: url(../../public/image/introduce.png) no-repeat;
 }
 .intro-tit{
@@ -13,16 +13,38 @@
     font-size: 2.5rem;
 }
 .intro-header{
-    position: absolute;
-    top: 53rem;
-    height: auto;
-    margin: 0 auto;
+    position: relative;
+    top: 53rem;    
+}
+.intro-header::before{
+    content: '';
+    display: inline-block;
+    width: 1000px;
+    margin-left: 20%;
+    border: 0.8px solid #c4c3c3;
+
+
 }
 .intro-title{
+    position: relative;
+    width: 100%;
+    height: auto;
+    // transform: translate(50%, 50%);
+    top: 50%;
+    left: 13%;
+    padding-top: 7%;
+    
 }
-.intro-text{
-    float: left;
-
+.intro-text1,.intro-text2,.intro-text3{
+    float: left;  
+    width: 30%;
+  span{
+    text-align: center;
+    font-size: 2rem;
+  }
+  p{
+    font-size: 1.1rem;
+  }
 }
 
 

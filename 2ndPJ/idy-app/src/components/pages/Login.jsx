@@ -37,7 +37,7 @@ function Login() {
     //필수입력
    "This is a required entry", 
     //아이디가 존재하지 않습니다
-    "ID does not exist", 
+    "아이디가 존재하지 않습니다", 
   ];
 
   // [ 비밀번호관련 메시지 프리셋 ] ////
@@ -45,7 +45,7 @@ function Login() {
     //필수입력
    "This is a required entry", 
     //비밀번호가 일치하지 않습니다
-    "Password doesn't match", 
+    "비밀번호가 일치하지 않습니다", 
   ];
 
 
@@ -238,8 +238,9 @@ function Login() {
   },[]);
 
   return (
-    <div className="outbx">
-      <section className="membx" style={{ minHeight: "300px" }}>
+    <div className="outbx" style={{marginTop: "16%"}}>
+      <section className="membx" style={{ minHeight: "400px" }}>
+        <div className="logicon"></div>
         <h2>로그인</h2>
         <form method="post" action="process.php">
           <ul>

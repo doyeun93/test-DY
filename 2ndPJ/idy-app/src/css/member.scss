@@ -2,11 +2,30 @@
 
 /* 최상위 부모박스 */
 .outbx {
-  height: 80dvh;
+  height: 100dvh;
   margin: 11rem 0;
   padding: 25px;
 }
 /* 전체박스 */
+.logicon{
+  position: absolute;
+  z-index: 1;
+  background: url(../../public/image/samie_txt.png) no-repeat;
+  width: 100%;
+  height: 100%;
+  margin-top: 1.4%;
+  margin-left: 4%;
+}
+.memicon{
+  position: absolute;
+  z-index: 1;
+  background: url(../../public/image/samie7.png) no-repeat;
+  width: 100%;
+  height: 100%;
+  margin-top: 1%;
+  margin-left: 2%;
+}
+
 .membx {
   max-width: 700px;
   min-height: 600px;
@@ -16,7 +35,7 @@
 
   h2 {
     text-align: center;
-    padding: 35px;
+    padding: 40px;
     font-size: 2.7rem;
   }
   h1{

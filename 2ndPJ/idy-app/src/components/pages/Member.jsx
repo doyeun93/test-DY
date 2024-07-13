@@ -265,6 +265,7 @@ function Member() {
   return (
     <div className="outbx">
       <section className="membx">
+        <div className="memicon"></div>
         <h2>회원가입</h2>
         <h1>함께 하는 순간을 기다리고 있었습니다 :-)</h1>
         <form action="process.php" method="post">
