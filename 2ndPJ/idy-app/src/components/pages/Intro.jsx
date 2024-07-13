@@ -1,10 +1,14 @@
 import React from 'react';
 
 import "../../css/intro.scss";
+import { introData } from '../data/intro';
 
 
 
 function Intro(props) {
+
+
+
     return (
         <>
         <section className="intro-top">
@@ -35,7 +39,19 @@ function Intro(props) {
                 </div>
             </div>
            </div>
-           <nav className="intro-mid"></nav>
+           {/* 여기에 동영상을 넣을까? */}
+           <nav className="intro-mid">
+            <div className="intro-mtit">
+                {introData.map((v,i)=>(
+                    <ul key={i}>
+                        <li>{v.text1}</li>
+                        <li>{v.text2}</li>
+                        <br/>
+                        <br/>
+                    </ul>   
+                ))}
+            </div>
+           </nav>
         </section>    
         </>
     );

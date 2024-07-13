@@ -8,13 +8,13 @@
 .intro-tit{
     position: absolute;
     max-width: 1920px;
-    top: 46rem;
+    top: 107%;
     left: 37%;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
 }
 .intro-header{
     position: relative;
-    top: 53rem;    
+    top: 40%;    
 }
 .intro-header::before{
     content: '';
@@ -38,6 +38,7 @@
 .intro-text1,.intro-text2,.intro-text3{
     float: left;  
     width: 30%;
+    line-height: 1.4;
   span{
     text-align: center;
     font-size: 2rem;
@@ -47,4 +48,19 @@
   }
 }
 
+.intro-mid {
+    position: relative;
+    bottom: -56%;
+    height: 100vh;
+    
+}
+
+.intro-mtit {
+    max-width: 800px;
+    min-height: 700px;
+    padding: 15px;
+    border: 1px solid #dfdfdf;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
 
