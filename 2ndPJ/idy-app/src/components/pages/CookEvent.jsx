@@ -12,7 +12,7 @@ export default function CookEvent() {
         <div className="evt-title">
           <ul>
             <li>
-              <img src="./image/samie_txt.png" alt="wow" />
+              <img src={process.env.PUBLIC_URL+"/image/samie_txt.png" } alt="wow" />
             </li>
             <li>이벤트</li>
           </ul>

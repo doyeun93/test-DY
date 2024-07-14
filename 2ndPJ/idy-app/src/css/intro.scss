@@ -1,4 +1,6 @@
-
+.intro-box{
+    height: 450vh;
+}
 
 
 .intro-top{
@@ -48,9 +50,14 @@
   }
 }
 
+.intro-mv{
+    position: relative;
+    top: 45%;
+}
+
 .intro-mid {
     position: relative;
-    bottom: -56%;
+    bottom: -49%;
     height: 100vh;
     
 }
@@ -59,6 +66,7 @@
     max-width: 800px;
     min-height: 700px;
     padding: 15px;
+    padding-top: 6%;
     border: 1px solid #dfdfdf;
     margin: 0 auto;
     font-size: 1.1rem;

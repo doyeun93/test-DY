@@ -10,7 +10,7 @@ function Intro(props) {
 
 
     return (
-        <>
+        <div className="intro-box">
         <section className="intro-top">
            <div className="intro-tit">
             <h1>즐거운 요리 혁명, 새미네 부엌</h1>
@@ -40,6 +40,10 @@ function Intro(props) {
             </div>
            </div>
            {/* 여기에 동영상을 넣을까? */}
+           <div className="intro-mv">
+           <video src="./image/mv.mp4" style={{width:"100%",height:"60%"}}
+        muted loop autoPlay />
+        </div>
            <nav className="intro-mid">
             <div className="intro-mtit">
                 {introData.map((v,i)=>(
@@ -53,7 +57,7 @@ function Intro(props) {
             </div>
            </nav>
         </section>    
-        </>
+        </div>
     );
 }
 
