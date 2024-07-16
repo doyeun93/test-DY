@@ -39,9 +39,8 @@ function Intro(props) {
                 </div>
             </div>
            </div>
-           {/* 여기에 동영상을 넣을까? */}
            <div className="intro-mv">
-           <video src="./image/mv.mp4" style={{width:"100%",height:"60%"}}
+           <video src="./image/intro_mv.mp4" style={{width:"81%",height:"60%",marginLeft:"8%"}}
         muted loop autoPlay />
         </div>
            <nav className="intro-mid">

@@ -1,5 +1,5 @@
 .intro-box{
-    height: 450vh;
+    height: 410vh;
 }
 
 
@@ -46,8 +46,10 @@
     font-size: 2rem;
   }
   p{
-    font-size: 1.1rem;
-  }
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: "Noto Sans KR", sans-serif;
+}
 }
 
 .intro-mv{
@@ -69,6 +71,8 @@
     padding-top: 6%;
     border: 1px solid #dfdfdf;
     margin: 0 auto;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: "Noto Sans KR", sans-serif;
 }
 

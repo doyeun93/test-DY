@@ -15,7 +15,6 @@ export const TopArea = memo(({loginMsg,loginSts,logoutFn,goPage}) =>{
 
   // 햄버거버튼
   const showMenuFn = () => {
-    console.log("여기~!");
     $(".hbox").css({left:"0"});
   };
 

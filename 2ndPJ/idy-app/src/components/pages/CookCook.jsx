@@ -7,124 +7,133 @@ import cooData from "../data/cook_board.json";
 import "../../css/cookcook.scss";
 import "../../css/board_file.scss";
 
+export default function CookCook() {
+  const [pageNum, setPageNum] = useState(1);
 
+  const totalCount = useRef(cooData.length);
 
-export default function CookCook(){
-    const [pageNum, setPageNum] = useState(1);
+  const unitSize = 8;
 
-    const totalCount = useRef(cooData.length);
-    
-    const unitSize = 8;
-  
-    
-    const bindList = () => {
-     
-      let orgData = cooData;
-  
-      // 2. 정렬 적용하기 : 내림차순
-      orgData.sort((a, b) =>
-        Number(a.idx) > Number(b.idx) ? -1 : Number(a.idx) < Number(b.idx) ? 1 : 0
+  const bindList = () => {
+    let orgData = cooData;
+
+    // 2. 정렬 적용하기 : 내림차순
+    orgData.sort((a, b) =>
+      Number(a.idx) > Number(b.idx) ? -1 : Number(a.idx) < Number(b.idx) ? 1 : 0
+    );
+
+    // 3. 일부 데이터만 선택
+
+    let sNum = (pageNum - 1) * unitSize;
+
+    let eNum = pageNum * unitSize;
+
+    // 결과배열
+    const selData = [];
+
+    for (let i = sNum; i < eNum; i++) {
+      // 끝번호가 전체 개수보다 크면 나가기
+      if (i >= totalCount.current) break;
+      // 대상 배열값 추가
+      selData.push(orgData[i]);
+    } ////// for ////////
+
+    console.log("일부데이터:", selData);
+
+    return selData.map((v, i) => (
+      <tr key={i}>
+        {/* 시작번호(i+1)를 더하여 페이지별 순번을 변경 */}
+        <td>{i + 1 + sNum}</td>
+        <td>
+          <a href="#" data-idx="51">
+            {v.tit}
+          </a>
+        </td>
+        <td>{v.unm}</td>
+        <td>{v.date}</td>
+        <td>{v.cnt}</td>
+      </tr>
+    ));
+  }; ///// bindList 함수 ////////
+
+  const pagingList = () => {
+    // 전체 페이징 개수 : 전체레코드수 / 페이지당 개수
+    // 유의점 : 나머지가 있는지 검사해서 있으면 +1
+
+    // 1. 페이징 개수
+    let pagingCount = Math.floor(totalCount.current / unitSize);
+
+    // 나머지가 있으면 다음 페이지가 필요함
+    // 나머지가 0이 아니면 1더하기
+    if (totalCount.current % unitSize > 0) {
+      pagingCount++;
+    }
+    console.log("페이징개수:", pagingCount, "나머지개수:", totalCount.current % unitSize);
+
+    // 링크코드 만들기
+    const pgCode = [];
+
+    // 1부터 페이지 끝번호까지 돌면서 코드만들기
+    for (let i = 1; i <= pagingCount; i++) {
+      pgCode.push(
+        <Fragment key={i}>
+          {
+            // 페이징번호와 현재페이지번호 일치시 b요소
+            i === pageNum ? (
+              <b>{i}</b>
+            ) : (
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setPageNum(i);
+                }}
+              >
+                {i}
+              </a>
+            )
+          }
+          {/* 사이에 바 넣기 */}
+          {i !== pagingCount && " | "}
+        </Fragment>
       );
-  
-      // 3. 일부 데이터만 선택
-      
-      let sNum = (pageNum - 1) * unitSize;
-    
-      let eNum = pageNum * unitSize;
-      
-      // 결과배열
-      const selData = [];
-  
-      for (let i = sNum; i < eNum; i++) {
-        // 끝번호가 전체 개수보다 크면 나가기
-        if (i >= totalCount.current) break;
-        // 대상 배열값 추가
-        selData.push(orgData[i]);
-      } ////// for ////////
-  
-      console.log("일부데이터:", selData);
-  
-      return selData.map((v, i) => (
-        <tr key={i}>
-          {/* 시작번호(i+1)를 더하여 페이지별 순번을 변경 */}
-          <td>{i + 1 + sNum}</td>
-          <td>
-            <a href="#" data-idx="51">
-              {v.tit}
-            </a>
-          </td>
-          <td>{v.unm}</td>
-          <td>{v.date}</td>
-          <td>{v.cnt}</td>
-        </tr>
-      ));
-    }; ///// bindList 함수 ////////
-  
-    const pagingList = () => {
-      // 전체 페이징 개수 : 전체레코드수 / 페이지당 개수
-      // 유의점 : 나머지가 있는지 검사해서 있으면 +1
-  
-      // 1. 페이징 개수
-      let pagingCount = Math.floor(totalCount.current / unitSize);
-  
-      // 나머지가 있으면 다음 페이지가 필요함
-      // 나머지가 0이 아니면 1더하기
-      if (totalCount.current % unitSize > 0) {
-        pagingCount++;
-      }
-      console.log("페이징개수:", pagingCount, "나머지개수:", totalCount.current % unitSize);
-  
-      // 링크코드 만들기
-      const pgCode = [];
-  
-      // 1부터 페이지 끝번호까지 돌면서 코드만들기
-      for (let i = 1; i <= pagingCount; i++) {
-        pgCode.push(
-          <Fragment key={i}>
-            {
-              // 페이징번호와 현재페이지번호 일치시 b요소
-              i === pageNum ? (
-                <b>{i}</b>
-              ) : (
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setPageNum(i);
-                  }}
-                >
-                  {i}
-                </a>
-              )
-            }
-            {/* 사이에 바 넣기 */}
-            {i !== pagingCount && " | "}
-          </Fragment>
-        );
-      } ///// for /////
-  
-      // 코드 리턴
-      return pgCode;
-    }; ///// pagingList 함수 //////////////
+    } ///// for /////
 
-    //// 코드 리턴 구역
-    return(
-        <>
-            <section className="cookcook-top">
-                <div className="cookcook-title">
-                    <span>요리해요</span>
-                </div>
-                <div className="cookcook-text">
-                    <ul>
-                        <li className="on">
-                            <Link to="/cookcook">요리해요</Link>
-                        </li>
-                        <li>
-                            <Link to="/cookqna">질문있어요</Link>
-                        </li>
-                    </ul>
-                </div>
-                <main className="cont">
+    // 코드 리턴
+    return pgCode;
+  }; ///// pagingList 함수 //////////////
+
+  //// 코드 리턴 구역
+  return (
+    <>
+      <section className="cookcook-top">
+        <div className="cookcook-title">
+          <span>요리해요</span>
+        </div>
+        <div className="cookcook-text">
+          <ul>
+            <li className="on">
+              <Link to="/cookcook">요리해요</Link>
+            </li>
+            <li>
+              <Link to="/cookqna">질문있어요</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="cook-write">
+          <img src={process.env.PUBLIC_URL + `/image/samie2.png`} alt="새미이미지" />
+          <div className="cook-cook">
+            <ul className="cook-cbox">
+              <li>나만의 요리를 올려주세요!</li>
+              <li>나만의 요리법, 재밌는 플레이팅, 요리 꿀팁 등 다양한 이야기를 새미네부엌에서 함께 나눠 주세요!</li>
+            </ul>
+            <Link to="/login">
+              작성하기
+              <img src={process.env.PUBLIC_URL + `/image/ic_write.png`} alt="연필그림" />
+            </Link>
+          </div>
+        </div>
+        <main className="cont">
           <div className="selbx">
             <select name="cta" id="cta" className="cta">
               <option value="tit">제목</option>
@@ -170,9 +179,7 @@ export default function CookCook(){
             </tbody>
           </table>
         </main>
-            </section>
-        </>
-    );
+      </section>
+    </>
+  );
 } ////////////  Cook함수 ////////
-
-
