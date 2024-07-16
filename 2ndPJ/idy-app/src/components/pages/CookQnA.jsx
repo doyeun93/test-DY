@@ -129,6 +129,21 @@ export default function CookQnA() {
             </li>
           </ul>
         </div>
+
+        <div className="cook-Qna">
+          <img src={process.env.PUBLIC_URL + `/image/samie4.png`} alt="새미이미지" />
+          <div className="cook-qna">
+            <ul className="cook-qbox">
+              <li>나만의 요리를 올려주세요!</li>
+              <li>고민이 있으세요? 지금 고민을 남기고 함께 해결방안을 찾아봐요!</li>
+            </ul>
+            <Link to="/login">
+              작성하기
+              <img src={process.env.PUBLIC_URL + `/image/ic_write.png`} alt="연필그림" />
+            </Link>
+          </div>
+        </div>
+
         <main className="cont">
           <div className="selbx">
             <select name="cta" id="cta" className="cta">

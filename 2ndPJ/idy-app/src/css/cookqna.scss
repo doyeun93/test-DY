@@ -2,7 +2,7 @@
 
 
 .cookqna-top{
-    height: 160vh;
+    height: 190vh;
     // background-image: url("../../public/image/bg_pattern_pink.png");
     // background-color: #fff3f363;
 }
@@ -58,6 +58,55 @@
 .cookqna-text > ul > li.on {
   background-color: #fff9e2;
 }
+
+
+.cook-Qna {
+  width: 78%;
+  height: 5.8%;
+  margin-left: 10.9%;
+  margin-top: 7%;
+  border-radius: 29px;
+  background-color: #ffaf54;
+}
+.cook-Qna > img {
+  position: absolute;
+  margin-top: -2.9%;
+  margin-left: 3.7%;
+}
+
+.cook-qbox{
+  position: relative;
+}
+
+.cook-qbox > li:first-child {
+  display: inline-block;
+  margin-top: 1.4%;
+  margin-left: 17%;
+  color: white;
+  font-size: 1.7rem;
+}
+.cook-qbox > li:last-child {
+  margin-left: 17%;
+  color: white;
+  font-size: 1.4rem;
+}
+.cook-qna > a {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  margin-top: -3.3%;
+  color: white;
+  font-size: 1.7rem;
+  justify-content: flex-end;
+  margin-right: 4%;
+}
+.cook-qna > a::before {
+  content: " ｜ ";
+  display: inline-block;
+  margin-right: 24px;
+}
+
+
 
 /* 검색옵션박스 */
 .selbx {
