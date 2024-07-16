@@ -45,8 +45,6 @@ export default function CookQnA() {
       selData.push(orgData[i]);
     } ////// for ////////
 
-    console.log("일부데이터:", selData);
-
     return selData.map((v, i) => (
       <tr key={i}>
         {/* 시작번호(i+1)를 더하여 페이지별 순번을 변경 */}
@@ -129,12 +127,11 @@ export default function CookQnA() {
             </li>
           </ul>
         </div>
-
         <div className="cook-Qna">
           <img src={process.env.PUBLIC_URL + `/image/samie4.png`} alt="새미이미지" />
           <div className="cook-qna">
             <ul className="cook-qbox">
-              <li>나만의 요리를 올려주세요!</li>
+              <li>요리에 대한 모든 고민</li>
               <li>고민이 있으세요? 지금 고민을 남기고 함께 해결방안을 찾아봐요!</li>
             </ul>
             <Link to="/login">
@@ -143,7 +140,6 @@ export default function CookQnA() {
             </Link>
           </div>
         </div>
-
         <main className="cont">
           <div className="selbx">
             <select name="cta" id="cta" className="cta">

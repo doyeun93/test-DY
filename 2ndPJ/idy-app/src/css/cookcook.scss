@@ -281,7 +281,45 @@
     color: #fff;
   }
   
+
+  @media screen and (max-width: 1470px) {
+    .cook-write > img {
+      margin-top: -2.3%;
+      margin-left: 2.4%;
+    }
+    .cook-cook > a {
+      margin-right: 0.3%;
+      font-size: 1.6rem;
+    }
+  }
+  
   @media screen and (max-width: 450px) {
+    .cookcook-title span {
+      top: 58%;
+  }
+
+    .cook-write {
+      width: 98%;
+      margin-left: 0.9%;
+    }
+  
+    .cook-write > img {
+      width: 30%;
+    }
+  
+    .cook-cbox > li:first-child {
+      margin-left: 33.7%;
+    }
+  
+    .cook-cbox > li:last-child {
+      display: none;
+    }
+  
+    .cook-cook > a {
+      margin-top: 1.7%;
+      margin-right: 2.7%;
+      font-size: 1.5rem;
+    }
     /* 보기 모드 공통 */
     .cont .dtblview {
       width: 90vw;

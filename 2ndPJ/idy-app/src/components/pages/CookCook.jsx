@@ -38,8 +38,6 @@ export default function CookCook() {
       selData.push(orgData[i]);
     } ////// for ////////
 
-    console.log("일부데이터:", selData);
-
     return selData.map((v, i) => (
       <tr key={i}>
         {/* 시작번호(i+1)를 더하여 페이지별 순번을 변경 */}
