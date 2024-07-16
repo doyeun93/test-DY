@@ -125,6 +125,7 @@
 
   .hbox{
     position: fixed;
+    top: 0%;
     left: 100%;
     width: 100vw;
     height: 100dvh;
@@ -134,21 +135,47 @@
   }
   .htit{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    font-size: min(8vw,45px);
+    top: 9%;
+    left: 14%;
+    font-size: min(6.5vw, 40px);
+    // top: 50%;
+    // left: 50%;
+    // translate: -50% -50%;
+  }
+  .htit > li{
+    border-bottom: 1px solid #e5e5e5;
+    width: 188%;
+    padding: 9%;
+  }
+  .htit > li:last-child{
+    border-bottom: none;
+  }
+
+  .htit > li:first-child::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 4%;
+    left: -16%;
+    width: 20%;
+    height: 6%;
+    background: url(../../public/image/ic_star.png)no-repeat center;
   }
   .htit li{
     cursor: pointer;
-    text-align: center;
+    // text-align: center;
     line-height: 2;
+  }
+ 
+  .htext >li {
+    font-size: 1.1rem;
   }
   .cbtn{
     position: absolute;
     top: 2vw;
     right: 4vw;
-    font-size: 5vw;
+    font-size: 12vw;
+    color: #15a775;
     background-color: transparent;
     border: none;
     cursor: pointer;

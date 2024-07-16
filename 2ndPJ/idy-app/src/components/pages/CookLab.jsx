@@ -72,7 +72,7 @@ export default function CookLab() {
                     <p>{v.type2}</p>
                   </div>
                 </div>
-                <Link to="/LabDetail">
+                <Link to="/detail">
                   <span>{v.title}</span>
                 </Link>
               </li>

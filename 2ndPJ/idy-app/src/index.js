@@ -16,6 +16,7 @@ import CookEvent from "./components/pages/CookEvent";
 import SearchPage from "./components/pages/SearchPage";
 import Member from "./components/pages/Member";
 import Login from "./components/pages/Login";
+import LabDetail from "./components/pages/LabDetail";
 
 
 
@@ -44,6 +45,7 @@ export default function MainComponent(props) {
           <Route path="search" element={<SearchPage />} />
           <Route path="member" element={<Member />}/>
           <Route path="login" element={<Login />}/>
+          <Route path="detail" element={<LabDetail />}/>
           
 
         </Route>
