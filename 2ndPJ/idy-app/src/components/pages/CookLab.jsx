@@ -23,6 +23,8 @@ export default function CookLab() {
     setLbar(!lbar);
   }
  
+  // 상세페이지
+  
  
   //// 코드 리턴 구역
   return (
@@ -70,7 +72,9 @@ export default function CookLab() {
                     <p>{v.type2}</p>
                   </div>
                 </div>
-                <span>{v.title}</span>
+                <Link to="/LabDetail">
+                  <span>{v.title}</span>
+                </Link>
               </li>
             ))}
           </ul>

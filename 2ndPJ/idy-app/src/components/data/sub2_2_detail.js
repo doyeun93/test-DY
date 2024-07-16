@@ -1,4 +1,4 @@
-[
+export const sDetailData = [
     {
         idx: "1",
         imgName: "sol_detail1",
