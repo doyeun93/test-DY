@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { gnbData } from '../data/gnb';
+import { Link } from 'react-router-dom';
 
 
 export function ShowMenu() {
@@ -17,7 +19,21 @@ export function ShowMenu() {
         <button className='cbtn' onClick={hideBox}>×</button>
         <nav className="hlist">
           <ul className="htit">
-            <li onClick={goSub}>새미네소개</li>
+          {gnbData.map((v, i) => (
+                <li key={i}>
+                  {v.sub ? <a href="#">{v.txt}</a> : <Link to={v.link}>{v.txt}</Link>}
+                  {v.sub && (
+                    <ul className="htext">
+                      {v.sub.map((v, i) => (
+                        <li key={i}>
+                          <Link to={v.link}>{v.txt}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            {/* <li onClick={goSub}>새미네소개</li>
             <li onClick={goSub}>요리초보가이드</li>
             <li onClick={goSub}>요리연구소
               <ul className="htext">
@@ -31,7 +47,7 @@ export function ShowMenu() {
                 <li onClick={goSub}>질문있어요</li>
               </ul>
             </li>
-            <li onClick={goSub}>WOW이벤트</li>
+            <li onClick={goSub}>WOW이벤트</li> */}
           </ul>
         </nav>
       </div>
