@@ -35,7 +35,7 @@
     top: 50%;
     left: 13%;
     padding-top: 7%;    
-    opacity: 0;
+    
 }
 
 
@@ -43,7 +43,7 @@
     float: left;  
     width: 30%;
     line-height: 1.4;
-    
+    opacity: 0;
 
   span{
     text-align: center;
@@ -58,15 +58,18 @@
 
 .intro-text1.on{
     opacity: 1;
-    transition: .3s ease-in-out;
+    transition: 1s ease-in-out;
+    scale: 1.1;
 }
 .intro-text2.on{
     opacity: 1;
-    transition: .4s ease-in-out;
+    transition: 1.6s ease-in-out;
+    scale: 1.1;
 }
 .intro-text3.on{
     opacity: 1;
-    transition: .5s ease-in-out;
+    transition: 2.1s ease-in-out;
+    scale: 1.1;
 }
 
 
