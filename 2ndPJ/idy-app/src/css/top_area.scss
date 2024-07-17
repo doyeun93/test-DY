@@ -103,7 +103,8 @@
     width: 14%;
     height: 100%;
   }
-  // 햄버거 버튼
+
+  /****************  햄버거 버튼영역 ****************/
   .ham{
     position: absolute;
     // top: 5px;
@@ -161,6 +162,47 @@
     height: 6%;
     background: url(../../public/image/ic_star.png)no-repeat center;
   }
+  .htit > li:nth-child(2)::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 19%;
+    left: -16%;
+    width: 20%;
+    height: 6%;
+    background: url(../../public/image/ic_star.png)no-repeat center;
+  }
+  .htit > li:nth-child(3)::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 34%;
+    left: -16%;
+    width: 20%;
+    height: 6%;
+    background: url(../../public/image/ic_star.png)no-repeat center;
+  }
+  .htit > li:nth-child(4)::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 62%;
+    left: -16%;
+    width: 20%;
+    height: 6%;
+    background: url(../../public/image/ic_star.png)no-repeat center;
+  }
+  .htit > li:last-child::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 89%;
+    left: -16%;
+    width: 20%;
+    height: 6%;
+    background: url(../../public/image/ic_star.png)no-repeat center;
+  }
+
   .htit li{
     cursor: pointer;
     // text-align: center;
