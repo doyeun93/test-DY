@@ -1,16 +1,17 @@
-import { lDetailData } from '../data/sub2_1_detail';
-import "../../css/detail.scss";
-
 import React from 'react';
 
-function LabDetail({backList, gNo, selItem}) {
-    
-    const ldData = lDetailData;
+import { useLocation } from "react-router-dom";
+
+function LabDetail(props) {
+    const loc = useLocation();
+    const title = loc.state.title;
+    const text = loc.state.text;
+    const type = loc.state.type;
 
     return (
-      <>
-
-      </>
+        <div>
+            
+        </div>
     );
 }
 

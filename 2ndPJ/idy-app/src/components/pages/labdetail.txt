@@ -1,0 +1,69 @@
+import { lDetailData } from '../data/sub2_1_detail';
+import { sDetailData } from '../data/sub2_2_detail';
+import "../../css/detail.scss";
+
+import React from 'react';
+
+function LabDetail({backList, gNo, selItem}) {
+    
+    const selData = selItem=="레시피"? lDetailData : selItem=="솔루션"? sDetailData:[];
+
+    return (
+        <ul>
+            <li>
+            <div className="lab-imgbox">
+              <img src={
+               ( selItem=="레시피"? `/image/sub2/detail/` :
+                 selItem=="솔루션"? `/image/sub2/detail/` : "")
+                +selData[gNo].imgName+".jpg"} alt="이미지" />
+              <div className="lab-info">
+                <p>{selData[gNo].type2}</p>
+                <p>{selData[gNo].type3}</p>
+              </div>
+            </div>
+                <span>{selData[gNo].title}</span>
+            {
+                selItem=="레시피"&&
+                <div className="detail-box">
+                    <div className="detail-title">
+                        <span>{selData[gNo].title}</span>
+                    </div>
+                    <div className="detail-tit">
+                        {/* <h1>{selData[gNo].text}</h1> */}
+                        {selData[gNo].text.split("*").map((v,i)=>(
+                            <p key={i}>{v}</p>
+                        ))}
+                    </div>
+                    <div className="detail-pic">
+                        
+                    </div>
+                        {selData.map((v,i)=> (
+                    <div key={i} className="detail-text">
+                            <div  className="de-txt1">
+                                <p >{v.type1}</p>
+                                <p >{v.type2}</p>
+                                <p >{v.type3}</p>
+                            </div>
+                            <div className="de-txt2">
+                                <p >{v.type4}</p>
+                                <p >{v.type5}</p>
+                                <p >{v.type6}</p>
+                            </div>
+                    </div>
+                        ))}
+                    <div className="detail-img">
+                        {selData[gNo].imgName}
+                    </div>
+                    <div className="detail-de">
+                        <p>{selData.type7}</p>
+                        <p>{selData.type8}</p>
+                        <p>{selData.type9}</p>
+                    </div>
+                </div>
+            }    
+          </li>
+      </ul>
+    );
+}
+
+export default LabDetail;

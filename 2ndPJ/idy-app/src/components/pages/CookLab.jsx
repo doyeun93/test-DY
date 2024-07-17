@@ -5,8 +5,8 @@ import "../../css/cooklab.scss";
 import { recipeData } from "../data/sub2_1";
 import { Link } from "react-router-dom";
 import $ from "jquery";
-import LabList from "./LabList";
-import LabDetail from "./LabDetail";
+// import LabList from "./LabList";
+// import LabDetail from "./LabDetail";
 
 export default function CookLab() {
   // 정렬
@@ -18,23 +18,21 @@ export default function CookLab() {
     recipeData.sort((a, b) => (a.title > b.title ? -1 : a.title < b.title ? 1 : 0));
   }
 
-  
   const [lbar, setLbar] = useState(false);
- 
+
   const labBar = () => {
     setLbar(!lbar);
-  }
- 
+  };
+
   // 상세페이지
-  const [ viewList, setViewList] = useState(true);
+  // const [ viewList, setViewList] = useState(true);
 
-  // 2. 상품 데이터 인덱스값 상태관리 변수
-  const [idx, setIdx] = useState(0); 
+  // // 2. 상품 데이터 인덱스값 상태관리 변수
+  // const [idx, setIdx] = useState(0);
 
-  // 3. 선택 아이템 고유 이름 상태관리 변수
-  const [selItem, setSelItem] = useState("레시피");
-  
- 
+  // // 3. 선택 아이템 고유 이름 상태관리 변수
+  // const [selItem, setSelItem] = useState("레시피");
+
   //// 코드 리턴 구역
   return (
     <>
@@ -44,13 +42,8 @@ export default function CookLab() {
         </div>
         <div className="cooklab-text">
           <ul>
-            <li className="on">
-
-              {labBar && <Link to="/cooklab" >레시피</Link>}
-            </li>
-            <li>
-              {labBar && <Link to="/cooksol">솔루션</Link> }
-            </li>
+            <li className="on">{labBar && <Link to="/cooklab">레시피</Link>}</li>
+            <li>{labBar && <Link to="/cooksol">솔루션</Link>}</li>
           </ul>
         </div>
         <div className="lab-sort">
@@ -71,9 +64,7 @@ export default function CookLab() {
           </aside>
         </div>
         <div className="lab-mid">
-          {
-            viewList? <LabList viewDetail={setViewList} updateIdx={setIdx} selItem={selItem}/>:<LabDetail backList={setViewList} gNo={idx} selItem={selItem}/>
-          }
+          {/* {viewList? <LabList viewDetail={setViewList} updateIdx={setIdx} selItem={selItem}/>:<LabDetail backList={setViewList} gNo={idx} selItem={selItem}/>} */}
           <ul>
             {recipeData.map((v, i) => (
               <li key={i}>

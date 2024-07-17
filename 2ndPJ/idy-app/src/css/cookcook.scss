@@ -50,6 +50,8 @@
   .cookcook-text > ul >li::before{ 
     content: "";
     display: inline-block;
+    position: relative;
+    top: 12%;
     width: 1.4rem;
     height: 2rem;
     background: url(../../public/image/ic_star_pink.png) no-repeat center / auto 100%;
