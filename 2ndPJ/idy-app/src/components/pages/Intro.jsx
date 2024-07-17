@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import "../../css/intro.scss";
 import { introData } from '../data/intro';
+import intro_letter from '../func/intro_letter';
 
 
 
 function Intro(props) {
 
+    useEffect(() => {
+        intro_letter();
+    },[]);
 
 
     return (
