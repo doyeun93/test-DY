@@ -16,6 +16,9 @@ function Intro(props) {
     return (
         <div className="intro-box">
         <section className="intro-top">
+            <div className="intro-img">
+                <img src={process.env.PUBLIC_URL+`/image/introduce.png`} alt="새미이미지" />
+            </div>
            <div className="intro-tit">
             <h1>즐거운 요리 혁명, 새미네 부엌</h1>
            </div>

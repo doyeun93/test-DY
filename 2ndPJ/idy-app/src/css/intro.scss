@@ -5,7 +5,14 @@
 
 .intro-top{
     height: 300vh;
-    background: url(../../public/image/introduce.png) no-repeat;
+    width: auto;
+}
+.intro-img{
+    position: absolute;
+    top: 9%;
+    height: auto;
+    max-width: 1920px;
+    
 }
 .intro-tit{
     position: absolute;
