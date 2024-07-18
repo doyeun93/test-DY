@@ -5,8 +5,7 @@ import "../../css/cooklab.scss";
 import { rDetailData } from "../data/sub2_1_detail";
 import { Link } from "react-router-dom";
 import $ from "jquery";
-// import LabList from "./LabList";
-// import LabDetail from "./LabDetail";
+
 
 export default function CookLab() {
   // 정렬
@@ -25,7 +24,6 @@ export default function CookLab() {
   };
 
   // 상세페이지
-  const [tot, setTot] = useState(rDetailData[0]);
   // const [ viewList, setViewList] = useState(true);
 
   // // 2. 상품 데이터 인덱스값 상태관리 변수
