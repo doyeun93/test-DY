@@ -19,7 +19,6 @@ import orgData from "../data/board.json";
 // [ 로컬쓰 클리어 ] /////////
 const clearBoardData = () => {
     localStorage.removeItem("board-data");
-    console.log("게시판 로컬쓰 클리어!");
   }; /////////// clearData //////////////
   
   // [ 로컬쓰 초기체크셋팅! ] ////////////

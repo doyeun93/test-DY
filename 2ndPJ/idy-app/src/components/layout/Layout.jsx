@@ -34,6 +34,7 @@ function Layout() {
         let usrIcon = ["🙍‍♂","🧏‍♀","🦸‍♂","👨‍🎤","🦸‍♀"];
         let rdm = Math.floor(Math.random() *5);
         setLoginMsg(`Welcome ${name} ${usrIcon[rdm]}`);
+        sessionStorage.removeItem("bd-rec");
     },[]); ////// makeMsg 함수 ///////////
 
     // 3. 로그아웃 함수

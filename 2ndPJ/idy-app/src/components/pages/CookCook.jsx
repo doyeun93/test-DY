@@ -131,23 +131,23 @@ export default function CookCook() {
     // 버튼별 분기
     switch (btnText) {
       // 글쓰기 모드로 변경
-      case "Write":
+      case "글쓰기":
         setMode("W");
         break;
       // 리스트 모드로 변경
-      case "List":
+      case "목록":
         setMode("L");
         break;
       // 서브밋일 경우 함수 호출
-      case "Submit":
+      case "제출":
         submitFn();
         break;
       // 수정일 경우 수정모드로 변경
-      case "Modify":
+      case "수정":
         setMode("M");
         break;
       // 삭제일 경우 삭제 함수 호출
-      case "Delete":
+      case "삭제":
         deleteFn();
         break;
     } ///// switch /////
@@ -283,7 +283,7 @@ export default function CookCook() {
   }; ///// submitFn ///////
 
 
-  //// 코드 리턴 구역
+  ////////////////////// 코드 리턴 구역  ////////////////////////////////////////
   return (
     <>
       <section className="cookcook-top">
@@ -339,12 +339,12 @@ export default function CookCook() {
             <td>
               {
                 // 1. 글쓰기 버튼은 로그인상태이고 L이면 출력
-                mode == "L" && sts && <button onClick={clickButton}>Write</button>
+                mode == "L" && sts && <button onClick={clickButton}>글쓰기</button>
               }
               {
                 // 2. 읽기 상태일 경우
                 <>
-                  {mode == "R" && <button onClick={clickButton}>List</button>}
+                  {mode == "R" && <button onClick={clickButton}>목록</button>}
                   {/* { console.log("비교:",JSON.parse(sts).uid, "==?" , selRecord.current.uid)} */}
 
                   {
@@ -353,7 +353,7 @@ export default function CookCook() {
                     // 글정보 항목 중 uid가 사용자 아이디임
                     // 로그인 상태 정보하위의 sts.uid와 비교함
                     mode == "R" && sts && JSON.parse(sts).uid == selRecord.current.uid && (
-                      <button onClick={clickButton}>Modify</button>
+                      <button onClick={clickButton}>수정</button>
                     )
                   }
                 </>
@@ -362,8 +362,8 @@ export default function CookCook() {
                 // 3. 쓰기 상태일 경우
                 mode == "W" && (
                   <>
-                    <button onClick={clickButton}>Submit</button>
-                    <button onClick={clickButton}>List</button>
+                    <button onClick={clickButton}>제출</button>
+                    <button onClick={clickButton}>목록</button>
                   </>
                 )
               }
@@ -371,9 +371,9 @@ export default function CookCook() {
                 // 4. 수정 상태일 경우
                 mode == "M" && (
                   <>
-                    <button onClick={clickButton}>Submit</button>
-                    <button onClick={clickButton}>Delete</button>
-                    <button onClick={clickButton}>List</button>
+                    <button onClick={clickButton}>제출</button>
+                    <button onClick={clickButton}>삭제</button>
+                    <button onClick={clickButton}>목록</button>
                   </>
                 )
               }
@@ -430,10 +430,7 @@ const ListMode = ({ bindList, pagingList }) => {
           <table className="dtbl btngrp">
             <tbody>
               <tr>
-                <td>
-                  <button>
-                    <a href="#">Write</a>
-                  </button>
+                <td>  
                 </td>
               </tr>
             </tbody>
@@ -448,31 +445,15 @@ const ListMode = ({ bindList, pagingList }) => {
                 읽기 모드 서브 컴포넌트  
  **********************************************************/
                 const ReadMode = ({ selRecord , sts }) => {
-                  // selRecord : 현재글 정보
-                  // sts : 로그인 사용자 정보
-                  // 읽기모드가 호출되었다는 것은 리스트의 제목이 클릭되었다는 것을 의미
-                  // 따라서 현재 레코드 값도 저장되었다는 의미
-                
-                  // console.log("전달된 참조변수:", selRecord.current);
-                  // 전달된 데이터 객체를 변수에 할당
+    
                   const data = selRecord.current;
-                
-                  // [조회수 증가하기]
-                  // 규칙1 : 자신의 글은 증가하지않는다
-                  // 규칙2 : 타인의 글은 증가한다
-                  // 규칙3 : 로그인한 상태에서 한번만 증가한다
-                  // (( 조회된 글 저장 방법 ))
-                  // -> 세션스토리지 / 쿠키 / 참조변수(전역변수)
-                  // =>> 참조변수는 새로고침하면 초기화되므로 사용불가
-                  // =>> 쿠키는 삭제 방법이 즉각적이지 않아 사용불가 
-                  // =>> 세션스토리지는 적합 : 창을 닫으면 사라지므로
+
                 
                   // 1. 없으면 세션스 만들기 
                   if(!sessionStorage.getItem("bd-rec")){
                     sessionStorage.setItem("bd-rec", "[]");
                   }
                 
-                  
                   // 2. 세션스에 글번호 저장하기
                 
                   // (1) 세션스 파싱하여 변수할당
@@ -481,7 +462,6 @@ const ListMode = ({ bindList, pagingList }) => {
                   // (2) 기존 배열값에 현재글번호 존재여부 검사하기
                   // 결과가 true면 조회수를 증가하지 않는다
                   let isRec = rec.includes(data.idx);
-                  console.log("이미있니?", isRec);
                   
                   // (3) 로그인한 사용자의 글이면 isRec값을 true처리
                   // sts가 true면 즉, 로그인한 사용하지면 처리
@@ -574,7 +554,7 @@ const ListMode = ({ bindList, pagingList }) => {
                   return (
                     <>
                       <table className="dtblview readone">
-                        <caption>OPINION : Write</caption>
+                        <caption>OPINION : 글쓰기</caption>
                         <tbody>
                           <tr>
                             <td>Name</td>
@@ -639,7 +619,7 @@ const ListMode = ({ bindList, pagingList }) => {
                   return (
                     <>
                       <table className="dtblview readone">
-                        <caption>OPINION : Modify </caption>
+                        <caption>OPINION : 수정하기 </caption>
                         <tbody>
                           <tr>
                             <td>Name</td>
