@@ -425,10 +425,10 @@ const ListMode = ({ bindList, pagingList }) => {
             <thead>
               <tr>
                 <th>Number</th>
-                <th>Title</th>
-                <th>Writer</th>
-                <th>Date</th>
-                <th>Hits</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>날짜</th>
+                <th>조회수</th>
               </tr>
             </thead>
             <tbody>{bindList()}</tbody>
@@ -521,22 +521,22 @@ const ListMode = ({ bindList, pagingList }) => {
                   return (
                     <>
                       <table className="dtblview readone">
-                        <caption>OPINION : Read</caption>
+                        <caption>읽기모드</caption>
                         <tbody>
                           <tr>
-                            <td>Name</td>
+                            <td>작성자</td>
                             <td>
                               <input type="text" className="name" size="20" readOnly value={data.unm} />
                             </td>
                           </tr>
                           <tr>
-                            <td>Title</td>
+                            <td>제목</td>
                             <td>
                               <input type="text" className="subject" size="60" readOnly value={data.tit} />
                             </td>
                           </tr>
                           <tr>
-                            <td>Content</td>
+                            <td>내용</td>
                             <td>
                               <textarea
                                 className="content"
@@ -548,7 +548,7 @@ const ListMode = ({ bindList, pagingList }) => {
                             </td>
                           </tr>
                           <tr>
-                            <td>Attachment</td>
+                            <td>첨부파일</td>
                             <td></td>
                           </tr>
                         </tbody>
@@ -568,10 +568,10 @@ const ListMode = ({ bindList, pagingList }) => {
                   return (
                     <>
                       <table className="dtblview readone">
-                        <caption>OPINION : Write</caption>
+                        <caption>글쓰기</caption>
                         <tbody>
                           <tr>
-                            <td>Name</td>
+                            <td>작성자</td>
                             <td>
                               <input
                                 type="text"
@@ -584,7 +584,7 @@ const ListMode = ({ bindList, pagingList }) => {
                             </td>
                           </tr>
                           <tr>
-                            <td>E-mail</td>
+                            <td>이메일</td>
                             <td>
                               <input
                                 type="text"
@@ -597,19 +597,19 @@ const ListMode = ({ bindList, pagingList }) => {
                             </td>
                           </tr>
                           <tr>
-                            <td>Title</td>
+                            <td>제목</td>
                             <td>
                               <input type="text" className="subject" size="60" />
                             </td>
                           </tr>
                           <tr>
-                            <td>Content</td>
+                            <td>내용</td>
                             <td>
                               <textarea className="content" cols="60" rows="10"></textarea>
                             </td>
                           </tr>
                           <tr>
-                            <td>Attachment</td>
+                            <td>첨부파일</td>
                             <td></td>
                           </tr>
                         </tbody>
@@ -633,22 +633,22 @@ const ListMode = ({ bindList, pagingList }) => {
                   return (
                     <>
                       <table className="dtblview readone">
-                        <caption>OPINION : Modify </caption>
+                        <caption>수정모드</caption>
                         <tbody>
                           <tr>
-                            <td>Name</td>
+                            <td>작성자</td>
                             <td>
                               <input type="text" className="name" size="20" readOnly value={data.unm} />
                             </td>
                           </tr>
                           <tr>
-                            <td>Title</td>
+                            <td>제목</td>
                             <td>
                               <input type="text" className="subject" size="60" defaultValue={data.tit} />
                             </td>
                           </tr>
                           <tr>
-                            <td>Content</td>
+                            <td>내용</td>
                             <td>
                               <textarea
                                 className="content"
@@ -659,7 +659,7 @@ const ListMode = ({ bindList, pagingList }) => {
                             </td>
                           </tr>
                           <tr>
-                            <td>Attachment</td>
+                            <td>첨부파일</td>
                             <td></td>
                           </tr>
                         </tbody>
