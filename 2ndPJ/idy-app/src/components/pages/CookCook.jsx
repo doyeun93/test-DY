@@ -1,16 +1,33 @@
 // 요리해요 페이지 컴포넌트 ///
 
 import { Link } from "react-router-dom";
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useContext, useRef, useState } from "react";
 import cooData from "../data/cook_board.json";
 
 import "../../css/cookcook.scss";
 import "../../css/board_file.scss";
+import {initBoardData} from "../func/board_fn";
+import { dCon } from "../modules/dCon";
 
 export default function CookCook() {
+
+  const myCon = useContext(dCon);
+
+  const sts = myCon.loginSts;
+  initBoardData();
+
+  const cooData = JSON.parse(localStorage.getItem("board-data"));
+  cooData.sort((a, b) =>
+   Number(a.idx) > Number(b.idx) ? -1 : Number(a.idx) < Number(b.idx) ? 1 : 0
+ );
+
   const [pageNum, setPageNum] = useState(1);
 
+  const [mode, setMode] = useState("L");
+
   const totalCount = useRef(cooData.length);
+
+  const selRecord = useRef(null);
 
   const unitSize = 8;
 
@@ -43,7 +60,12 @@ export default function CookCook() {
         {/* 시작번호(i+1)를 더하여 페이지별 순번을 변경 */}
         <td>{i + 1 + sNum}</td>
         <td>
-          <a href="#" data-idx="51">
+          <a href="#" onClick={(e) => {
+              e.preventDefault();
+              // 읽기모드 변경
+              setMode("R");
+              selRecord.current = v;  
+            }}>
             {v.tit}
           </a>
         </td>
@@ -66,7 +88,7 @@ export default function CookCook() {
     if (totalCount.current % unitSize > 0) {
       pagingCount++;
     }
-    console.log("페이징개수:", pagingCount, "나머지개수:", totalCount.current % unitSize);
+    // console.log("페이징개수:", pagingCount, "나머지개수:", totalCount.current % unitSize);
 
     // 링크코드 만들기
     const pgCode = [];

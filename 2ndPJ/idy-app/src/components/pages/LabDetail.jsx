@@ -5,11 +5,12 @@ import {dCon} from "../modules/dCon";
 
 import { useLocation } from "react-router-dom";
 
-function LabDetail({tot, dt, setTot}) {
-    // tot - 레시피 토탈 정보
-    // dt - 레시피데이터
-    // setTot - 레시피 토탈정보 업데이트 함수
-    let imgName = tot.imgName;
+function LabDetail() {
+    const loc = useLocation();
+    const imgName = loc.state.imgName;
+    const title = loc.state.title;
+    const text = loc.state.text;
+    const type = loc.state.type;
     
 
     return (
@@ -18,15 +19,19 @@ function LabDetail({tot, dt, setTot}) {
             <div className="lab-detail">
                 {/* 레시피 상세정보 제목 */}
                 <div className="ldetail-top">
-
+                    <span>{title}</span>
                 </div>
                 {/* 레시피 상세정보 소제목 */}
                 <div className="ldetail-tit">
-                    <h2></h2>
+                    {
+                        text.split("*").map((v,i)=>(
+                            <p key={i}>{v}</p>
+                        ))
+                    }
                 </div>
                 {/* 레시피 상세정보 이미지 */}
                 <div className="ldetail-pic">
-
+                    {imgName}
                 </div>
                 {/* 레시피 상세정보 재료 */}
                 <div className="ldetail-txt">

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import "../../css/cooklab.scss";
-import { recipeData } from "../data/sub2_1";
+import { rDetailData } from "../data/sub2_1_detail";
 import { Link } from "react-router-dom";
 import $ from "jquery";
 // import LabList from "./LabList";
@@ -13,9 +13,9 @@ export default function CookLab() {
   const [sort, setSort] = useState("asc");
 
   if (sort == "asc") {
-    recipeData.sort((a, b) => (a.title > b.title ? 1 : a.title < b.title ? -1 : 0));
+    rDetailData.sort((a, b) => (a.title > b.title ? 1 : a.title < b.title ? -1 : 0));
   } else if (sort == "desc") {
-    recipeData.sort((a, b) => (a.title > b.title ? -1 : a.title < b.title ? 1 : 0));
+    rDetailData.sort((a, b) => (a.title > b.title ? -1 : a.title < b.title ? 1 : 0));
   }
 
   const [lbar, setLbar] = useState(false);
@@ -25,6 +25,7 @@ export default function CookLab() {
   };
 
   // 상세페이지
+  const [tot, setTot] = useState(rDetailData[0]);
   // const [ viewList, setViewList] = useState(true);
 
   // // 2. 상품 데이터 인덱스값 상태관리 변수
@@ -32,6 +33,7 @@ export default function CookLab() {
 
   // // 3. 선택 아이템 고유 이름 상태관리 변수
   // const [selItem, setSelItem] = useState("레시피");
+
 
   //// 코드 리턴 구역
   return (
@@ -66,13 +68,13 @@ export default function CookLab() {
         <div className="lab-mid">
           {/* {viewList? <LabList viewDetail={setViewList} updateIdx={setIdx} selItem={selItem}/>:<LabDetail backList={setViewList} gNo={idx} selItem={selItem}/>} */}
           <ul>
-            {recipeData.map((v, i) => (
+            {rDetailData.map((v, i) => (
               <li key={i}>
                 <div className="lab-imgbox">
                   <img src={`./image/sub2/${v.imgName}.jpg`} alt={v.title} />
                   <div className="lab-info">
-                    <p>{v.type1}</p>
                     <p>{v.type2}</p>
+                    <p>{v.type3}</p>
                   </div>
                 </div>
                 <Link to="/detail">
@@ -83,6 +85,7 @@ export default function CookLab() {
           </ul>
         </div>
       </section>
+      {/* 레시피 상세정보 */}
     </>
   );
 } ////////////  Lab함수 ////////

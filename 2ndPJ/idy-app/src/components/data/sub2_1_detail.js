@@ -1,7 +1,7 @@
-export const lDetailData = [
+export const rDetailData = [
     {
         idx: "1",
-        imgName: "re-detail1",
+        imgName: "re_detail1",
         title: "고급 중식당의 맛을 집에서! 동파육",
         text: `동파육이 집에서 가능하다고? *
         간단하지만, 제대로! * 오향이 어우러진 깊은 풍미를 느껴보세요!`,
@@ -21,7 +21,7 @@ export const lDetailData = [
     
     {
         idx: "2",
-        imgName: "re-detail2",
+        imgName: "re_detail2",
         title: "원팬 햄치즈 토스트",
         text: `재료 손질 필요없이 3가지 재료 더해 간단하게! *
          모짜렐라 치즈 자글자글 굽고, 체다치즈, 햄 올리면 끝! * 원팬 토스트로 냉털해봐요!`,
@@ -42,7 +42,7 @@ export const lDetailData = [
 
     {
         idx: "3",
-        imgName: "re-detail3",
+        imgName: "re_detail3",
         title: "기본 밑반찬, 어묵볶음 ",
         text: `간장맛, 매운맛 취향따라 요리하기*
          기본 반찬 중의 기본, 어묵볶음 만드는 법 * 간단하게 알고가요!`,
@@ -65,7 +65,7 @@ export const lDetailData = [
     
     {
         idx: "4",
-        imgName: "re-detail4",
+        imgName: "re_detail4",
         title: "초간단 파이 수프 ",
         text: `평범했던 수프의 바삭한 변신! * 집에 있는 수프, 간단한데 더 맛있게 먹을 수 있는 방법! *
         남은 식빵과 생지가 있다면? 이렇게 활용해 보세요!` ,
@@ -84,7 +84,7 @@ export const lDetailData = [
     
     {
         idx: "5",
-        imgName: "re-detail5",
+        imgName: "re_detail5",
         title: "30분만에, 육회",
         text: `고기만 준비하면 30분만에 초간단 완성!* 
         고추장없이 고기 본연의 맛을 살린 양념과 함께*
@@ -106,7 +106,7 @@ export const lDetailData = [
 
     {
         idx: "6",
-        imgName: "re-detail6",
+        imgName: "re_detail6",
         title:"3step 장조림전",
         text: ` 장조림, 반찬으로만 먹었다면 주목! *
         장조림 잘게 찢어 부침가루와 섞으면*
@@ -126,7 +126,7 @@ export const lDetailData = [
     
     {
         idx: "7",
-        imgName: "re-detail7",
+        imgName: "re_detail7",
         title: "쏘야, 소시지 야채볶음 ",
         text: `도시락 메뉴로도, 간단 반찬으로도 제격 *
         소시지에 칼집을 살짝 넣어주고, *
@@ -148,7 +148,7 @@ export const lDetailData = [
     
     {
         idx: "8",
-        imgName: "re-detail8",
+        imgName: "re_detail8",
         title: "감칠맛 폭발 닭날개구이 ",
         text: `뼈와 살의 완벽한 조화, 닭날개 *
         취향에 따라 마늘맛, 마라맛, 매운맛 양념에 버무려 *
