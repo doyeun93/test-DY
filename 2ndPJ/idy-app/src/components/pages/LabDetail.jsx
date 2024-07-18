@@ -19,6 +19,7 @@ function LabDetail() {
             <div className="lab-detail">
                 {/* 레시피 상세정보 제목 */}
                 <div className="ldetail-top">
+                    <h2>레시피</h2>
                     <span>{title}</span>
                 </div>
                 {/* 레시피 상세정보 소제목 */}
@@ -37,6 +38,11 @@ function LabDetail() {
                 <div className="ldetail-txt">
                     <div className="ldetail-txt1">
                         {/* type1,2,3 들어감 */}
+                        <ul> 
+                            <li>{type}</li>
+                            <li>{type}</li>
+                            <li>{type}</li>
+                        </ul>
                     </div>
                     <div className="ldetail-txt2">
                         {/* li에 type4,5,6 들어감 */}

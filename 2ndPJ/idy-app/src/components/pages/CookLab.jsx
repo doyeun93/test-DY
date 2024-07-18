@@ -79,10 +79,11 @@ export default function CookLab() {
                 </div>
                 <Link to="/detail"
                   state={{
-                  imgName: v.imgName, // 캐릭터이름
-                  title: v.title, // 캐릭터설명
-                  text: v.text, // 캐릭터상세
-                  type: v.type1, // 캐릭터상세
+                  imgName: v.imgName, 
+                  title: v.title, 
+                  text: v.text, 
+                  type: v.type1, 
+                  type: v.type2, 
                 }}
                 >
                   <span>{v.title}</span>
