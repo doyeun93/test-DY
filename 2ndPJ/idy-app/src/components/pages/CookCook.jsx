@@ -313,8 +313,86 @@ export default function CookCook() {
             </Link>
           </div>
         </div>
-      
+        {
+        // 1. 리스트 모드일 경우 리스트 출력하기
+        mode == "L" && <ListMode bindList={bindList} pagingList={pagingList} />
+      }
+      {
+        // 2. 읽기 모드일 경우 상세보기 출력하기
+        mode == "R" && <ReadMode selRecord={selRecord} sts={sts}/>
+      }
+      {
+        // 3. 쓰기 모드일 경우 로그인 정보 보내기
+        // sts값은 문자열이므로 파싱하여 객체로 보냄
+        mode == "W" && <WriteMode sts={JSON.parse(sts)} />
+      }
+      {
+        // 4.  수정 모드일 경우 상세보기 출력하기
+        // sts값은 문자열이므로 파싱하여 객체로 보냄
+        mode == "M" && <ModifyMode selRecord={selRecord} />
+      }
+      <br />
+      {/* 모드별 버튼 출력 박스 */}
+      <table className="dtbl btngrp">
+        <tbody>
+          <tr>
+            <td>
+              {
+                // 1. 글쓰기 버튼은 로그인상태이고 L이면 출력
+                mode == "L" && sts && <button onClick={clickButton}>Write</button>
+              }
+              {
+                // 2. 읽기 상태일 경우
+                <>
+                  {mode == "R" && <button onClick={clickButton}>List</button>}
+                  {/* { console.log("비교:",JSON.parse(sts).uid, "==?" , selRecord.current.uid)} */}
 
+                  {
+                    //로그인한 상태이고 글쓴이와 일치할 때 수정모드 이동 버튼이 노출됨
+                    // 현재글은 selRecord 참조변수에 저장됨
+                    // 글정보 항목 중 uid가 사용자 아이디임
+                    // 로그인 상태 정보하위의 sts.uid와 비교함
+                    mode == "R" && sts && JSON.parse(sts).uid == selRecord.current.uid && (
+                      <button onClick={clickButton}>Modify</button>
+                    )
+                  }
+                </>
+              }
+              {
+                // 3. 쓰기 상태일 경우
+                mode == "W" && (
+                  <>
+                    <button onClick={clickButton}>Submit</button>
+                    <button onClick={clickButton}>List</button>
+                  </>
+                )
+              }
+              {
+                // 4. 수정 상태일 경우
+                mode == "M" && (
+                  <>
+                    <button onClick={clickButton}>Submit</button>
+                    <button onClick={clickButton}>Delete</button>
+                    <button onClick={clickButton}>List</button>
+                  </>
+                )
+              }
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    </>
+    );
+  } ////////////  Cook함수 ////////
+
+/**********************************************************
+                리스트 모드 서브 컴포넌트  
+ **********************************************************/
+
+const ListMode = ({ bindList, pagingList }) => {
+  return (
+    <>
         <main className="cont">
           <div className="selbx">
             <select name="cta" id="cta" className="cta">
@@ -361,7 +439,238 @@ export default function CookCook() {
             </tbody>
           </table>
         </main>
-      </section>
+      
     </>
   );
-} ////////////  Cook함수 ////////
+}////// ListMode //////////////////////////
+
+/**********************************************************
+                읽기 모드 서브 컴포넌트  
+ **********************************************************/
+                const ReadMode = ({ selRecord , sts }) => {
+                  // selRecord : 현재글 정보
+                  // sts : 로그인 사용자 정보
+                  // 읽기모드가 호출되었다는 것은 리스트의 제목이 클릭되었다는 것을 의미
+                  // 따라서 현재 레코드 값도 저장되었다는 의미
+                
+                  // console.log("전달된 참조변수:", selRecord.current);
+                  // 전달된 데이터 객체를 변수에 할당
+                  const data = selRecord.current;
+                
+                  // [조회수 증가하기]
+                  // 규칙1 : 자신의 글은 증가하지않는다
+                  // 규칙2 : 타인의 글은 증가한다
+                  // 규칙3 : 로그인한 상태에서 한번만 증가한다
+                  // (( 조회된 글 저장 방법 ))
+                  // -> 세션스토리지 / 쿠키 / 참조변수(전역변수)
+                  // =>> 참조변수는 새로고침하면 초기화되므로 사용불가
+                  // =>> 쿠키는 삭제 방법이 즉각적이지 않아 사용불가 
+                  // =>> 세션스토리지는 적합 : 창을 닫으면 사라지므로
+                
+                  // 1. 없으면 세션스 만들기 
+                  if(!sessionStorage.getItem("bd-rec")){
+                    sessionStorage.setItem("bd-rec", "[]");
+                  }
+                
+                  
+                  // 2. 세션스에 글번호 저장하기
+                
+                  // (1) 세션스 파싱하여 변수할당
+                  let rec = JSON.parse(sessionStorage.getItem("bd-rec"));
+                
+                  // (2) 기존 배열값에 현재글번호 존재여부 검사하기
+                  // 결과가 true면 조회수를 증가하지 않는다
+                  let isRec = rec.includes(data.idx);
+                  console.log("이미있니?", isRec);
+                  
+                  // (3) 로그인한 사용자의 글이면 isRec값을 true처리
+                  // sts가 true면 즉, 로그인한 사용하지면 처리
+                  if(sts){
+                    console.log("선택글 아이디 : ", data.uid, 
+                  "로그인 사용자 아이디:", JSON.parse(sts).uid);
+                    // 글쓴이 아이디와 로그인 사용자 아이디가 같은가?
+                    if(data.uid == JSON.parse(sts).uid){
+                      // 글번호 저장과 조회수 증가를 하지 않도록 isRec값을 true로 변경한다
+                      isRec = true;
+                    } // if ///
+                
+                  } //// if ///
+                
+                  // (4) 배열에 값 추가하기 : 기존값에 없으면 넣기
+                  if(!isRec)rec.push(data.idx);
+                
+                  // (5) 다시 세션스에 저장하기
+                  sessionStorage.setItem("bd-rec",JSON.stringify(rec));
+                
+                  // 3. 글번호 증가하기
+                  // -> 게시판 원본 데이터에 조회수 업데이트하기
+                  if(!isRec) {
+                    // (1) 게시판 로컬스 데이터 파싱
+                    let bdData =JSON.parse(localStorage.getItem("board-data"));
+                    // (2) 게시판 해당 데이터 cnt값 증가
+                    // 조건 : isRec값이 false일때
+                    bdData.some(v=>{
+                      if(v.idx == data.idx) {
+                        // 기존값에 1증가하여 넣기
+                        v.cnt = Number(v.cnt)+1;
+                        return true;
+                      } ///// if /////
+                    }); ////////// some /////////
+                    
+                      // (3) 다시 로컬스에 저장하기
+                      localStorage.setItem("board-data", JSON.stringify(bdData));
+                       
+                
+                  } ///// if : (!isRec) ////
+                
+                
+                  return (
+                    <>
+                      <table className="dtblview readone">
+                        <caption>OPINION : Read</caption>
+                        <tbody>
+                          <tr>
+                            <td>Name</td>
+                            <td>
+                              <input type="text" className="name" size="20" readOnly value={data.unm} />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Title</td>
+                            <td>
+                              <input type="text" className="subject" size="60" readOnly value={data.tit} />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Content</td>
+                            <td>
+                              <textarea
+                                className="content"
+                                cols="60"
+                                rows="10"
+                                readOnly
+                                value={data.cont}
+                              ></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Attachment</td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </>
+                  );
+                }; ////// ReadMode //////////////////////////
+                
+                /**********************************************************
+                                쓰기 모드 서브 컴포넌트  
+                 **********************************************************/
+                const WriteMode = ({ sts }) => {
+                  // sts : 로그인 상태정보
+                  // 로그인한 사람만 글쓰기 가능
+                  // console.log(sts);
+                
+                  return (
+                    <>
+                      <table className="dtblview readone">
+                        <caption>OPINION : Write</caption>
+                        <tbody>
+                          <tr>
+                            <td>Name</td>
+                            <td>
+                              <input
+                                type="text"
+                                className="name"
+                                size="20"
+                                readOnly
+                                // 로그인 한 사람 이름
+                                value={sts.unm}
+                              />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>E-mail</td>
+                            <td>
+                              <input
+                                type="text"
+                                className="email"
+                                size="40"
+                                readOnly
+                                // 로그인 한 사람 이메일
+                                value={sts.eml}
+                              />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Title</td>
+                            <td>
+                              <input type="text" className="subject" size="60" />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Content</td>
+                            <td>
+                              <textarea className="content" cols="60" rows="10"></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Attachment</td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </>
+                  );
+                }; ////// WriteMode //////////////////////////
+                
+                
+                /**********************************************************
+                                수정 모드 서브 컴포넌트  
+                 **********************************************************/
+                const ModifyMode = ({ selRecord }) => {
+                  // 수정모드가 호출되었다는 것은 리스트의 제목이 클릭되었다는 것을 의미
+                  // 따라서 현재 레코드 값도 저장되었다는 의미
+                
+                  // console.log("전달된 참조변수:", selRecord.current);
+                  // 전달된 데이터 객체를 변수에 할당
+                  const data = selRecord.current;
+                
+                  return (
+                    <>
+                      <table className="dtblview readone">
+                        <caption>OPINION : Modify </caption>
+                        <tbody>
+                          <tr>
+                            <td>Name</td>
+                            <td>
+                              <input type="text" className="name" size="20" readOnly value={data.unm} />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Title</td>
+                            <td>
+                              <input type="text" className="subject" size="60" defaultValue={data.tit} />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Content</td>
+                            <td>
+                              <textarea
+                                className="content"
+                                cols="60"
+                                rows="10"
+                                defaultValue={data.cont}
+                              ></textarea>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Attachment</td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </>
+                  );
+                }; ////// ModifyMode //////////////////////////
+                
