@@ -307,8 +307,7 @@ export default function CookCook() {
               <li>나만의 요리를 올려주세요!</li>
               <li>나만의 요리법, 재밌는 플레이팅, 요리 꿀팁 등 다양한 이야기를 새미네부엌에서 함께 나눠 주세요!</li>
             </ul>
-            <Link to="/login">
-              작성하기
+            <Link to="/login">작성하기
               <img src={process.env.PUBLIC_URL + `/image/ic_write.png`} alt="연필그림" />
             </Link>
           </div>

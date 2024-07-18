@@ -122,7 +122,7 @@ function Searching({ kword }) {
                     // 체크 변경시 change 이벤트 발생
                     onChange = {(e)=>{
                       // 체크박스의 checked 속성은 체크시 ture, 불체크시 false 리턴
-                      console.log(e.target.checked);
+                      // console.log(e.target.checked);
                       // 훅값 업데이트
                       setChk([e.target.checked,chk[1]]);
                     }}/>
@@ -138,7 +138,7 @@ function Searching({ kword }) {
                      // 체크 변경시 change 이벤트 발생
                      onChange = {(e)=>{
                       // 체크박스의 checked 속성은 체크시 ture, 불체크시 false 리턴
-                      console.log(e.target.checked);
+                      // console.log(e.target.checked);
                       // 훅값 업데이트
                       setChk([e.target.checked,chk[0]]);
                     }}/>
