@@ -17,6 +17,8 @@ function LabDetail() {
         <>
             {/* 레시피 상세정보 박스 */}
             <div className="lab-detail">
+                {/* 스크랩 버튼 구현 */}
+                
                 {/* 레시피 상세정보 제목 */}
                 <div className="ldetail-top">
                     <h2>레시피</h2>
