@@ -47,7 +47,7 @@ function LabDetail() {
                     <div className="ldetail-txt2">
                         {/* li에 type4,5,6 들어감 */}
                         <ul> 
-                            <li></li>
+                            <li>{type}</li>
                         </ul>
                     </div>
                 </div>
