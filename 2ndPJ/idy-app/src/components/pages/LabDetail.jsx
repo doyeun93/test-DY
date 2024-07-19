@@ -59,10 +59,10 @@ function LabDetail() {
             localStorage.setItem("scrap-data", JSON.stringify(locals));
 
             // 로컬스 카트데이터 상태값 변경
-            // myCon.setLocalsCart(localStorage.getItem("scrap-data"));
+             myCon.setLocalsCart(localStorage.getItem("scrap-data"));
 
-            // // 카트리스트 생성 상태값 변경
-            // myCon.setCartSts(true);
+            // 카트리스트 생성 상태값 변경
+             myCon.setCartSts(true);
           }}
         >
           <FontAwesomeIcon
@@ -90,7 +90,7 @@ function LabDetail() {
         </div>
         {/* 레시피 상세정보 이미지 */}
         <div className="ldetail-pic">
-          <img
+          <img style={{width:"100%", height:"100", objectFit:"cover"}}
             src={`./image/${matchFolder[state.imgName.substr(0, 3)]}/${state.imgName}.jpg`}
             alt={state.title}
           />
@@ -98,7 +98,6 @@ function LabDetail() {
         {/* 레시피 상세정보 재료 */}
         <div className="ldetail-txt">
           <div className="ldetail-txt1">
-            {/* type1,2,3 들어감 */}
             <ul>
               <li>{state.type1}</li>
               <li>{state.type2}</li>
@@ -106,7 +105,6 @@ function LabDetail() {
             </ul>
           </div>
           <div className="ldetail-txt2">
-            {/* li에 type4,5,6 들어감 */}
             <ul>
               <li>{state.type4}</li>
               <li>{state.type5}</li>

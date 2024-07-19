@@ -87,7 +87,7 @@ function Scrap(props) {
                           </td>
                           <td>{v.ginfo[1]}</td>
                           <td>{v.ginfo[2]} </td>
-                          {/* <td>{addComma(v.ginfo[3])}원</td> */}
+            
                           <td className="cnt-part">
                             <div>
                               <span>
@@ -108,7 +108,7 @@ function Scrap(props) {
                                     // 대상 : selData -> 배열 변환 데이터
                                     // i는 배열 순번(map돌 때 i가 들어옴)
                                     selData[i].cnt = $(e.currentTarget).siblings(".item-cnt").val();
-                                    console.log("수량업데이트:", selData);
+                                    
 
                                     // 2. 데이터 문자화하기 : 변경된 원본을 문자화
                                     let res = JSON.stringify(selData);
