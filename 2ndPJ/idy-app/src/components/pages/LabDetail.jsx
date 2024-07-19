@@ -4,6 +4,8 @@ import $ from "jquery";
 import { dCon } from "../modules/dCon";
 
 import { useLocation } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 
 function LabDetail() {
   const loc = useLocation();
@@ -17,7 +19,17 @@ function LabDetail() {
       {/* 레시피 상세정보 박스 */}
       <div className="lab-detail">
         {/* 스크랩 버튼 구현 */}
-
+            <button>
+                <FontAwesomeIcon style={{
+                        position:'fixed',
+                        bottom: '56%',
+                        left:'80%',
+                        color:'#15a775',
+                        fontSize:'40px',
+                        // border: '1px solid #f5f5f5',
+                      }}  
+                icon={faBookmark} />
+            </button>
         {/* 레시피 상세정보 제목 */}
         <div className="ldetail-top">
           <h2>레시피</h2>
