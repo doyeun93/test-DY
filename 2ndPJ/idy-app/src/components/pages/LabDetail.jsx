@@ -55,6 +55,9 @@ function LabDetail() {
                    // 로컬스 카트데이터 상태값 변경
                    myCon.setLocalsCart(localStorage.getItem("scrap-data"));
 
+                   // 카트리스트 생성 상태값 변경
+                  myCon.setCartSts(true);
+
             }}>
                 <FontAwesomeIcon style={{
                         position:'fixed',
