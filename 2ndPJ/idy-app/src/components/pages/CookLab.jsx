@@ -76,13 +76,7 @@ export default function CookLab() {
                   </div>
                 </div>
                 <Link to="/detail"
-                  state={{
-                  imgName: v.imgName, 
-                  title: v.title, 
-                  text: v.text, 
-                  type: v.type1, 
-                  type: v.type2, 
-                }}
+                  state={v}
                 >
                   <span>{v.title}</span>
                 </Link>
