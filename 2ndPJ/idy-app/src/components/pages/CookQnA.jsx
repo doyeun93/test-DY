@@ -29,7 +29,11 @@ export default function CookQnA() {
 
   const selRecord = useRef(null);
 
+  const pgPgNum = useRef(1);
+
   const unitSize = 8;
+  // 페이징의 페이징 개수 : 한번에 보여줄 페이징 개수
+  const pgPgSize = 5;
 
   const bindList = () => {
     let orgData = baseData;
@@ -266,6 +270,8 @@ export default function CookQnA() {
               unitSize={unitSize}
               pageNum={pageNum}
               setPageNum={setPageNum}
+              pgPgNum={pgPgNum}
+              pgPgSize={pgPgSize}
             />
           )
         }
@@ -342,7 +348,7 @@ export default function CookQnA() {
                 리스트 모드 서브 컴포넌트  
  **********************************************************/
 
-const ListMode = ({ bindList, totalCount, unitSize, pageNum, setPageNum }) => {
+const ListMode = ({ bindList, totalCount, unitSize, pageNum, setPageNum, pgPgNum, pgPgSize }) => {
   return (
     <>
       <main className="cont">
@@ -379,6 +385,8 @@ const ListMode = ({ bindList, totalCount, unitSize, pageNum, setPageNum }) => {
                     unitSize={unitSize}
                     pageNum={pageNum}
                     setPageNum={setPageNum}
+                    pgPgNum={pgPgNum}
+                    pgPgSize={pgPgSize}
                   />
                 }
               </td>
@@ -494,8 +502,8 @@ const ReadMode = ({ selRecord, sts }) => {
 }; ////// ReadMode //////////////////////////
 
 /**********************************************************
-                                쓰기 모드 서브 컴포넌트  
-                 **********************************************************/
+      쓰기 모드 서브 컴포넌트  
+**********************************************************/
 const WriteMode = ({ sts }) => {
   // sts : 로그인 상태정보
   // 로그인한 사람만 글쓰기 가능
@@ -555,8 +563,8 @@ const WriteMode = ({ sts }) => {
 }; ////// WriteMode //////////////////////////
 
 /**********************************************************
-                                수정 모드 서브 컴포넌트  
-                 **********************************************************/
+         수정 모드 서브 컴포넌트  
+**********************************************************/
 const ModifyMode = ({ selRecord }) => {
   // 수정모드가 호출되었다는 것은 리스트의 제목이 클릭되었다는 것을 의미
   // 따라서 현재 레코드 값도 저장되었다는 의미
@@ -602,7 +610,7 @@ const ModifyMode = ({ selRecord }) => {
    *  PagingList : 페이징 기능 컴포넌트 
   
 ********************************************************/
-const PagingList = ({ totalCount, unitSize, pageNum, setPageNum }) => {
+const PagingList = ({ totalCount, unitSize, pageNum, setPageNum, pgPgNum, pgPgSize  }) => {
   /********************************************** 
       [ 전달변수 ]
       1. totalCount : 전체 레코드 개수
@@ -622,37 +630,167 @@ const PagingList = ({ totalCount, unitSize, pageNum, setPageNum }) => {
   if (totalCount.current % unitSize > 0) {
     pagingCount++;
   }
-  console.log("페이징개수:", pagingCount, "나머지개수:", totalCount.current % unitSize);
+  // console.log("페이징개수:", pagingCount, "나머지개수:", totalCount.current % unitSize);
 
-  // 링크코드 만들기
+  let pgPgCount = Math.floor(pagingCount / pgPgSize);
+
+  // 페이징 개수를 페이징의 페이징 단위수로 나눈
+  // 나머지가 있으면 다음 페이징의 번호가 필요함
+  // 나머지가 0이 아니면 1더하기
+  if (pagingCount % pgPgSize > 0) {
+    pgPgCount++;
+  } /// if
+
+  console.log("페이징의 페이징 개수:", pgPgCount);
+
+  // (2) 리스트 시작값 / 한계값 구하기
+  // 시작값 : (페페넘-1)*페페단
+  let initNum = (pgPgNum.current - 1) * pgPgSize;
+  // 한계값 : 페페넘*페페단
+  let limitNum = pgPgNum.current * pgPgSize;
+
+  console.log("시작값:", initNum, "/한계값:", limitNum);
+
+
+  ////////////////////// [링크코드 만들기] /////////////////////////
   const pgCode = [];
 
   // 1부터 페이지 끝번호까지 돌면서 코드만들기
-  for (let i = 1; i <= pagingCount; i++) {
+  for (let i = initNum; i < limitNum; i++) {
+    // 전체 페이징 번호를 만드는 i가
+    // 페이징 전체개수보다 클 경우 나가야함
+    if (i >= pagingCount) break;
+
     pgCode.push(
       <Fragment key={i}>
         {
           // 페이징번호와 현재페이지번호 일치시 b요소
-          i === pageNum ? (
-            <b>{i}</b>
+          i + 1 === pageNum - 1 ? (
+            <b>{i + 1}</b>
           ) : (
             <a
               href="#"
               onClick={(e) => {
                 e.preventDefault();
-                setPageNum(i);
+                setPageNum(i + 1);
               }}
             >
-              {i}
+              {i + 1}
             </a>
           )
         }
         {/* 사이에 바 넣기 */}
-        {i !== pagingCount && " | "}
+        {i + 1 !== limitNum && i + 1 < pagingCount && " | "}
       </Fragment>
     );
-  } ///// for /////
+  } ///// [1] for : 페이징 리스트 출력 끝 /////
 
+  {
+    // [2] 페이징 이전블록 이동 버튼 만들기
+    // 기준 : 1페이지가 아니면 보여라
+    // 배열 맨앞추가는 unshift()
+    pgCode.unshift(
+      pgPgNum.current === 1 ? (
+        ""
+      ) : (
+        // for문으로 만든 리스트에 추가하는 것이므로 key값이 있어야함
+        // 단, 중복되면 안됨. 중복안되는 수인 마이너스로 세팅한다
+        <Fragment key={-1}>
+          &nbsp;&nbsp;
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              goPaging(-1, false);
+            }}
+            title="move previous end"
+            style={{ marginLeft: "10px" }}
+          >
+            «
+          </a>
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              goPaging(-1, true);
+            }}
+            title="move previous"
+            style={{ marginLeft: "10px" }}
+          >
+            ◀
+          </a>
+          &nbsp;&nbsp;
+        </Fragment>
+      )
+    );
+  }
+  {
+    // [3] 페이징 다음블록 이동 버튼 만들기
+    // 기준 : 끝페이지가 아니면 보여라
+    // 배열 맨뒷추가는 push()
+    pgCode.push(
+      pgPgNum.current === pgPgCount ? (
+        ""
+      ) : (
+        // for문으로 만든 리스트에 추가하는 것이므로 key값이 있어야함
+        // 단, 중복되면 안됨. 중복안되는 수인 마이너스로 세팅한다
+        <Fragment key={-2}>
+          &nbsp;&nbsp;
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              goPaging(1, true);
+            }}
+            title="move next"
+            style={{ marginLeft: "10px" }}
+          >
+            ▶
+          </a>
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              goPaging(1, false);
+            }}
+            title="move next end"
+            style={{ marginLeft: "10px" }}
+          >
+            »
+          </a>
+          &nbsp;&nbsp;
+        </Fragment>
+      )
+    );
+  }
+
+  // [블록이동함수] //
+  const goPaging = (dir, opt) => {
+    // dir - 이동방향(오른쪽: +1, 왼쪽: -1)
+    // opt - 일반이동(true), 끝이동(false)
+    console.log("방향:", dir, "/옵션:", opt);
+
+    // 새 페이징의 페이징 번호
+    let newPgPgNum;
+    // 1. opt 옵션에 따라 페이징의 페이징 이동 번호 만들기
+    // (1) 일반 페이징 이동은 현재 페이징 번호에 증감
+    if (opt) newPgPgNum = pgPgNum.current + dir;
+    // (2) 끝 페이징이동은 오른쪽(1)일 경우 맨 끝 페이징번호로 이동(pgPgCount)
+    // 왼쪽(-1)일 경우 맨앞 페이징번호로 이동(1)
+    else newPgPgNum = dir == 1 ? pgPgCount : 1;
+
+    // 2. 페이징의 페이징 번호 업데이트하기
+    pgPgNum.current = newPgPgNum;
+
+    // 3. 새로운 페이지의 페이징 구역의 페이지 번호 업데이트하기
+    // 첫번째 페이지번호 업데이트하기
+    // -> 항상 이전 블록 수의 마지막 번호 +1이 다음 페이지 첫번호
+    // 이동할 페이지 번호
+    let landingPage = (pgPgNum.current - 1) * pgPgSize + 1;
+    console.log("도착페이지번호:", landingPage);
+    // 페이지번호 상태변수 업데이트로 전체 리랜더링
+    setPageNum(landingPage);
+  }; //////// goPaging ///////////////
   // 코드 리턴
   return pgCode;
 }; ///// pagingList 함수 //////////////
