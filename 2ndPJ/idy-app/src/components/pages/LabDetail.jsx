@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../../css/cooklab_detail.scss";
 import $ from "jquery";
 import { dCon } from "../modules/dCon";
@@ -14,12 +14,48 @@ function LabDetail() {
   const text = loc.state.text;
   const type = loc.state.type;
 
+
+
+  const myCon = useContext(dCon);
+
   return (
     <>
       {/* 레시피 상세정보 박스 */}
       <div className="lab-detail">
         {/* 스크랩 버튼 구현 */}
-            <button>
+            <button className="btn" 
+            onClick={()=>{
+                if (!localStorage.getItem("scrap-data")) {
+                    localStorage.setItem("scrap-data", "[]");
+                  } //// if /////
+                  let locals = localStorage.getItem("scrap-data");
+                  locals = JSON.parse(locals);
+
+                //   let newLocals = locals.map(v=>v.idx);
+
+                //   let retSts = newLocals.includes(gIdx);
+
+                //   if(retSts){
+                //     // 메시지 보이기
+                //     alert("이미 선택하신 상품입니다");
+                //     // 함수 나가기
+                //     return;
+                //   } ////// if //////////
+
+                //   locals.push({
+                //     idx: gIdx,
+                //     cat: cat,
+                //     ginfo: ginfo,
+                //     cnt : $("#sum").val(),
+                //   });
+
+                   // 로컬스에 문자화하여 입력하기
+                   localStorage.setItem("scrap-data", JSON.stringify(locals));
+
+                   // 로컬스 카트데이터 상태값 변경
+                   myCon.setLocalsCart(localStorage.getItem("scrap-data"));
+
+            }}>
                 <FontAwesomeIcon style={{
                         position:'fixed',
                         bottom: '56%',

@@ -207,11 +207,6 @@ function Scrap(props) {
                               onClick={() => {
                                 // confirm()의 "확인" 클릭시 true -> console이 찍힘
                                 if (window.confirm("해당 상품을 삭제하시겠습니까?")) {
-                                  console.log("삭제함");
-                                  console.log("현재 객체:", selData);
-                                  console.log("지울 순번:", i); // selData의 i
-                                  // splice 자체를 찍으면 지워진 요소가 찍힘
-                                  // console.log("지우기:",selData.splice(i,1)); // selData의 i
 
                                   // 지울 배열 순번은 map()에서 i로 들어옴
                                   // 지울 배열은 selData임
