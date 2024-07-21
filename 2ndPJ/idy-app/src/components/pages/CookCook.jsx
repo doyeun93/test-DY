@@ -334,7 +334,7 @@ export default function CookCook() {
                   // 4. 수정 상태일 경우
                   mode == "M" && (
                     <>
-                      <button onClick={clickButton}>제출</button>
+                      <button onClick={clickButton}>수정</button>
                       <button onClick={clickButton}>삭제</button>
                       <button onClick={clickButton}>목록</button>
                     </>
@@ -508,7 +508,7 @@ const ReadMode = ({ selRecord, sts }) => {
 
 /**********************************************************
                                 쓰기 모드 서브 컴포넌트  
-                 **********************************************************/
+**********************************************************/
 const WriteMode = ({ sts }) => {
   // sts : 로그인 상태정보
   // 로그인한 사람만 글쓰기 가능

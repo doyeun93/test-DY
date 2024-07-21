@@ -5,17 +5,17 @@ import mFn from "./function";
 function detail_letter(props) {
     
 
-const getBCR = (x) => x.getBoundingClientRect().bottom;
+const getBCR = (x) => x.getBoundingClientRect().top;
 // 화면기준값(높이의 2/3)
 const winH = window.innerHeight / 3;
 
 
 // 스크롤 등장 대상
 // New Item
-const inTit = mFn.qs(".intro-title");
-const showTg = mFn.qs(".intro-text1");
-const showTg2 = mFn.qs(".intro-text2");
-const showTg3 = mFn.qs(".intro-text3");
+const inTit = mFn.qs(".rdetail-seq");
+const showTg = mFn.qs(".rdetail-seq1");
+const showTg2 = mFn.qs(".rdetail-seq2");
+const showTg3 = mFn.qs(".rdetail-seq3");
 
 // 윈도우 스크롤 이벤트 설정하기
 window.addEventListener("scroll", () => {

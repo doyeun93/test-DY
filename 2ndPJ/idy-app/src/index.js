@@ -76,7 +76,7 @@ export default function MainComponent(props) {
         {/* Layout 루트 Route로 하위 Route를 감싼다! */}
       </Routes>
 
-      {scrapSts && <Scrap/> }
+      {scrapSts && <Scrap /> }
       </dCon.Provider>
     </BrowserRouter>
   );

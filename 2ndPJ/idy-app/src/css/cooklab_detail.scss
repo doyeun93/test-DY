@@ -81,6 +81,7 @@
 }
 
 
+
 .ldetail-txt1 > ul > li:first-child::before{
     content: "";
     display: inline-block;
@@ -91,6 +92,7 @@
     width: 4%;
     height: 5%;
 }
+
 .ldetail-txt1 > ul > li:nth-child(2)::before{
     content: "";
     display: inline-block;
@@ -101,6 +103,7 @@
     width: 4%;
     height: 5.1%;
 }
+
 .ldetail-txt1 > ul > li:last-child::before{
     content: "";
     display: inline-block;
@@ -146,6 +149,42 @@
     border: 0.8px solid #c4c3c3;
 }
 
+.rdetail-seq1,.rdetail-seq2,.rdetail-seq3{
+    opacity: 0;
+}
+
+.rdetail-seq1{
+    opacity: 1;
+    transition: 1s ease-in-out;
+}
+.rdetail-seq2{
+    opacity: 1;
+    transition: 1.6s ease-in-out;
+}
+.rdetail-seq3{
+    opacity: 1;
+    transition: 2.1s ease-in-out;
+}
 
 
 
+/****************** 미디어쿼리 ******************/
+@media screen and (max-width: 1470px) {
+
+    .ldetail-txt1 > ul > li:first-child::before{
+        top: 214.5%;
+        left: 27%;
+        height: 7%;
+    }
+    .ldetail-txt1 > ul > li:nth-child(2)::before{
+        top: 214.5%;
+        left: 42%;
+        height: 7.1%; 
+    }
+    .ldetail-txt1 > ul > li:last-child::before{
+        top: 214.5%;
+        left: 57.2%;
+        height: 7.1%;
+    }
+
+}

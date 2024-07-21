@@ -329,7 +329,7 @@ export default function CookQnA() {
                   // 4. 수정 상태일 경우
                   mode == "M" && (
                     <>
-                      <button onClick={clickButton}>제출</button>
+                      <button onClick={clickButton}>수정</button>
                       <button onClick={clickButton}>삭제</button>
                       <button onClick={clickButton}>목록</button>
                     </>

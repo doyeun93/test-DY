@@ -1,7 +1,7 @@
 
 
 .cookcook-top{
-    height: 190vh;
+    height: 200vh;
     background-image: url("../../public/image/bg_pattern_pink.png");
     background-color: #fff3f363;
 }
@@ -93,6 +93,8 @@
     font-size: 1.4rem;
   }
   .cook-cook > a {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
@@ -131,8 +133,7 @@
     margin: 0 auto;
   }
   
-  .dtbl caption,
-  .dtblview caption {
+  .dtbl caption{
     /*테이블 타이틀*/
     font-size: 24px;
     color: #333;
@@ -219,7 +220,7 @@
   
   /* 내용보기 */
   .dtblview {
-    font-family: "Ubuntu Condensed", sans-serif;
+    // font-family: "Ubuntu Condensed", sans-serif;
     font-size: 34px;
     border-collapse: collapse;
     width: 750px;
@@ -227,6 +228,13 @@
     border-top: 2px solid #999;
     /*두종색*/
     border-bottom: 2px solid #999;
+  }
+
+  .dtblview caption {
+    /*테이블 타이틀*/
+    font-size: 2.5rem;
+    color: #333;
+    padding: 14% 0;
   }
   /*첫째열*/
   .dtblview td:first-child {
@@ -266,8 +274,8 @@
     padding: 8px 40px;
     background-color: #fff;
     color: #000;
-    font-weight: bold;
-    font-family: "Ubuntu Condensed", sans-serif;
+    // font-weight: bold;
+    // font-family: "Ubuntu Condensed", sans-serif;
     font-size: 15px;
     transition: 0.3s;
     margin-top: 20px;
@@ -286,7 +294,7 @@
 
   @media screen and (max-width: 1470px) {
     .cook-write > img {
-      margin-top: -2.3%;
+      margin-top: -3.5%;
       margin-left: 2.4%;
     }
     .cook-cook > a {
@@ -307,6 +315,7 @@
   
     .cook-write > img {
       width: 30%;
+      margin-top: -6.9%;
     }
   
     .cook-cbox > li:first-child {
