@@ -80,13 +80,13 @@ function Scrap(props) {
                           <td>
                             <img
                               src={
-                                process.env.PUBLIC_URL + `/image/goods/${v.cat}/${v.ginfo[0]}.png`
+                                process.env.PUBLIC_URL + `/image/sub2/${v.imgName}.jpg`
                               }
                               alt="item"
                             />
                           </td>
-                          <td>{v.ginfo[1]}</td>
-                          <td>{v.ginfo[2]} </td>
+                          <td>{v.title}</td>
+                          {/* <td>{v.ginfo[2]} </td> */}
             
                           <td className="cnt-part">
                             <div>
@@ -113,11 +113,11 @@ function Scrap(props) {
                                     // 2. 데이터 문자화하기 : 변경된 원본을 문자화
                                     let res = JSON.stringify(selData);
 
-                                    // 3.로컬스 "cart-data"반영하기
-                                    localStorage.setItem("cart-data", res);
+                                    // 3.로컬스 "scrap-data"반영하기
+                                    localStorage.setItem("scrap-data", res);
 
                                     // 4. 카트리스트 전역상태변수 변경
-                                    myCon.setLocalsCart(res);
+                                    myCon.setLocalsScrap(res);
 
                                     // 5. 반영 버튼 숨기기
                                     $(e.currentTarget)
@@ -191,14 +191,14 @@ function Scrap(props) {
                             </div>
                           </td>
                           <td>
-                            <span className="sum-num1">{addComma(v.ginfo[3] * v.cnt)}</span>원
+                            {/* <span className="sum-num1">{addComma(v.ginfo[3] * v.cnt)}</span>원 */}
                             {/* 계산된 합계금액 숫자만 히든필드에 넣어놓고
                                 총합계 계산에 사용함 */}
-                            <input
+                            {/* <input
                               className="sum-num2"
                               type="hidden"
                               defaultValue={v.ginfo[3] * v.cnt}
-                            />
+                            /> */}
                           </td>
                           <td>
                             {/* 데이터 삭제 기능 버튼 */}
@@ -216,16 +216,16 @@ function Scrap(props) {
                                   // 2. 데이터 문자화하기 : 변경된 원본을 문자화함
                                   let res = JSON.stringify(selData);
 
-                                  // 3. 로컬스 "cart-data"반영하기
-                                  localStorage.setItem("cart-data", res);
+                                  // 3. 로컬스 "scrap-data"반영하기
+                                  localStorage.setItem("scrap-data", res);
 
                                   // 4. 카트리스트 전역상태변수 변경 -> 리랜더링 하기위함
-                                  myCon.setLocalsCart(res);
+                                  myCon.setLocalsScrap(res);
 
                                   // 5. 데이터개수가 0이면 카트 리스트
                                   // 상태변수를 false로 변경하여 카트 리스트 출력을 없앤다
 
-                                  if (selData.length == 0) myCon.setCartSts(false);
+                                  if (selData.length == 0) myCon.setScrapSts(false);
 
                                   /*  let aa = [];
                                     aa.splice(지울순번, 지울개수 ); */

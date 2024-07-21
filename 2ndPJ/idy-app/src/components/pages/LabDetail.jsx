@@ -59,17 +59,17 @@ function LabDetail() {
             localStorage.setItem("scrap-data", JSON.stringify(locals));
 
             // 로컬스 카트데이터 상태값 변경
-             myCon.setLocalsCart(localStorage.getItem("scrap-data"));
+             myCon.setLocalsScrap(localStorage.getItem("scrap-data"));
 
             // 카트리스트 생성 상태값 변경
-             myCon.setCartSts(true);
+             myCon.setScrapSts(true);
           }}
         >
           <FontAwesomeIcon
             style={{
               position: "fixed",
               bottom: "56%",
-              left: "80%",
+              left: "85%",
               color: "#15a775",
               fontSize: "40px",
               // border: '1px solid #f5f5f5',
