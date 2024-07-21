@@ -1,5 +1,5 @@
 .lab-detail {
-  height: 500vh;
+  height: 450vh;
 }
 
 .ldetail-top {
@@ -113,6 +113,7 @@
 }
 
 .ldetail-img{
+    gap: 2%;
     padding-top: 10%;
     display: flex;
     max-width: 500px;
@@ -127,7 +128,23 @@
 }
 
 .ldetail-seq{
+    padding-top: 6%;
+    margin: 0 auto;
+    padding-top: 6%;
+    max-width: 1000px;
+    height: 300px;
+    line-height: 4;
     
+
 }
+.ldetail-seq::before{
+    content: '';
+    display: inline-block;
+    width: 1000px;
+    margin-left: 20%;
+    border: 0.8px solid #c4c3c3;
+}
+
+
 
 
