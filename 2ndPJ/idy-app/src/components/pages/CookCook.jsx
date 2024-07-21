@@ -31,7 +31,7 @@ export default function CookCook() {
 
   const pgPgNum = useRef(1);
 
-  const unitSize = 8;
+  const unitSize = 6;
   // const unitSize = 4;
 
   // 페이징의 페이징 개수 : 한번에 보여줄 페이징 개수

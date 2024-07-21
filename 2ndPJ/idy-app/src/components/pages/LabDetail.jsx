@@ -129,7 +129,7 @@ function LabDetail() {
         </div>
         {/* 레시피 상세정보 레시피 순서 */}
         <div className="ldetail-seq">            
-        <ul>
+        <ul >
               <li>{state.type7}</li>
               <li>{state.type8}</li>
               <li>{state.type9}</li>
