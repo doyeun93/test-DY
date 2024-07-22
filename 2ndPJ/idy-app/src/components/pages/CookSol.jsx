@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import "../../css/cooksol.scss";
-import { solutionData } from "../data/sub2_2";
+import { sDetailData } from "../data/sub2_2_detail";
 import { Link } from "react-router-dom";
 
 export default function CookSol() {
@@ -9,9 +9,9 @@ export default function CookSol() {
   const [sort, setSort] = useState("asc");
 
   if (sort == "asc") {
-    solutionData.sort((a, b) => (a.title > b.title ? 1 : a.title < b.title ? -1 : 0));
+    sDetailData.sort((a, b) => (a.title > b.title ? 1 : a.title < b.title ? -1 : 0));
   } else if (sort == "desc") {
-    solutionData.sort((a, b) => (a.title > b.title ? -1 : a.title < b.title ? 1 : 0));
+    sDetailData.sort((a, b) => (a.title > b.title ? -1 : a.title < b.title ? 1 : 0));
   }
 
 
@@ -51,7 +51,7 @@ export default function CookSol() {
         </div>
         <div className="sol-mid">
           <ul>
-            {solutionData.map((v, i) => (
+            {sDetailData.map((v, i) => (
               <li key={i}>
                 <div className="sol-imgbox">
                   <img src={`./image/sub2/${v.imgName}.jpg`} alt={v.title} />
@@ -60,7 +60,11 @@ export default function CookSol() {
                     <p>{v.type2}</p>
                   </div>
                 </div>
+                <Link to="/detail"
+                  state={v}
+                >
                 <span>{v.title}</span>
+                </Link>
               </li>
             ))}
           </ul>

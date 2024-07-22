@@ -61,7 +61,7 @@ function Scrap(props) {
                 <th></th>
                 <th>상품명</th>
                 <th></th>
-                <th>수량</th>
+                <th>종류</th>
                 <th></th>
                 <th>삭제</th>
               </tr>
@@ -89,18 +89,19 @@ function Scrap(props) {
                               />
                             </td>
                             <td>{v.title}</td>
+                            <td>{v.kind}</td>
         
                             <td className="cnt-part">
                               <div>
                                 <span>
-                                  <input
+                                  {/* <input
                                     type="text"
                                     className="item-cnt"
                                     readOnly=""
                                     defaultValue={v.cnt}
                                     onBlur={() => {
                                     }}
-                                  />
+                                  /> */}
                                   {/* 반영 버튼 */}
                                   <button
                                     className="btn-insert"
@@ -171,14 +172,14 @@ function Scrap(props) {
                                         .show();
                                     }}
                                   >
-                                    <img
+                                    {/* <img
                                       src={process.env.PUBLIC_URL + "/image/cnt_up.png"}
                                       alt="증가"
                                     />
                                     <img
                                       src={process.env.PUBLIC_URL + "/image/cnt_down.png"}
                                       alt="감소"
-                                    />
+                                    /> */}
                                   </b>
                                 </span>
                               </div>

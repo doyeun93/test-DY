@@ -24,6 +24,7 @@ function LabDetail() {
   const matchFolder = {
     sub: "sub1",
     re_: "sub2",
+    sol: "sub2",
     coo: "sub3",
     eve: "sub4",
   };
@@ -56,11 +57,11 @@ function LabDetail() {
             locals.push({
               idx: state.idx,
               title: state.title,
-              text: state.text,
+              kind: state.kind,
               imgName: state.imgName,
             });
             
-            // console.log("qqqqqqqqqqqqqqqqqqqqqqq", state.idx);
+            
             // 로컬스에 문자화하여 입력하기
             localStorage.setItem("scrap-data", JSON.stringify(locals));
             
@@ -87,7 +88,7 @@ function LabDetail() {
         </button>
         {/* 레시피 상세정보 제목 */}
         <div className="ldetail-top">
-          <h2>레시피</h2>
+          <h2>{state.kind}</h2>
           <span>{state.title}</span>
         </div>
         {/* 레시피 상세정보 소제목 */}

@@ -78,38 +78,38 @@
   }
 }
 
-.ldetail-txt1 > ul > li:first-child::before {
-  content: "";
-  display: inline-block;
-  background: url("../../public/image/re_icon1.png") no-repeat;
-  position: absolute;
-  top: 168.5%;
-  left: 32%;
-  width: 4%;
-  height: 5%;
-}
+// .ldetail-txt1 > ul > li:first-child::before {
+//   content: "";
+//   display: inline-block;
+//   background: url("../../public/image/re_icon1.png") no-repeat;
+//   position: absolute;
+//   top: 168.5%;
+//   left: 32%;
+//   width: 4%;
+//   height: 5%;
+// }
 
-.ldetail-txt1 > ul > li:nth-child(2)::before {
-  content: "";
-  display: inline-block;
-  background: url("../../public/image/re_icon2.png") no-repeat;
-  position: absolute;
-  top: 168.5%;
-  left: 44%;
-  width: 4%;
-  height: 5.1%;
-}
+// .ldetail-txt1 > ul > li:nth-child(2)::before {
+//   content: "";
+//   display: inline-block;
+//   background: url("../../public/image/re_icon2.png") no-repeat;
+//   position: absolute;
+//   top: 168.5%;
+//   left: 44%;
+//   width: 4%;
+//   height: 5.1%;
+// }
 
-.ldetail-txt1 > ul > li:last-child::before {
-  content: "";
-  display: inline-block;
-  background: url("../../public/image/re_icon3.png") no-repeat;
-  position: absolute;
-  top: 168.5%;
-  left: 56.2%;
-  width: 4%;
-  height: 5.1%;
-}
+// .ldetail-txt1 > ul > li:last-child::before {
+//   content: "";
+//   display: inline-block;
+//   background: url("../../public/image/re_icon3.png") no-repeat;
+//   position: absolute;
+//   top: 168.5%;
+//   left: 56.2%;
+//   width: 4%;
+//   height: 5.1%;
+// }
 
 .ldetail-img {
   gap: 2%;
