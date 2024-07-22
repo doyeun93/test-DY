@@ -6,8 +6,9 @@ function detail_letter(props) {
     
 
 const getBCR = (x) => x.getBoundingClientRect().top;
-// 화면기준값(높이의 2/3)
-const winH = window.innerHeight / 3;
+
+const winH = window.innerHeight / 4*3;
+// console.log("화면:", winH);
 
 
 // 스크롤 등장 대상
