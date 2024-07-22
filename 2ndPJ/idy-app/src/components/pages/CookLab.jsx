@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import "../../css/cooklab.scss";
-import { rDetailData } from "../data/sub2_1_detail";
+import { recipeData } from "../data/sub2_1";
 import { Link } from "react-router-dom";
 import $ from "jquery";
 
@@ -12,9 +12,9 @@ export default function CookLab() {
   const [sort, setSort] = useState("asc");
 
   if (sort == "asc") {
-    rDetailData.sort((a, b) => (a.title > b.title ? 1 : a.title < b.title ? -1 : 0));
+    recipeData.sort((a, b) => (a.title > b.title ? 1 : a.title < b.title ? -1 : 0));
   } else if (sort == "desc") {
-    rDetailData.sort((a, b) => (a.title > b.title ? -1 : a.title < b.title ? 1 : 0));
+    recipeData.sort((a, b) => (a.title > b.title ? -1 : a.title < b.title ? 1 : 0));
   }
 
   const [lbar, setLbar] = useState(false);
@@ -66,7 +66,7 @@ export default function CookLab() {
         <div className="lab-mid">
           {/* {viewList? <LabList viewDetail={setViewList} updateIdx={setIdx} selItem={selItem}/>:<LabDetail backList={setViewList} gNo={idx} selItem={selItem}/>} */}
           <ul>
-            {rDetailData.map((v, i) => (
+            {recipeData.map((v, i) => (
               <li key={i}>
                 <div className="lab-imgbox">
                   <img src={`./image/sub2/${v.imgName}.jpg`} alt={v.title} />
