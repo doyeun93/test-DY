@@ -178,14 +178,14 @@ function Scrap(props) {
                                       .show();
                                   }}
                                 >
-                                  <img
+                                  {/* <img
                                     src={process.env.PUBLIC_URL + "/images/cnt_up.png"}
                                     alt="증가"
                                   />
                                   <img
                                     src={process.env.PUBLIC_URL + "/images/cnt_down.png"}
                                     alt="감소"
-                                  />
+                                  /> */}
                                 </b>
                               </span>
                             </div>
