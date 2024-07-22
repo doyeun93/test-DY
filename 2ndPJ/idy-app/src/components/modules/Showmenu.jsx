@@ -5,10 +5,6 @@ import { Link } from 'react-router-dom';
 
 export function ShowMenu() {
 
-  const goSub = (e) => {
-    document.querySelector(".ham").click();  
-  };
-
   const hideBox = () => {
     document.querySelector(".hbox").style.left = "100%";
   };
@@ -20,7 +16,7 @@ export function ShowMenu() {
         <nav className="hlist">
           <ul className="htit">
           {gnbData.map((v, i) => (
-                <li key={i}>
+                <li key={i} onClick={hideBox}>
                   {v.sub ? <a href="#">{v.txt}</a> : <Link to={v.link}>{v.txt}</Link>}
                   {v.sub && (
                     <ul className="htext">
