@@ -165,6 +165,10 @@
 
 /****************** 미디어쿼리 ******************/
 @media screen and (max-width: 1470px) {
+  .lab-detail {
+    height: 510vh;
+}
+
   .ldetail-txt1 > ul > li:first-child::before {
     top: 214.5%;
     left: 27%;
