@@ -25,30 +25,30 @@ import Scrap from "./components/modules/Scrap";
 
 export default function MainComponent(props) {
 
-  let cartTemp = false;
+  let scrapTemp = false;
 
   // 로컬스 카트 데이터 상태변수 
   const [localsScrap, setLocalsScrap] = useState(localStorage.getItem("scrap-data"));
 
   // 로컬스 카트 데이터 존재 여부에 따라 상태값 변경
   if(localsScrap){
-    // 데이터가 있으면 cartTemp값 true로 변경
+    // 데이터가 있으면 scrapTemp값 true로 변경
     // 데이터 개수가 0이 아니여야 함
-    let cartCnt = JSON.parse(localsScrap).length;
+    let scrapCnt = JSON.parse(localsScrap).length;
     
 
-    if(cartCnt > 0) cartTemp = true; 
+    if(scrapCnt > 0) scrapTemp = true; 
     
   } // 카트 존재여부 if ////////////////
 
-  const [scrapSts, setScrapSts] = useState(cartTemp);
+  const [scrapSts, setScrapSts] = useState(scrapTemp);
 
 
   return(
     // 라우터 루트로 라우터 구성시작
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <ScrollTop />
       <dCon.Provider value={{ setLocalsScrap, setScrapSts, localsScrap, }}>
+      <ScrollTop />
 
       <Routes>
         {/* 중요!!! 레이아웃 컴포넌트를 루트로 설정!
