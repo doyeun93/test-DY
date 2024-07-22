@@ -9,16 +9,15 @@ import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 import detail_letter from "../func/detail_letter";
 
 function LabDetail() {
-
-  useEffect(()=> {
+  useEffect(() => {
     detail_letter();
-  },[])
+  }, []);
 
-  const {state} = useLocation();
-//   const imgName = loc.state.imgName;
-//   const title = loc.state.title;
-//   const text = loc.state.text;
-//   const type = loc.state.type;
+  const { state } = useLocation();
+  //   const imgName = loc.state.imgName;
+  //   const title = loc.state.title;
+  //   const text = loc.state.text;
+  //   const type = loc.state.type;
 
   const myCon = useContext(dCon);
 
@@ -43,32 +42,35 @@ function LabDetail() {
             let locals = localStorage.getItem("scrap-data");
             locals = JSON.parse(locals);
 
-              let newLocals = locals.map(v=>v.imgName);
+            let newLocals = locals.map((v) => v.imgName);
 
-              let retSts = newLocals.includes(state.imgName);
-
-              if(retSts){
-                // 메시지 보이기
-                alert("이미 선택하신 상품입니다");
-                // 함수 나가기
-                return;
-              } ////// if //////////
-
-              locals.push({
-                idx: state.idx,
-                title: state.title,
-                text: state.text,
-                imgName: state.imgName,
-              });
-
+            let retSts = newLocals.includes(state.imgName);
+            
+            if (retSts) {
+              // 메시지 보이기
+              alert("이미 선택하신 상품입니다");
+              // 함수 나가기
+              return;
+            } ////// if //////////
+            
+            locals.push({
+              idx: state.idx,
+              title: state.title,
+              text: state.text,
+              imgName: state.imgName,
+            });
+            
+            // console.log("qqqqqqqqqqqqqqqqqqqqqqq", state.idx);
             // 로컬스에 문자화하여 입력하기
             localStorage.setItem("scrap-data", JSON.stringify(locals));
-
+            
             // 로컬스 카트데이터 상태값 변경
-             myCon.setLocalsScrap(localStorage.getItem("scrap-data"));
+            myCon.setLocalsScrap(localStorage.getItem("scrap-data"));
 
             // 카트리스트 생성 상태값 변경
-             myCon.setScrapSts(true);
+            myCon.setScrapSts(true);
+
+            // myCon.goPage("/scrap");
           }}
         >
           <FontAwesomeIcon
@@ -96,7 +98,8 @@ function LabDetail() {
         </div>
         {/* 레시피 상세정보 이미지 */}
         <div className="ldetail-pic">
-          <img style={{width:"100%", height:"100", objectFit:"cover"}}
+          <img
+            style={{ width: "100%", height: "100", objectFit: "cover" }}
             src={`./image/${matchFolder[state.imgName.substr(0, 3)]}/${state.imgName}.jpg`}
             alt={state.title}
           />
@@ -134,12 +137,12 @@ function LabDetail() {
           />
         </div>
         {/* 레시피 상세정보 레시피 순서 */}
-        <div className="ldetail-seq">            
-        <ul className="rdetail-seq">
-              <li className="rdetail-seq1">{state.type7}</li>
-              <li className="rdetail-seq2">{state.type8}</li>
-              <li className="rdetail-seq3">{state.type9}</li>
-            </ul>
+        <div className="ldetail-seq">
+          <ul className="rdetail-seq">
+            <li className="rdetail-seq1">{state.type7}</li>
+            <li className="rdetail-seq2">{state.type8}</li>
+            <li className="rdetail-seq3">{state.type9}</li>
+          </ul>
         </div>
       </div>
     </>

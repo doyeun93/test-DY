@@ -16,9 +16,10 @@
     background-color: #ddd;
     border-radius: 5px;
   }
-  
-  
-  
+
+  .scrap-box{
+    height: 400vh;
+  }
   
   /* 전체부모박스 */
   #scraplist {
@@ -49,15 +50,15 @@
   #scraplist table {
     width: 90%;
     margin: 50px auto;
-    font-size: 14px;
+    font-size: 21px;
     border-top: 2px solid rgb(34, 34, 34);
     border-bottom: 2px solid rgb(34, 34, 34);
     border-collapse: collapse;
   }
   #scraplist caption {
     padding: 20px 0px;
-    text-decoration: underline wavy;
-    font-size: 30px;
+    // text-decoration: underline wavy;
+    font-size: 2.4rem;
   }
   #scraplist th {
     padding: 15px 0px;
@@ -70,11 +71,11 @@
     text-align: center;
   }
   #scraplist td img {
-    width: 50px;
+    width: 70px;
   }
   
   /* 카트버튼 이미지 */
-  #myscrap {
+  #myScrap {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -85,7 +86,7 @@
   }
   
   /* 카트박스 사이드 이동상태 */
-  #myscrap.on {
+  #myScrap.on {
     position: fixed;
     top: 50%;
     left: calc(100% - 70px);
@@ -96,23 +97,23 @@
     transition: 0.4s ease-in 2s;
   }
   /* 원본 이미지 크기 */
-  #myscrap img {
+  #myScrap img {
     width: 370px;
   }
   /* 변경 이미지 크기 */
-  #myscrap.on img {
+  #myScrap.on img {
     width: 50px;
     transition: 0.4s ease-in 2s;
   }
   /* 개수 표시박스 */
-  #myscrap .cntBx {
+  #myScrap .cntBx {
     text-align: center;
     font-size: 20px;
     font-weight: bold;
     color: blue;
     opacity: 0;
   }
-  #myscrap.on .cntBx {
+  #myScrap.on .cntBx {
     opacity: 1;
     transition: 0.4s 3s;
   }
