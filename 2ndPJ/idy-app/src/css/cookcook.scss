@@ -214,7 +214,7 @@
   .dtbl tfoot td {
     text-align: center;
     /*글자중앙정렬*/
-    padding: 20px 0px;
+    padding: 80px 0px;
     /*위아래,우좌 padding설정*/
   }
   
@@ -270,7 +270,7 @@
   
   /* 버튼그룹 */
   .btngrp button {
-    border-radius: 25px;
+    border-radius: 16px;
     padding: 8px 40px;
     background-color: #fff;
     color: #000;
@@ -294,7 +294,8 @@
 
   @media screen and (max-width: 1470px) {
     .cook-write > img {
-      margin-top: -3.5%;
+      //맥북 margin-top: -3.5%;
+      margin-top: -1.9%;
       margin-left: 2.4%;
     }
     .cook-cook > a {
@@ -347,6 +348,17 @@
     .dtbl th {
       padding: 5px;
     }
+
+    .dtblview caption {
+      margin-left: -36%;
+    }
+    .dtblview {
+      font-size: 24px;
+    }
+    .dtblview td:first-child {
+      width: 76px;
+    }
+
   }
   
 
