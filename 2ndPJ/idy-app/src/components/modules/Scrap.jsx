@@ -16,7 +16,7 @@ function Scrap(props) {
     // 카트 버튼 나타나기
     $("#myScrap")
       .removeClass("on")
-      .delay(500) // 애니메이션 지연시간
+      .delay(300) // 애니메이션 지연시간
       .fadeIn(300, function () {
         $(this).addClass("on");
       }); //// fadeIn ///////
