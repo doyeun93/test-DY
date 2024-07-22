@@ -56,8 +56,8 @@ export default function CookSol() {
                 <div className="sol-imgbox">
                   <img src={`./image/sub2/${v.imgName}.jpg`} alt={v.title} />
                   <div className="sol-info">
-                    <p>{v.type1}</p>
                     <p>{v.type2}</p>
+                    <p>{v.type3}</p>
                   </div>
                 </div>
                 <Link to="/detail"

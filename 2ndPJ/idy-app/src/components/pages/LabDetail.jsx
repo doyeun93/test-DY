@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import "../../css/cooklab_detail.scss";
+import "../../css/detail.scss";
 import $ from "jquery";
 import { dCon } from "../modules/dCon";
 
@@ -141,7 +141,9 @@ function LabDetail() {
         <div className="ldetail-seq">
           <ul className="rdetail-seq">
             <li className="rdetail-seq1">{state.type7}</li>
+            <br />
             <li className="rdetail-seq2">{state.type8}</li>
+            <br />
             <li className="rdetail-seq3">{state.type9}</li>
           </ul>
         </div>
