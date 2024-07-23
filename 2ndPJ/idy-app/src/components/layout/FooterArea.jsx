@@ -54,18 +54,16 @@ function FooterArea() {
           <div className="footer-social">
             <div className="footer-sns">
               <ul>
-                <li>
-                  <a href="#">
+              <li>
                     <img src={process.env.PUBLIC_URL+"/image/logo_award.png"} alt="로고어워즈" />
-                  </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="https://www.instagram.com/semie_kitchen/">
                     <img src={process.env.PUBLIC_URL+"/image/ic_insta.png"} alt="인스타그램" />
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="https://pf.kakao.com/_Hxoxkxab">
                     <img src={process.env.PUBLIC_URL+"/image/ic_kakao.png"} alt="카카오톡" />
                   </a>
                 </li>
