@@ -97,6 +97,29 @@
   font-weight: 500;
   font-family: "Noto Sans KR", sans-serif;
 }
+.intro-mtit > ul >li:nth-child(odd)::first-letter {
+  font-weight: bold;
+  color: #15a775;
+  font-size: 1.6rem;
+}
+.intro-mtit > ul:last-child{
+  text-align: center;
+  padding-top: 10%;
+}
+.intro-mtit > ul:last-child::before{
+  content: "";
+  display: inline-block;
+  width: 400px;
+  border: 0.8px solid #c4c3c3;
+
+}
+.intro-mtit > ul:last-child::after{
+  content: "";
+  display: inline-block;
+  width: 400px;
+  border: 0.8px solid #c4c3c3;
+
+}
 
 /****************** 미디어쿼리 ******************/
 @media screen and (max-width: 1470px) {
