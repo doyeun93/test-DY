@@ -123,22 +123,35 @@
 
 /****************** 미디어쿼리 ******************/
 @media screen and (max-width: 1470px) {
+
+  .intro-tit {
+    top: 96%;
+    }
+    
+    .intro-header {
+    top: 37%;
+    }
+    
+    .intro-mv {
+    top: 45%;
+    }
 }
 
 @media screen and (max-width: 450px) {
 
     .intro-box {
-        height: 373vh;
+      height: 330vh;
     } 
     .intro-top {
-        height: 315vh;
+        height: 220vh;
     }
     .intro-header {
-        padding-top: 15%;
+        padding-top: 0%;
     }
 
   .intro-tit {
     left: 2%;
+    top: 48%;
     text-align: center;
   }
   .intro-header::before {
