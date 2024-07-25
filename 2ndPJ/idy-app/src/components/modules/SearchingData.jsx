@@ -15,7 +15,7 @@ function SearchingData({ dt }) {
   
 
   // 경로를 맞추기 위해 배열에 이미지명 앞3글자가 있는지 검사함!
-  const route = {"sub":"sub1","re_":"sub2","sol":"sub2","coo":"sub3"};
+  const route = { sub: "sub1", re_: "sub2", sol: "sub2", coo: "sub3" };
   
 
 
@@ -27,17 +27,21 @@ function SearchingData({ dt }) {
         total > 0 && (
           <ul className="clist">
             {dt.map((v, i) => (
-              <li key={i}>
-                
+              <li key={i}> 
                 <Link
-                  to="/detail"
+                  to={
+                    route[v.imgName.substr(0, 3)] == "sub1" ||
+                    route[v.imgName.substr(0, 3)] == "sub3"
+                      ? "/"
+                      : "/detail"
+                  }
                   /* state로 3가지 값을 넘겨준다! */
-                  state={{
-                    title: v.title, // 제목
-                    text: v.text, // 설명
-                  }}
+                  state={v}
                 >
-                  <img src={`./image/${route[v.imgName.substr(0,3)]}/${v.imgName}.jpg`} alt={v.imgName} />
+                 <img
+                    src={process.env.PUBLIC_URL+`/image/${route[v.imgName.substr(0, 3)]}/${
+                      v.imgName
+                    }.jpg`} alt={v.imgName} />
                   <h3>{v.title}</h3>
                 </Link>
               </li>
