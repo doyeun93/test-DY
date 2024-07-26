@@ -23,6 +23,7 @@ function Searching({ kword }) {
   console.log(guideData);
   console.log(recipeData);
   // console.log([...guideData,...recipeData,...solutionData,...cookingData]);
+  // 스프레드 연산자(...) : 기존 배열이나 객체의 전체 또는 일부를 다른 배열이나 객체로 빠르게 복사할 수 있음
 
 
   const selData = [...guideData,...recipeData,...solutionData,...cookingData];

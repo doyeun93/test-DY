@@ -1,0 +1,40 @@
+body{
+    background: url(../test/image/tab_a_bg.jpg) no-repeat 100% 100%;
+}
+
+/* 모달 배경 */
+.modal {
+    display: none; /* 기본적으로 숨겨져 있음 */
+    position: fixed;
+    z-index: 1; /* 페이지의 다른 콘텐츠 위에 표시 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* 스크롤 가능 */
+    background-color: rgba(0, 0, 0, 0.4); /* 반투명 배경 */
+}
+
+/* 모달 내용 */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 중앙 정렬 */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* 너비 조정 */
+}
+
+/* 닫기 버튼 */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
