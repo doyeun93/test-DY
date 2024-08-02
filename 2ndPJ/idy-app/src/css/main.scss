@@ -553,12 +553,12 @@ body {
 
   .header-text > li:last-child {
     margin-top: -22.7%;
-    padding-left: 65%;
+    padding-left: 39%;
     height: 52px;
   }
   .header-text > li:last-child::after {
-    width: 120%;
-    right: 105%;
+    width: 55%;
+    right: 55%;
     bottom: -51%;
   }
   .header-title {
@@ -622,11 +622,11 @@ body {
 
   .cook-bottom {
     margin-top: -36%;
-    width: 100%;
-    margin-left: 0%;
+    width: 99%;
+    margin-left: 0.4%;
   }
   .cook-bottom > img {
-    margin-top: -28.4%;
+    margin-top: -31.7%;
   }
 
   .cook-food {
@@ -635,6 +635,7 @@ body {
   .cook-food > p {
     margin-top: 2%;
     margin-left: 7%;
+    font-size: 1.4rem;
   }
 
   // 이벤트 구역

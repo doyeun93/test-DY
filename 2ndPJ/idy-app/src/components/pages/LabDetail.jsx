@@ -76,9 +76,9 @@ function LabDetail() {
         >
           <FontAwesomeIcon
             style={{
-              position: "fixed",
-              bottom: "56%",
-              left: "85%",
+              position: "absolute",
+              bottom: "57%",
+              left: "89%",
               color: "#15a775",
               fontSize: "40px",
               // border: '1px solid #f5f5f5',

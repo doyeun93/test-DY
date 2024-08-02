@@ -141,9 +141,8 @@
 }
 
 @media screen and (max-width: 450px) {
-
     .intro-box {
-      height: 330vh;
+      height: 350vh;
     } 
     .intro-top {
         height: 220vh;
@@ -153,17 +152,25 @@
     }
 
   .intro-tit {
-    left: 2%;
+    left: -1%;
     top: 48%;
     text-align: center;
   }
   .intro-header::before {
-    margin-left: 0%;
+    max-width: 400px;
+    margin-left: 1%;
   }
 
   .intro-title {
-    left: 4%;
+    left: 2.5%;
   }
+
+  .intro-text1,
+  .intro-text2,
+  .intro-text3 {
+    margin-left: 1%;
+  }
+
   .intro-text1.on {
     scale: .95;
     padding-top: 10%;
@@ -176,4 +183,15 @@
     scale: .95;
     padding-top: 10%;
   }
+
+  .intro-mtit > ul:last-child > li:first-child {
+    padding-top: 9%;
+  }
+  .intro-mtit > ul:last-child::before {
+    width: 370px; 
+  }
+  .intro-mtit > ul:last-child::after {
+    width: 370px; 
+  }
+
 }
