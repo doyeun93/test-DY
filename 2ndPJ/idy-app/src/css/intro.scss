@@ -126,7 +126,9 @@
 
 /****************** 미디어쿼리 ******************/
 @media screen and (max-width: 1470px) {
-
+  .intro-box {
+    height: 440vh;
+  }
   .intro-tit {
     top: 96%;
     }
