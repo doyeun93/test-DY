@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 
 import "../../css/scrap.scss";
+import { Link } from "react-router-dom";
 
 function Scrap(props) {
   const [force, setForce] = useState(false);
@@ -81,14 +82,18 @@ function Scrap(props) {
                             <td>{i + 1}</td>
                             {/* 상품이미지 */}
                             <td>
-                              <img
-                                src={
-                                  process.env.PUBLIC_URL + `/image/sub2/${v.imgName}.jpg`
-                                }
-                                alt="item"
-                              />
+                              <Link to="/cooklab">
+                                <img
+                                  src={
+                                    process.env.PUBLIC_URL + `/image/sub2/${v.imgName}.jpg`
+                                  }
+                                  alt="item"
+                                />
+                                </Link>
                             </td>
+                             
                             <td>{v.title}</td>
+                              
                             <td>{v.kind}</td>
         
                             <td className="cnt-part">
