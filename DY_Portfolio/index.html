@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IM DOYEON</title>
     <link rel="stylesheet" href="./css/main.css" />
+    <script src="./js/auto_scroll.js" defer></script>
 </head>
 <body>
     <!-- <h1>Welcome to my page!</h1>
@@ -25,27 +26,71 @@
         <nav class="gnb">
             <ul>
                 <li class="on">
-                    <a href="#pg1">about</a>
+                    <a href="#pg1">About</a>
                 </li>
                 <li>
-                    <a href="#pg2">portfolio</a>
+                    <a href="#pg2">Skills</a>
                 </li>
                 <li>
-                    <a href="#pg3">contact</a>
-                </li>
-                
+                    <a href="#pg3">Project</a>
+                </li>    
+                <li>
+                    <a href="#pg4">Contact</a>
+                </li>    
             </ul>
         </nav>
     </section>
 
-    <!-- about 영역 -->
-    <section id="top">about</section>
+    <!-- 페이지 영역 -->
+    <section id="content">
+        <main>
+            <!-- 2-1.about -->
+            <section id="pg1" class="page">
+                <div class="inbox bg-com pg1">
+                    About
+                </div>
+            </section>
+            <!-- 2-2. 포폴 -->
+            <section id="pg2" class="page">
+                <div class="inbox bg-com pg2">
+                    Skills   
+                </div>
+            </section>
+            <!-- 2-3.contact -->
+            <section id="pg3" class="page">
+                <div class="inbox bg-com pg3">
+                    Project
+                </div>
+            <!-- 2-4.contact -->
+            <section id="pg4" class="page">
+                <div class="inbox bg-com pg4">
+                    Contact
+                </div>
+        
+            </main>
+    </section>
 
-    <!-- 포폴 영역 -->
-    <section id="main">portfolio</section>
+    
+    <section id="footer"></section>
 
-    <!-- contact 영역 -->
-    <section id="bottom">contact</section>
+    <!-- 위치표시자 -->
+    <nav class="indic">
+        <ul>
+            <li class="on">
+                <a href="#pg1"><span>About</span></a>
+            </li>
+            <li>
+                <a href="#pg2"><span>Skills</span></a>
+            </li>
+            <li>
+                <a href="#pg3"><span>Project</span></a>
+            </li>
+            <li>
+                <a href="#pg4"><span>Contact</span></a>
+            </li>
+        </ul>
+    </nav>
+
 
     
 </body>

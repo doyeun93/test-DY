@@ -1,3 +1,168 @@
+@charset "utf-8";
+
 body * {
-    outline: 1px dashed #ccc;
-  }
+  /* outline: 1px dashed #fc8785; */
+}
+
+/* 기본 초기화 */
+html,
+body,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* 자동스크롤 위해 스크롤바 없애기 */
+/* html,body{
+    overflow: hidden;
+} */
+
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+a {
+  text-decoration: none;
+  color: #fff;
+  text-shadow: 0 0 2px #777;
+}
+
+.inbox {
+  max-width: 2000px;
+  margin: 0 auto;
+  /* outline: 2px dashed red; */
+}
+
+.page .inbox {
+  position: relative;
+  height: 100vh;
+}
+
+
+.bg-com {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+#header {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  z-index: 9999;
+  /* background-color: rgba(0, 0, 0, 0.7); */
+}
+
+.header {
+  position: relative;
+  height: 80px;
+}
+/* 타이틀 영역 */
+.header-tit{
+  height: 100px;
+  text-align: center;
+  font-size: 2.4vw;
+}
+/* 1-1.로고 */
+#logo {
+  width: 250px;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+#logo img {
+  width: 100%;
+  margin-top: -24px;
+}
+
+/* 1-2. GNB 메뉴 */
+.gnb {
+  position: absolute;
+  top: 40px;
+  right: 2%;
+}
+/* 메뉴 플렉스박스 */
+.gnb ul {
+  display: flex;
+}
+.gnb li {
+  margin: 0 7px;
+}
+
+.gnb a:hover,
+.gnb li.on a {
+  display: inline-block; 
+  color: black;
+  text-decoration: overline; 
+  transform: scale(1.1);
+}
+
+/* 각 페이지 클래스 */
+.pg1 {
+  background-color: linen;
+}
+.pg2 {
+  background-color: lightgray;
+}
+.pg3 {
+  background-color: lightblue;
+}
+.pg4 {
+  background-color: lavender;
+}
+
+
+/* 인디케이터 */
+.indic {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  /* 세로중앙이동 */
+  left: 5%;
+  width: 20px;
+  /* outline: 3px dotted blue; */
+}
+
+.indic li {
+  width: 100%;
+  height: 10px;
+  margin: 3px 0;
+  cursor: pointer; /* 손가락모양 */
+}
+
+/* a요소 */
+.indic a {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin-top: 4px;
+  background-color: #777;
+  box-shadow: 1px 1px 1px black;
+  transition: width 0.4s;
+}
+
+
+.indic li:hover a,
+.indic li.on a {
+  width: 150%;
+  background-color: #8f8d8d;
+}
+
+
+.indic span {
+  display: none;
+}
