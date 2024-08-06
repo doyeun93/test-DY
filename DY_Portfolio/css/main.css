@@ -100,7 +100,7 @@ a {
   display: flex;
 }
 .gnb li {
-  margin: 0 7px;
+  margin: 0 20px;
 }
 
 .gnb a:hover,

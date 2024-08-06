@@ -1,25 +1,19 @@
-
+import mfn from "./my_function.js";
 
 
 // 1. 전역변수 설정하기
-// 1-1. 페이지변수
 let pgNum = 0;
-// 1-2. 휠 상태변수(true는 막기 , false는 통과)
-let stsWheel = false;
-// 1-3. .page클래스 요소
-const elePage = document.querySelectorAll('.page');
-// 1-4. 전체페이지수
-const totalCnt = elePage.length;
-console.log('대상:', elePage, totalCnt,'개');
 
+let stsWheel = false;
+
+const elePage = document.querySelectorAll('.page');
+
+const totalCnt = elePage.length;
 
 
 // 2. 이벤트 등록하기 ////////////
 window.addEventListener('wheel',wheelFn,{passive:false});
 
-
-// [새로 고침시 스크롤바 위치 인덱싱이 되므로 맨 위로 강제 이동하기 설정]
-// scrollTo(x축이동,y축이동)
 setTimeout(() => {
     window.scrollTo(0,0);
 }, 500);
@@ -27,29 +21,20 @@ setTimeout(() => {
 
 //////////////// 3. 함수 구현하기 ///////////////////////
 
-
-function wheelFn(e){ // 이벤트전달변수(자동)
-    // 함수호출확인!
-    console.log('휠~~~!');
-
-    // 1. 우리는 휠 기본 기능을 막고 자동으로 스크롤을 하나씩 되게 할 것
-    
+function wheelFn(e){ 
     e.preventDefault();
     // -> passive:false 설정해야함 (윈도우라서)
     
     //// 2. 광 휠 금지 장치
-    if(stsWheel) return; // 돌아가
-    stsWheel = true;  // 잠금
+    if(stsWheel) return; 
+    stsWheel = true; 
     setTimeout(() => {
-        stsWheel = false; // 잠금해제
+        stsWheel = false; 
     }, 500);
 
 
     // 3. 휠 방향 알아내기
     let delta = e.wheelDelta;
-    // 휠 델타는 이벤트 객체에서 리턴해주는 방향, 이동거리 등의 정보값 
-   
-    // -> 마이너스가 아랫방향
 
     // 4. 방향별 분기하기
     if(delta<0){
@@ -68,7 +53,6 @@ function wheelFn(e){ // 이벤트전달변수(자동)
             pgNum = 0;
         }
     } // else //////
-    console.log('pgNum: ', pgNum);
 
 
     // 5. 페이지 이동하기
@@ -83,14 +67,8 @@ function wheelFn(e){ // 이벤트전달변수(자동)
     // 6. 해당 메뉴 순번 on 넣기 , 나머지 on빼기
     chgMenu(pgNum);
    
-   
-  
-
 } /////////// wheelFn 함수 ////////////////
 ///////////////////////////////////////////
-
-
-
 
 
 const gnb = document.querySelectorAll(".gnb a");
@@ -107,15 +85,12 @@ const indic = document.querySelectorAll(".indic a");
 }); /////// foreach ////////
 
 
-
 indic.forEach((ele,idx)=>{
     ele.onclick = () =>{
         chgMenu(idx);
     }; /// click 함수
 
 }); /////// foreach ////////
-
-
 
 
 //// [메뉴 변경함수 : .gnb + .indic] ///////////
@@ -131,7 +106,6 @@ function chgMenu(idx){
                 ele.parentElement.classList.add('on');
                 indic[seq].parentElement.classList.add('on');
                        
-
             } ///////////// if //////////
             else{ ///// 기타의 경우 on 지우기
                 ele.parentElement.classList.remove('on');
@@ -144,3 +118,21 @@ function chgMenu(idx){
        
 } /// chgMenu 함수 ///////////
 
+
+// 스킬 영역
+const skill = mfn.qs(".pg2");
+
+let hcode = "<ul>";
+
+for (let i = 0; i <= 5; i++){
+    hcode += `
+    <li>
+        <img src="./images/skill/s${i}.png"
+        alt="스킬로고이미지">    
+    </li>
+    `;
+}
+
+hcode += "</ul>";
+
+skill.innerHTML = hcode;
