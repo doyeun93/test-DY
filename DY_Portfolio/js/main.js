@@ -1,5 +1,3 @@
-import mfn from "./my_function.js";
-
 
 // 1. 전역변수 설정하기
 let pgNum = 0;
@@ -120,11 +118,11 @@ function chgMenu(idx){
 
 
 // 스킬 영역
-const skill = mfn.qs(".pg2");
+const skill = document.querySelector(".pg2");
 
 let hcode = "<ul>";
 
-for (let i = 0; i <= 5; i++){
+for (let i = 1; i <= 5; i++){
     hcode += `
     <li>
         <img src="./images/skill/s${i}.png"
