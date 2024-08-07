@@ -131,15 +131,25 @@
   }
   .intro-tit {
     top: 96%;
+    left: 32%;
     }
     
     .intro-header {
     top: 37%;
     }
+
+    .intro-header::before {
+      margin-left: 16%;
+    }
     
     .intro-mv {
     top: 45%;
     }
+
+    .intro-mtit > ul:last-child > li:first-child {		    
+      padding-top: 6%;
+    }
+    
 }
 
 @media screen and (max-width: 450px) {

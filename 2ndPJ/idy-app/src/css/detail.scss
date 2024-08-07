@@ -6,6 +6,7 @@
   height: 400px;
   background: url(../../public/image/bg_pattern_green.png);
   background-color: #eff9efca;
+  // text-align: center;
 
   h2 {
     position: relative;
@@ -168,6 +169,15 @@
   .lab-detail {
     height: 510vh;
 }
+
+.ldetail-top {
+  h2 {
+    left: 26.3%;
+ }
+   span {
+    left: 26%;
+   }
+ }
 
   .ldetail-txt1 > ul > li:first-child::before {
     top: 214.5%;

@@ -41,7 +41,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 4%;
-  text-align: right;
+  text-align: left;
 
   img {
     width: 100%;
@@ -96,6 +96,14 @@
 //     background: url(../../public/image/ic_scrap.png) no-repeat center / 100% 100%;
 
 // }
+
+@media screen and (max-width: 1470px) {
+  .guide-title {
+      span {
+      left: 15%;
+      }
+    }
+}
 
 @media screen and (max-width: 768px) {
   .guide-sort {

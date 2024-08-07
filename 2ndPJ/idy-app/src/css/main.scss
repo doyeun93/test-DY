@@ -174,7 +174,7 @@ body {
   line-height: 3.2;
 }
 
-// 이미드 슬라이드 구역 //
+// 이미지 슬라이드 구역 //
 .lab-img {
   position: absolute;
   width: auto;
@@ -442,7 +442,7 @@ body {
     margin-top: 5%;
   }
   .cook-bottom > img {
-    margin-top: -4.4%;
+    margin-top: -5.1%;
   }
   .cook-food {
     gap: 30%;
@@ -565,7 +565,8 @@ body {
     top: 38%;
   }
   .header-img {
-    padding-top: 65%;
+    // padding-top: 65%;
+    padding-top: 40%;
   }
 
   // 연구소 구역
@@ -576,7 +577,7 @@ body {
 
   .lab-top ul {
     height: auto;
-    display: block;
+    // display: block;
   }
 .lab-top > ul > li:first-child{
   margin-left: 3%;
@@ -584,6 +585,7 @@ body {
   .lab-top > ul > li:nth-child(2) > img {
     left: 60%;
     margin-top: -21%;
+    display: none;
   }
 
   .lab-top > ul > li:last-child {
@@ -604,7 +606,7 @@ body {
     justify-content: normal;
   }
   .cook-title > li:first-child img {
-    margin-left: 0%;
+    display: none;
   }
 
   .cook-title > li:nth-child(2) {
@@ -612,7 +614,7 @@ body {
   }
 
   .cook-title > li:last-child {
-    width: 23%;
+    width: 27%;
     margin-right: 0%;
   }
   .cook-img {
@@ -626,7 +628,8 @@ body {
     margin-left: 0.4%;
   }
   .cook-bottom > img {
-    margin-top: -31.7%;
+    // margin-top: -31.7%;
+    margin-top: -29.9%;
   }
 
   .cook-food {

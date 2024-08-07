@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/test-DY/2ndPJ/idy-app/build/static/css/main.b273403d.css",
-    "main.js": "/test-DY/2ndPJ/idy-app/build/static/js/main.286b54b3.js",
+    "main.css": "/test-DY/2ndPJ/idy-app/build/static/css/main.ecb3fd01.css",
+    "main.js": "/test-DY/2ndPJ/idy-app/build/static/js/main.dfa4e21b.js",
     "static/media/DoHyeon-Regular.woff": "/test-DY/2ndPJ/idy-app/build/static/media/DoHyeon-Regular.e6625971835bbc1bda75.woff",
     "static/media/bg_pattern.png": "/test-DY/2ndPJ/idy-app/build/static/media/bg_pattern.d539959836c553884345.png",
     "static/media/bg_pattern_pink.png": "/test-DY/2ndPJ/idy-app/build/static/media/bg_pattern_pink.596f89254b86afd6e134.png",
@@ -9,11 +9,11 @@
     "static/media/mv_btns.png": "/test-DY/2ndPJ/idy-app/build/static/media/mv_btns.1eef2593b6cbc9dcfce2.png",
     "static/media/samie7.png": "/test-DY/2ndPJ/idy-app/build/static/media/samie7.f6271870ca03e350765f.png",
     "index.html": "/test-DY/2ndPJ/idy-app/build/index.html",
-    "main.b273403d.css.map": "/test-DY/2ndPJ/idy-app/build/static/css/main.b273403d.css.map",
-    "main.286b54b3.js.map": "/test-DY/2ndPJ/idy-app/build/static/js/main.286b54b3.js.map"
+    "main.ecb3fd01.css.map": "/test-DY/2ndPJ/idy-app/build/static/css/main.ecb3fd01.css.map",
+    "main.dfa4e21b.js.map": "/test-DY/2ndPJ/idy-app/build/static/js/main.dfa4e21b.js.map"
   },
   "entrypoints": [
-    "static/css/main.b273403d.css",
-    "static/js/main.286b54b3.js"
+    "static/css/main.ecb3fd01.css",
+    "static/js/main.dfa4e21b.js"
   ]
 }
