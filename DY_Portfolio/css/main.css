@@ -169,6 +169,6 @@ a {
 
 
 /* skill */
-.pg2 > {
-  
+.pg2 > ul >li{
+  height: 100px;
 }
