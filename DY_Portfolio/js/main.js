@@ -22,14 +22,12 @@ setTimeout(() => {
 function wheelFn(e){ 
     e.preventDefault();
     // -> passive:false 설정해야함 (윈도우라서)
-    
     //// 2. 광 휠 금지 장치
     if(stsWheel) return; 
     stsWheel = true; 
     setTimeout(() => {
         stsWheel = false; 
     }, 500);
-
 
     // 3. 휠 방향 알아내기
     let delta = e.wheelDelta;
@@ -134,3 +132,7 @@ for (let i = 1; i <= 5; i++){
 hcode += "</ul>";
 
 skill.innerHTML = hcode;
+
+
+
+

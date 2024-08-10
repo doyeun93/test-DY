@@ -167,13 +167,19 @@ a {
   display: none;
 }
 
+.skill{
+  
+}
 
 /* skill */
 .pg2 > ul >li{
   height: 150px;
 }
+.pg2 > ul >li:first-child{
+  padding-top: 5%;
+}
 .pg2 > ul >li >img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  margin-left: 30%;
+  width: 500px;
+  height: 150px;
 }
