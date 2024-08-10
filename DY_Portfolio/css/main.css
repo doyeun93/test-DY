@@ -167,9 +167,6 @@ a {
   display: none;
 }
 
-.skill{
-  
-}
 
 /* skill */
 .pg2 > ul >li{
@@ -179,7 +176,7 @@ a {
   padding-top: 5%;
 }
 .pg2 > ul >li >img{
-  margin-left: 30%;
+  margin-left: 33%;
   width: 500px;
   height: 150px;
 }
