@@ -173,10 +173,10 @@ a {
   height: 150px;
 }
 .pg2 > ul >li:first-child{
-  padding-top: 5%;
+  /* padding-top: 5%; */
 }
 .pg2 > ul >li >img{
-  margin-left: 33%;
-  width: 500px;
-  height: 150px;
+  margin-left: 34%;
+  width: 490px;
+  height: 130px;
 }
