@@ -1,9 +1,6 @@
-/* 게시판 모듈용 CSS - cookqna.scss  */
 
 .cookqna-top {
   height: 220vh;
-  // background-image: url("../../public/image/bg_pattern_pink.png");
-  // background-color: #fff3f363;
 }
 
 .cookqna-title {
@@ -157,7 +154,7 @@
         padding: 위 오른왼 아래;(3개)
         padding: 위아래 오른왼;(2개)
         padding: 모든방향;(1개)
-     */
+  */
 }
 
 /* 보드 메인리스트 a요소 말줄임표시하기 */
@@ -279,8 +276,6 @@
   padding: 8px 40px;
   background-color: #fff;
   color: #000;
-  // font-weight: bold;
-  // font-family: "Ubuntu Condensed", sans-serif;
   font-size: 15px;
   transition: 0.3s;
   margin-top: 20px;
@@ -297,6 +292,9 @@
 }
 
 @media screen and (max-width: 1470px) {
+  .cookqna-top {
+    height: 232vh;
+  }
   .cookqna-text {
     width: 1200px;
     margin-left: 10%;

@@ -1,5 +1,4 @@
 
-
 .cookcook-top{
     height: 220vh;
     background-image: url("../../public/image/bg_pattern_pink.png");
@@ -293,13 +292,16 @@
   
 
   @media screen and (max-width: 1470px) {
+    .cookcook-top {
+      height: 232vh;
+    }
     .cookcook-text {
       width: 1200px;
       margin-left: 10%;
     } 
     .cook-write > img {
-      //맥북 margin-top: -3.5%;
-      margin-top: -1.9%;
+      margin-top: -3.3%;
+      // margin-top: -1.9%;
       margin-left: 2.4%;
     }
     .cook-cook > a {
