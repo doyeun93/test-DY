@@ -251,7 +251,7 @@ function Scrap(props) {
           </table>
         </section>
       </div>
-      {/* 카트 버튼 이미지 박스 */}
+      {/* 스크랩 버튼 이미지 박스 */}
       <div
         id="myScrap"
         onClick={(e) => {
@@ -260,7 +260,7 @@ function Scrap(props) {
           $("#scraplist").animate({ right: "0" }, 400);
         }}
       >
-        {/* 카트 이미지  */}
+        {/* 스크랩 이미지  */}
         <img
           src={process.env.PUBLIC_URL + `/image/ic_scrap.png`}
           title={dataCnt}
