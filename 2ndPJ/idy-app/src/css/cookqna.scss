@@ -147,14 +147,6 @@
 .dtbl td,
 .dtbl th {
   padding: 13px;
-  /*위아래, 양쪽*/
-  /*
-        padding은 안쪽 공간-> 기존박스가 커짐
-        padding: 위 오른 아래 왼;(4개)
-        padding: 위 오른왼 아래;(3개)
-        padding: 위아래 오른왼;(2개)
-        padding: 모든방향;(1개)
-  */
 }
 
 /* 보드 메인리스트 a요소 말줄임표시하기 */
@@ -163,7 +155,6 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  /* 가로크기 지정(최대361px) */
   width: min(361px, 40vw);
 }
 
@@ -187,13 +178,11 @@
 .dtbl tbody tr td {
   /*본문 td 밑줄*/
   border-bottom: 1px solid #ccc;
-  /*두종색*/
 }
 
 .dtbl thead tr th {
   /*머리줄 th 윗줄*/
   border-top: 2px solid #999;
-  /*두종색*/
   border-bottom: 1px solid #999;
 }
 
@@ -215,20 +204,16 @@
 /* tfoot의 td에 padding 및 글자중앙 적용하기 */
 .dtbl tfoot td {
   text-align: center;
-  /*글자중앙정렬*/
   padding: 80px 0px;
-  /*위아래,우좌 padding설정*/
 }
 
 /* 내용보기 */
 .dtblview {
-  // font-family: "Ubuntu Condensed", sans-serif;
   font-size: 34px;
   border-collapse: collapse;
   width: 750px;
   margin: 20px auto;
   border-top: 2px solid #999;
-  /*두종색*/
   border-bottom: 2px solid #999;
 }
 
@@ -298,7 +283,7 @@
   .cookqna-text {
     width: 1200px;
     margin-left: 10%;
-} 
+  } 
   .cook-Qna > img {
     //맥북 margin-top: -5%;
     margin-top: -3.4%;
@@ -318,7 +303,7 @@
   .cookqna-text {
     width: auto;
     margin-left: auto;
-}
+  }
   .cook-Qna {
     width: 96%;
     margin-left: 0.9%;
@@ -369,5 +354,7 @@
   .dtblview td:first-child {
     width: 76px;
   }
-
+  #board tbody td a {
+    width: min(361px, 36vw);
+  }
 }

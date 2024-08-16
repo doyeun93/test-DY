@@ -184,13 +184,11 @@
   .dtbl tbody tr td {
     /*본문 td 밑줄*/
     border-bottom: 1px solid #ccc;
-    /*두종색*/
   }
   
   .dtbl thead tr th {
     /*머리줄 th 윗줄*/
     border-top: 2px solid #999;
-    /*두종색*/
     border-bottom: 1px solid #999;
   }
   
@@ -204,7 +202,6 @@
 
   /*짝수번째 배경색 넣기*/
   .dtbl tbody tr:nth-child(even) td {
-    /*even 짝수, odd 홀수*/
     background-color: #f3f3f3;
   }
   
@@ -212,20 +209,16 @@
   /* tfoot의 td에 padding 및 글자중앙 적용하기 */
   .dtbl tfoot td {
     text-align: center;
-    /*글자중앙정렬*/
     padding: 80px 0px;
-    /*위아래,우좌 padding설정*/
   }
   
   /* 내용보기 */
   .dtblview {
-    // font-family: "Ubuntu Condensed", sans-serif;
     font-size: 34px;
     border-collapse: collapse;
     width: 750px;
     margin: 20px auto;
     border-top: 2px solid #999;
-    /*두종색*/
     border-bottom: 2px solid #999;
   }
 
@@ -273,8 +266,6 @@
     padding: 8px 40px;
     background-color: #fff;
     color: #000;
-    // font-weight: bold;
-    // font-family: "Ubuntu Condensed", sans-serif;
     font-size: 15px;
     transition: 0.3s;
     margin-top: 20px;

@@ -18,7 +18,7 @@ export const TopArea = memo(({loginMsg,loginSts,logoutFn,goPage}) =>{
     $(".hbox").css({left:"0"});
   };
 
-  // 1. 검색창 보이기 함수
+  // 검색창 보이기 함수
   const showSearch = (e) => {
     e.preventDefault();
     $(".searchingGnb").show();
@@ -151,9 +151,6 @@ export const TopArea = memo(({loginMsg,loginSts,logoutFn,goPage}) =>{
                   />
                   <div className="schhbtn"
                   onClick={hideSearch}>✕</div>
-                  {/* <button 
-                  style={{marginLeft:"-3%"}}
-                  ></button> */}
                 </div>
                 {/* 검색기능링크 - 클릭시 검색창 보이기 */}
                 <a href="#" onClick={showSearch}>

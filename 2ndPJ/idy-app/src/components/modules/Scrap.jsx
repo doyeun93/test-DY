@@ -42,10 +42,10 @@ function Scrap(props) {
               <col span="1" style={{ width: "7%" }} />
               <col span="1" style={{ width: "14%" }} />
               <col span="1" style={{ width: "18%" }} />
-              <col span="1" style={{ width: "24%" }} />
-              <col span="1" style={{ width: "12%" }} />
+              <col span="1" style={{ width: "25%" }} />
+              <col span="1" style={{ width: "16%" }} />
               <col span="1" style={{ width: "10%" }} />
-              <col span="1" style={{ width: "7%" }} />
+              <col span="1" style={{ width: "3%" }} />
               <col span="1" style={{ width: "14%" }} />
             </colgroup>
             {/* 테이블 제목 */}
