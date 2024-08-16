@@ -25,6 +25,13 @@ export const TopArea = memo(({loginMsg,loginSts,logoutFn,goPage}) =>{
     $("#schinGnb").focus();
   }; /////// showSearch /////////////////////////////////
 
+
+  //  검색창 숨기기 함수
+  const hideSearch = (e) => {
+    e.preventDefault();
+    $(".searchingGnb").hide();
+  }
+
   const enterKey = (e) => {
     console.log(e.key, e.keyCode);
     if (e.key == "Enter") {
@@ -142,6 +149,11 @@ export const TopArea = memo(({loginMsg,loginSts,logoutFn,goPage}) =>{
                     placeholder="어떤 요리가 궁금하신가요?"
                     onKeyUp={enterKey}
                   />
+                  <div className="schhbtn"
+                  onClick={hideSearch}>✕</div>
+                  {/* <button 
+                  style={{marginLeft:"-3%"}}
+                  ></button> */}
                 </div>
                 {/* 검색기능링크 - 클릭시 검색창 보이기 */}
                 <a href="#" onClick={showSearch}>
