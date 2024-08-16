@@ -311,8 +311,11 @@
   @media screen and (max-width: 450px) {
     .cookcook-title span {
       top: 58%;
-  }
-
+    }
+    .cookcook-text {
+      width: auto;
+      margin-left: auto;
+    }
     .cook-write {
       width: 96%;
       margin-left: 0.9%;
@@ -362,7 +365,9 @@
     .dtblview td:first-child {
       width: 76px;
     }
-
+    #board tbody td a {
+      width: min(361px, 36vw);
+    }
   }
   
 
