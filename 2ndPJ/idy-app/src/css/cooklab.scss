@@ -54,6 +54,7 @@
 
 .cooklab-text > ul > li.on {
   background-color: #fff9e2;
+  border-radius: 3.0625rem 0 0 3.0625rem;
 }
 
 
@@ -151,6 +152,10 @@
         left: 15%;
       }
     }
+    .cooklab-text {
+      width: 1050px;
+      margin-left: 14%;
+  }  
 }
 
 

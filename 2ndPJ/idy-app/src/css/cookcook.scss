@@ -21,7 +21,6 @@
 .cookcook-text {
     position: relative;
     border: solid 1px #e5e5e5;
-  
     border-radius: 3.0625rem; 
   }     
   
@@ -59,6 +58,7 @@
   }
   .cookcook-text > ul > li.on {
     background-color: #fff9e2;
+    border-radius: 3.0625rem 0 0 3.0625rem;
   }
 
 
@@ -293,6 +293,10 @@
   
 
   @media screen and (max-width: 1470px) {
+    .cookcook-text {
+      width: 1200px;
+      margin-left: 10%;
+    } 
     .cook-write > img {
       //맥북 margin-top: -3.5%;
       margin-top: -1.9%;

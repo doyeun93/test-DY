@@ -58,6 +58,7 @@
   }
   .cooksol-text > ul > li.on {
     background-color: #fff9e2;
+    border-radius: 0 3.0625rem 3.0625rem 0;
   }
   
   // 정렬 구역
@@ -152,6 +153,10 @@
           left: 15%;
         }
       }
+    .cooksol-text {
+        width: 1050px;
+        margin-left: 14%;
+    } 
   }
   
   @media screen and (max-width: 450px) {
