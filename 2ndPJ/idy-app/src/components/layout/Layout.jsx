@@ -12,25 +12,23 @@ function Layout() {
 
   let scrapTemp = false;
 
-  // 로컬스 카트 데이터 상태변수 
+  // 로컬 스크랩 데이터 상태변수 
   const [localsScrap, setLocalsScrap] = useState(localStorage.getItem("scrap-data"));
 
-  // 로컬스 카트 데이터 존재 여부에 따라 상태값 변경
+  // 로컬 스크랩 데이터 존재 여부에 따라 상태값 변경
   if(localsScrap){
-    // 데이터가 있으면 scrapTemp값 true로 변경
-    // 데이터 개수가 0이 아니여야 함
     let scrapCnt = JSON.parse(localsScrap).length;
     
 
     if(scrapCnt > 0) scrapTemp = true; 
     
-  } // 카트 존재여부 if ////////////////
+  } 
 
   const [scrapSts, setScrapSts] = useState(scrapTemp);
 
   
     // 상태관리 변수 ///
-    // 1. 로그인 상태관리 변수 -> 초기값으로 세션스토리지 "minfo"를 할당함
+    // 1. 로그인 상태관리 변수 -> 초기값으로 세션스토리지 "minfo"를 할당
     const [loginSts, setLoginSts] = 
     useState(sessionStorage.getItem("minfo"));
 
@@ -39,12 +37,9 @@ function Layout() {
     const [loginMsg, setLoginMsg] = useState(null);
 
     // [ 공통 함수]
-    // 1. 라우팅 이동 함수 : 라우팅 이동후크인 useNavigate는 
-    // 다른 useCallback() 후크로 처리할 수 없다. 따라서 별도의 함수를 만들고 콜백처리해준다
-    // -> const goPage = useCallback
+    // 1. 라우팅 이동 함수 
     const goNav = useNavigate();
 
-    // 함수메모처리위해 useCallback()에 넣어준다 -> 기억해놨다가 나중에 불러와서 쓰려고
     const goPage = useCallback((pm1, pm2) => {
         goNav(pm1,pm2);
     }, []);
