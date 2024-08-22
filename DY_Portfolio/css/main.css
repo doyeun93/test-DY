@@ -170,6 +170,7 @@ a {
 
 /* project */
 
+
 .pbox{
   overflow: hidden;
 }
@@ -188,7 +189,7 @@ a {
     aspect-ratio: 664/443;
     box-sizing: border-box;
 }
-.pbox li img{
+.pbox > ul > li > img{
   width: 10%;
   height: 10%;
   /* object-fit: cover; */
