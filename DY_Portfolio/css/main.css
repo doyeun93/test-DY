@@ -170,15 +170,38 @@ a {
 
 /* project */
 
+.pbox{
+  overflow: hidden;
+}
+.pbox ul{
+  display: flex;
+  list-style: none;    
+  margin: 0;
+  padding: 0;  
+}
+.pbox li{
+    width: 25vw;
+    padding: 1vw;
+    /* 플렉스 부모박스크기에 맞춰 줄이기 
+    -> 0을 쓰면 맞춰서 안줄이겠다는 뜻*/
+    flex-shrink: 0;
+    aspect-ratio: 664/443;
+    box-sizing: border-box;
+}
+.pbox li img{
+  width: 10%;
+  height: 10%;
+  /* object-fit: cover; */
+}
 
 
 /* skill */
 .pg2 > ul >li{
   height: 150px;
 }
-.pg2 > ul >li:first-child{
-  /* padding-top: 5%; */
-}
+/* .pg2 > ul >li:first-child{
+  /* padding-top: 5%; 
+} */
 .pg2 > ul >li >img{
   margin-left: 34%;
   width: 490px;

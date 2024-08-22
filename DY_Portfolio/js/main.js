@@ -1,3 +1,4 @@
+// import project from "./project.js";
 
 // 1. 전역변수 설정하기
 let pgNum = 0;
@@ -133,7 +134,15 @@ hcode += "</ul>";
 skill.innerHTML = hcode;
 
 
-// 프로젝트 영역
+
+
+/////// 프로젝트 영역 //////////
+const qsEl = (el, x) => el.querySelector(x);
+const qsaEl = (el, x) => el.querySelectorAll(x);
+const addEvt = (ele, evt, fn) => ele.addEventListener(evt, fn);
+  
+
+
 const pbox = document.querySelector(".pg3");
 
 let pcode = "<ul>";
@@ -154,18 +163,18 @@ pcode += "</ul>";
 pbox.innerHTML = pcode;
 
 
-let target = el.querySelector(pbox,'ul');
+let target = qsEl(pbox,'ul');
 
 
 // 기준값 업데이트 함수 : 윈도우 가로폭의 1/4 => li 하나 크기
 // window.innerWidth/4
-const updateCriteria = () => el.querySelectorAll(target,"li")[0].offsetWidth;
+const updateCriteria = () => qsaEl(target,"li")[0].offsetWidth;
 
 // 기준값(대상 li의 가로크기값)
 let criteria = updateCriteria();
 
 // 리사이즈시 업데이트
-ele.addEventListener(window,"resize",
+addEvt(window,"resize",
     ()=> {criteria = updateCriteria();  
 });
 
@@ -182,7 +191,7 @@ function moveGallery(){
     if(currVal <= Math.floor(-criteria)){
         // 1. 맨앞 li 맨뒤로 이동 /  appendChild(맨앞 li)
         // 맨 앞 li는 새로 구해와야함(계속 변경되기때문에)
-        target.appendChild(mFn.qsaEl(target,"li")[0]);
+        target.appendChild(qsaEl(target,"li")[0]);
 
 
         // 2. translate 값 초기화
@@ -193,7 +202,7 @@ function moveGallery(){
 
     } ///////////////// if 문 /////////
     
-    // 재귀호출(타임아웃함수로 호출함)
+    // 타임아웃함수로 호출
     // stopSts 변수값이 false일 때만 실행하기
     if(!stopSts)
     setTimeout(moveGallery,10);
@@ -201,22 +210,23 @@ function moveGallery(){
 } //////// moveGallery ///////////////
 
 
-// 대상에 마우스 오버시 멈추고 아웃시 다시 흘러가게하기
+
 // 멈춤상태 변수
 let stopSts = false;
 
-
-ele.addEventListener(gbox,"mouseenter",()=>{
+addEvt(pbox,"mouseenter",()=>{
     //  멈춤상태변수 true변경
     stopSts = true;
-
 });
 
-ele.addEventListener(gbox,"mouseleave",()=>{
+addEvt(pbox,"mouseleave",()=>{
     //  멈춤상태변수 false 변경
     stopSts = false;
     // 재귀호출함수 호출하기
     moveGallery();
 });
+
+
+
 
 
