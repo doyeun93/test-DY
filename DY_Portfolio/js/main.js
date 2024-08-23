@@ -147,10 +147,11 @@ const pbox = document.querySelector(".proj1");
 let pcode = "<ul>";
 
 
+{/* <a href="https://doyeun93.github.io/IDY-PJ-LIVE/main.html"> */}
 for(let i=1; i<=7; i++) {
     pcode += `
         <li>
-            <a href="https://doyeun93.github.io/IDY-PJ-LIVE/main.html">
+            <a href="./project1.html">
                 <img src="./images/project/p1_${i}.png" 
                 alt="갤러리이미지">
             </a>
