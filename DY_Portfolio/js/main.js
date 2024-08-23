@@ -1,4 +1,4 @@
-// import project from "./project.js";
+
 
 // 1. 전역변수 설정하기
 let pgNum = 0;
@@ -22,7 +22,6 @@ setTimeout(() => {
 
 function wheelFn(e){ 
     e.preventDefault();
-    // -> passive:false 설정해야함 (윈도우라서)
     //// 2. 광 휠 금지 장치
     if(stsWheel) return; 
     stsWheel = true; 
@@ -65,7 +64,7 @@ function wheelFn(e){
     chgMenu(pgNum);
    
 } /////////// wheelFn 함수 ////////////////
-///////////////////////////////////////////
+
 
 
 const gnb = document.querySelectorAll(".gnb a");
@@ -143,7 +142,7 @@ const addEvt = (ele, evt, fn) => ele.addEventListener(evt, fn);
   
 
 
-const pbox = document.querySelector(".pg3");
+const pbox = document.querySelector(".proj1");
 
 let pcode = "<ul>";
 
@@ -151,8 +150,10 @@ let pcode = "<ul>";
 for(let i=1; i<=7; i++) {
     pcode += `
         <li>
-            <img src="./images/project/p1_${i}.png" 
-            alt="갤러리이미지">
+            <a href="https://doyeun93.github.io/IDY-PJ-LIVE/main.html">
+                <img src="./images/project/p1_${i}.png" 
+                alt="갤러리이미지">
+            </a>
         </li>
     `;
 } ///// for /////
@@ -178,7 +179,6 @@ addEvt(window,"resize",
     ()=> {criteria = updateCriteria();  
 });
 
-
 // 현재 translate 값
 let currVal = 0;
 
@@ -192,7 +192,6 @@ function moveGallery(){
         // 1. 맨앞 li 맨뒤로 이동 /  appendChild(맨앞 li)
         // 맨 앞 li는 새로 구해와야함(계속 변경되기때문에)
         target.appendChild(qsaEl(target,"li")[0]);
-
 
         // 2. translate 값 초기화
         target.style.translate =  "0px";

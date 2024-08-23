@@ -1,9 +1,5 @@
 @charset "utf-8";
 
-body * {
-  /* outline: 1px dashed #fc8785; */
-}
-
 /* 기본 초기화 */
 html,
 body,
@@ -77,19 +73,8 @@ a {
   text-align: center;
   font-size: 2.4vw;
 }
-/* 1-1.로고 */
-#logo {
-  width: 250px;
-  height: 100%;
-  text-align: center;
-  overflow: hidden;
-}
-#logo img {
-  width: 100%;
-  margin-top: -24px;
-}
 
-/* 1-2. GNB 메뉴 */
+/* GNB 메뉴 */
 .gnb {
   position: absolute;
   top: 40px;
@@ -141,7 +126,7 @@ a {
   width: 100%;
   height: 10px;
   margin: 3px 0;
-  cursor: pointer; /* 손가락모양 */
+  cursor: pointer; 
 }
 
 /* a요소 */
@@ -162,49 +147,77 @@ a {
   background-color: #8f8d8d;
 }
 
-
 .indic span {
   display: none;
 }
 
 
+
+/* about */
+.atop{
+  height: 41vh;
+  outline: 1px solid;
+}
+.intro{
+  padding-top: 3%;
+}
+.intro > ul{
+  display: flex;
+  justify-content: space-around;
+}
+.intro > ul > li{
+
+}
+
+.abottom{
+  height: 45vh;
+  outline: 1px solid lightcoral;
+}
+
+/* skill */
+.pg2 > ul {
+  padding-top: 3%;
+}
+.pg2 > ul >li{
+  height: 150px;
+}
+.pg2 > ul >li >img{
+  margin-left: 34%;
+  width: 490px;
+  height: 130px;
+}
+
+
 /* project */
-
-
-.pbox{
+.proj1{
+  height: 35vh; 
   overflow: hidden;
 }
-.pbox ul{
+.proj1 > ul{
   display: flex;
   list-style: none;    
   margin: 0;
   padding: 0;  
 }
-.pbox li{
-    width: 25vw;
-    padding: 1vw;
-    /* 플렉스 부모박스크기에 맞춰 줄이기 
-    -> 0을 쓰면 맞춰서 안줄이겠다는 뜻*/
-    flex-shrink: 0;
-    aspect-ratio: 664/443;
-    box-sizing: border-box;
+.proj1 > ul > li{
+  width: 24vw;
+  padding: 1vw;
+  margin-top: 2.8%;
+  flex-shrink: 0;
+  aspect-ratio: 670/450;
+  box-sizing: border-box;
 }
-.pbox > ul > li > img{
-  width: 10%;
-  height: 10%;
-  /* object-fit: cover; */
+.proj1 > ul > li > a > img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-
-/* skill */
-.pg2 > ul >li{
-  height: 150px;
+.proj2{
+  height: 31vh;
+  outline: 1px dotted;
 }
-/* .pg2 > ul >li:first-child{
-  /* padding-top: 5%; 
-} */
-.pg2 > ul >li >img{
-  margin-left: 34%;
-  width: 490px;
-  height: 130px;
+.proj3{
+  height: 31vh;
+  outline: 1px dotted;
 }

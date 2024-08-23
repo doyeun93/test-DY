@@ -1,3 +1,20 @@
+<!-- <h1>Welcome to my page!</h1>
+    <p>This is my first HTML page.</p>
+    <img src="image/doyeon.jpg" alt="doyeon" width="200" height="200">
+    <p>Name: À±À¯Ä­</p>
+    <p>Age: 25</p>
+    <p>Address: Seoul, South Korea</p>
+    <p>Email: doyeon.kim@gmail.com</p>
+    <p>Phone: 010-1234-5678</p>
+    <a href="https://www.naver.com">Visit Naver</a>
+    <br>
+    <a href="https://www.daum.net">Visit Daum</a>
+    <br> -->
+
+
+
+
+
 const qsEl = (el, x) => el.querySelector(x);
 const qsaEl = (el, x) => el.querySelectorAll(x);
 
