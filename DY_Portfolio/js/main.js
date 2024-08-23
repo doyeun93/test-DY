@@ -161,12 +161,12 @@ for(let i=1; i<=7; i++) {
 
 pcode += "</ul>";
 
-
 pbox.innerHTML = pcode;
-
 
 let target = qsEl(pbox,'ul');
 
+
+const pbox1 = document.querySelector(".proj2");
 
 // 기준값 업데이트 함수 : 윈도우 가로폭의 1/4 => li 하나 크기
 // window.innerWidth/4
