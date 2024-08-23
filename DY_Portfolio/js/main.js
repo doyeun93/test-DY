@@ -189,35 +189,55 @@ let target1 = qsEl(pbox1,'ul');
 // 기준값 업데이트 함수 : 윈도우 가로폭의 1/4 => li 하나 크기
 // window.innerWidth/4
 const updateCriteria = () => qsaEl(target,"li")[0].offsetWidth;
+const updateCriteria1 = () => qsaEl(target1,"li")[0].offsetWidth;
 
 // 기준값(대상 li의 가로크기값)
 let criteria = updateCriteria();
+let criteria1 = updateCriteria1();
+
 
 // 리사이즈시 업데이트
 addEvt(window,"resize",
-    ()=> {criteria = updateCriteria();  
+()=> {criteria = updateCriteria();  
+});
+addEvt(window,"resize",
+()=> {criteria1 = updateCriteria1();  
 });
 
 // 현재 translate 값
 let currVal = 0;
+let currVal1 = 0;
 
 
 function moveGallery(){
     // 현재값 1씩 감소
 
     target.style.translate = --currVal + "px";
-
     if(currVal <= Math.floor(-criteria)){
         // 1. 맨앞 li 맨뒤로 이동 /  appendChild(맨앞 li)
         // 맨 앞 li는 새로 구해와야함(계속 변경되기때문에)
         target.appendChild(qsaEl(target,"li")[0]);
-
         // 2. translate 값 초기화
         target.style.translate =  "0px";
-
         // 3. 하나 크기만큼 나가면 currVal값 초기화
         currVal = 0;
+    } ///////////////// if 문 /////////
+    
+    // 타임아웃함수로 호출
+    // stopSts 변수값이 false일 때만 실행하기
+    if(!stopSts)
+    setTimeout(moveGallery,10);
 
+
+    target1.style.translate = --currVal1 + "px";
+    if(currVal1 <= Math.floor(-criteria1)){
+        // 1. 맨앞 li 맨뒤로 이동 /  appendChild(맨앞 li)
+        // 맨 앞 li는 새로 구해와야함(계속 변경되기때문에)
+        target1.appendChild(qsaEl(target1,"li")[0]);
+        // 2. translate 값 초기화
+        target1.style.translate =  "0px";
+        // 3. 하나 크기만큼 나가면 currVal값 초기화
+        currVal1 = 0;
     } ///////////////// if 문 /////////
     
     // 타임아웃함수로 호출
