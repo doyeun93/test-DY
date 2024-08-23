@@ -166,7 +166,25 @@ pbox.innerHTML = pcode;
 let target = qsEl(pbox,'ul');
 
 
+
 const pbox1 = document.querySelector(".proj2");
+
+let pcode1 = "<ul>";
+for(let i=1; i<=7; i++){
+    pcode1 += `
+        <li>
+            <a href="./project2.html">
+                <img src="./images/project/p2_${i}.png" 
+                alt="갤러리이미지">
+            </a>
+        </li>
+    `;
+}
+pcode1 += "</ul>";
+
+pbox1.innerHTML = pcode1;
+
+let target1 = qsEl(pbox1,'ul');
 
 // 기준값 업데이트 함수 : 윈도우 가로폭의 1/4 => li 하나 크기
 // window.innerWidth/4
