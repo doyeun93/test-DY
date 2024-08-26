@@ -257,7 +257,7 @@ function moveGallery2(){
     } ///////////////// if 문 /////////
     
     if(!stopSts)
-    setTimeout(moveGallery2,10);
+    setTimeout(moveGallery2,12);
 } //////// moveGallery2 ///////////////
 
 
@@ -271,7 +271,7 @@ function moveGallery3(){
     } ///////////////// if 문 /////////
     
     if(!stopSts)
-    setTimeout(moveGallery3,14);
+    setTimeout(moveGallery3,18);
 } //////// moveGallery3 ///////////////
 
 
