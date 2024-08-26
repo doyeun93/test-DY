@@ -158,14 +158,6 @@ function Scrap(props) {
                                         .show();
                                     }}
                                   >
-                                    {/* <img
-                                      src={process.env.PUBLIC_URL + "/image/cnt_up.png"}
-                                      alt="증가"
-                                    />
-                                    <img
-                                      src={process.env.PUBLIC_URL + "/image/cnt_down.png"}
-                                      alt="감소"
-                                    /> */}
                                   </b>
                                 </span>
                               </div>
@@ -245,7 +237,7 @@ function Scrap(props) {
             }}
             icon={faBookmark}
           /> */}
-        {/* 카트 상품 개수 출력 박스 */}
+        {/* 상품 개수 출력 박스 */}
         <div className="cntBx">{dataCnt}</div>
       </div>
     </>

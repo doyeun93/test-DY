@@ -23,15 +23,6 @@ export default function CookLab() {
     setLbar(!lbar);
   };
 
-  // 상세페이지
-  // const [ viewList, setViewList] = useState(true);
-
-  // // 2. 상품 데이터 인덱스값 상태관리 변수
-  // const [idx, setIdx] = useState(0);
-
-  // // 3. 선택 아이템 고유 이름 상태관리 변수
-  // const [selItem, setSelItem] = useState("레시피");
-
 
   //// 코드 리턴 구역
   return (

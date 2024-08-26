@@ -1,7 +1,7 @@
-// DC PJ 캐릭터 검색결과 리스트 컴포넌트
+
 import React from "react";
 
-// CSS불러오기
+
 import "../../css/searching.scss";
 
 // 라우터돔 Link

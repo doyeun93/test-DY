@@ -20,10 +20,8 @@ function Searching({ kword }) {
   const [sort, setSort] = useState("asc");
   const [chk,setChk] = useState([true,true]);
 
-  console.log(guideData);
-  console.log(recipeData);
-  // console.log([...guideData,...recipeData,...solutionData,...cookingData]);
-  // 스프레드 연산자(...) : 기존 배열이나 객체의 전체 또는 일부를 다른 배열이나 객체로 빠르게 복사할 수 있음
+  // console.log(guideData);
+  // console.log(recipeData);
 
 
   const selData = [...guideData,...recipeData,...solutionData,...cookingData];
@@ -123,7 +121,6 @@ function Searching({ kword }) {
                     // 체크 변경시 change 이벤트 발생
                     onChange = {(e)=>{
                       // 체크박스의 checked 속성은 체크시 ture, 불체크시 false 리턴
-                      // console.log(e.target.checked);
                       // 훅값 업데이트
                       setChk([e.target.checked,chk[1]]);
                     }}/>
@@ -139,7 +136,6 @@ function Searching({ kword }) {
                      // 체크 변경시 change 이벤트 발생
                      onChange = {(e)=>{
                       // 체크박스의 checked 속성은 체크시 ture, 불체크시 false 리턴
-                      // console.log(e.target.checked);
                       // 훅값 업데이트
                       setChk([e.target.checked,chk[0]]);
                     }}/>
@@ -172,8 +168,7 @@ function Searching({ kword }) {
               <option value="desc">내림차순</option>
             </select>
           </aside>
-          {/* 2-3. 캐릭터 리스트 컴포넌트 : 
-            데이터 상태변수 중 첫번째값만 보냄 */}
+          {/* 2-3. 캐릭터 리스트 컴포넌트 : 데이터 상태변수 중 첫번째값만 보냄 */}
           <SearchingData dt={newList} />
         </div>
       </section>

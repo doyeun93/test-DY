@@ -62,16 +62,15 @@ function LabDetail() {
             });
             
             
-            // 로컬스에 문자화하여 입력하기
+            // 로컬스토리지에 문자화하여 입력하기
             localStorage.setItem("scrap-data", JSON.stringify(locals));
             
-            // 로컬스 카트데이터 상태값 변경
+            // 로컬스토리지 카트데이터 상태값 변경
             myCon.setLocalsScrap(localStorage.getItem("scrap-data"));
 
             // 카트리스트 생성 상태값 변경
             myCon.setScrapSts(true);
 
-            // myCon.goPage("/scrap");
           }}
         >
           <FontAwesomeIcon

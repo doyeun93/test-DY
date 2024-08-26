@@ -12,10 +12,10 @@ function Layout() {
 
   let scrapTemp = false;
 
-  // 로컬 스크랩 데이터 상태변수 
+  // 스크랩 데이터 상태변수 
   const [localsScrap, setLocalsScrap] = useState(localStorage.getItem("scrap-data"));
 
-  // 로컬 스크랩 데이터 존재 여부에 따라 상태값 변경
+  // 스크랩 데이터 존재 여부에 따라 상태값 변경
   if(localsScrap){
     let scrapCnt = JSON.parse(localsScrap).length;
     

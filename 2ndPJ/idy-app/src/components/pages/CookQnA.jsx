@@ -187,9 +187,7 @@ export default function CookQnA() {
 
   // 서브밋 처리함수
   const submitFn = () => {
-    // 제목 입력 항목
     let title = $(".subject").val().trim();
-    // 내용 입력 항목
     let cont = $(".content").val().trim();
     // trim으로 앞 뒤 공백 제거 후 검사
 
@@ -223,7 +221,6 @@ export default function CookQnA() {
         unm: person.unm,
         cnt: "0",
       };
-      // console.log("글쓰기 서브밋:", data);
 
       // 파일전송 실패상태변수
       let isFail = false;
@@ -254,13 +251,13 @@ export default function CookQnA() {
         return;
       } /////// if //////////
 
-      // [4] 로컬스에 입력하기
-      // (1) 로컬스에 파싱
+      // [4] 로컬스토리지에 입력하기
+      // (1) 로컬스토리지에 파싱
       let locals = localStorage.getItem("board-data");
       locals = JSON.parse(locals);
       // (2) 파싱 배열에 push
       locals.push(data);
-      // (3) 새배열을 문자화하여 로컬스에 넣기
+      // (3) 새배열을 문자화하여 로컬스토리지에 넣기
       localStorage.setItem("board-data", JSON.stringify(locals));
 
       // 4. 추가후 리스트 리랜더링시 리스트 불일치로 인한
@@ -281,14 +278,12 @@ export default function CookQnA() {
 
       // [2] 현재 데이터 idx값
       let currIdx = selRecord.current.idx;
-      // [3] 기존 데이터로 찾아서 변경하기 : 로컬스 데이터(basedata)
-      // find()는 특정항목을 찾아서 리턴하여 데이터를 가져오고, 업데이트 등 작업도 가능함
+      // [3] 기존 데이터로 찾아서 변경하기 : 로컬스토리지 데이터(basedata)
       baseData.find((v) => {
         console.log(v, selRecord);
         if (v.idx == currIdx) {
           // [ 업데이트 작업하기 ]
           // 이미 선택된 selRecord 참조변수의 글번호인 idx로 원본 데이터를 조회하여 기존 데이터를 업데이트함
-          // 기존 항목 변경 : tit, cont
           // (1) 글제목 : tit
           v.tit = title;
           // (2) 글내용 : cont
@@ -296,12 +291,11 @@ export default function CookQnA() {
           // (3) 수정일 : mdate
           v.mdate = today.toJSON().substr(0, 10); // 수정일
 
-          // 해당 항목을 만나면 끝남
           return true;
         }
       }); /////// find /////
 
-      // [4] 로컬스에 업데이트하기
+      // [4] 로컬스토리지에 업데이트하기
       localStorage.setItem("board-data", JSON.stringify(baseData));
 
       // [5]리스트로 돌아가기 -> 모드 변경 "L"
@@ -581,14 +575,14 @@ const ListMode = ({
 const ReadMode = ({ selRecord, sts }) => {
   const data = selRecord.current;
 
-  // 1. 없으면 세션스 만들기
+  // 1. 없으면 세션스토리지 만들기
   if (!sessionStorage.getItem("bd-rec")) {
     sessionStorage.setItem("bd-rec", "[]");
   }
 
-  // 2. 세션스에 글번호 저장하기
+  // 2. 세션스토리지에 글번호 저장하기
 
-  // (1) 세션스 파싱하여 변수할당
+  // (1) 세션스토리지 파싱하여 변수할당
   let rec = JSON.parse(sessionStorage.getItem("bd-rec"));
 
   // (2) 기존 배열값에 현재글번호 존재여부 검사하기
@@ -599,7 +593,6 @@ const ReadMode = ({ selRecord, sts }) => {
   // sts가 true면 즉, 로그인한 사용하지면 처리
   if (sts) {
     console.log("선택글 아이디 : ", data.uid, "로그인 사용자 아이디:", JSON.parse(sts).uid);
-    // 글쓴이 아이디와 로그인 사용자 아이디가 같은가?
     if (data.uid == JSON.parse(sts).uid) {
       // 글번호 저장과 조회수 증가를 하지 않도록 isRec값을 true로 변경한다
       isRec = true;
@@ -609,13 +602,13 @@ const ReadMode = ({ selRecord, sts }) => {
   // (4) 배열에 값 추가하기 : 기존값에 없으면 넣기
   if (!isRec) rec.push(data.idx);
 
-  // (5) 다시 세션스에 저장하기
+  // (5) 다시 세션스토리지에 저장하기
   sessionStorage.setItem("bd-rec", JSON.stringify(rec));
 
   // 3. 글번호 증가하기
   // -> 게시판 원본 데이터에 조회수 업데이트하기
   if (!isRec) {
-    // (1) 게시판 로컬스 데이터 파싱
+    // (1) 게시판 로컬스토리지 데이터 파싱
     let bdData = JSON.parse(localStorage.getItem("board-data"));
     // (2) 게시판 해당 데이터 cnt값 증가
     // 조건 : isRec값이 false일때
@@ -627,7 +620,7 @@ const ReadMode = ({ selRecord, sts }) => {
       } ///// if /////
     }); ////////// some /////////
 
-    // (3) 다시 로컬스에 저장하기
+    // (3) 다시 로컬스토리지에 저장하기
     localStorage.setItem("board-data", JSON.stringify(bdData));
   } ///// if : (!isRec) ////
 
@@ -759,8 +752,6 @@ const WriteMode = ({ sts, updateFileInfo }) => {
          수정 모드 서브 컴포넌트  
 **********************************************************/
 const ModifyMode = ({ selRecord }) => {
-  // 수정모드가 호출되었다는 것은 리스트의 제목이 클릭되었다는 것을 의미
-  // 따라서 현재 레코드 값도 저장되었다는 의미
 
   // console.log("전달된 참조변수:", selRecord.current);
   // 전달된 데이터 객체를 변수에 할당
@@ -862,9 +853,9 @@ const PagingList = ({ totalCount, unitSize, pageNum, setPageNum, pgPgNum, pgPgSi
   console.log("페이징의 페이징 개수:", pgPgCount);
 
   // (2) 리스트 시작값 / 한계값 구하기
-  // 시작값 : (페페넘-1)*페페단
+  // 시작값 
   let initNum = (pgPgNum.current - 1) * pgPgSize;
-  // 한계값 : 페페넘*페페단
+  // 한계값
   let limitNum = pgPgNum.current * pgPgSize;
 
   console.log("시작값:", initNum, "/한계값:", limitNum);
@@ -910,8 +901,6 @@ const PagingList = ({ totalCount, unitSize, pageNum, setPageNum, pgPgNum, pgPgSi
       pgPgNum.current === 1 ? (
         ""
       ) : (
-        // for문으로 만든 리스트에 추가하는 것이므로 key값이 있어야함
-        // 단, 중복되면 안됨. 중복안되는 수인 마이너스로 세팅한다
         <Fragment key={-1}>
           &nbsp;&nbsp;
           <a
@@ -949,8 +938,6 @@ const PagingList = ({ totalCount, unitSize, pageNum, setPageNum, pgPgNum, pgPgSi
       pgPgNum.current === pgPgCount ? (
         ""
       ) : (
-        // for문으로 만든 리스트에 추가하는 것이므로 key값이 있어야함
-        // 단, 중복되면 안됨. 중복안되는 수인 마이너스로 세팅한다
         <Fragment key={-2}>
           &nbsp;&nbsp;
           <a
@@ -1037,23 +1024,17 @@ const AttachBox = ({ saveFile }) => {
 
   // 드롭이벤트 발생시 처리 메서드
   const controlDrop = (e) => {
-    // 기본 드롭기능 막기
     e.preventDefault();
     // 드롭했으므로 비활성화 전환!
     setIsOn(false);
 
     // 파일정보 읽어오기
-    // 드롭된 파일로 부터 전송된 파일정보는 아래와 같이 읽어온다!
     const fileInfo = e.dataTransfer.files[0];
 
 
     // 파일정보셋팅 메서드 호출!
     setFileInfo(fileInfo);
 
-    // 서브밋 저장구역에서 파일정보를 사용하도록
-    // 상위 컴포넌트 변수인 uploadFile에 저장하는
-    // 함수인 updateFileInfo() 를 호출하는 속성인
-    // saveFile() 속성 함수를 사용하여 업데이트한다!
     saveFile(fileInfo);
 
     // 서버전송은 서브밋 버튼 클릭후 실행!!!
@@ -1061,8 +1042,7 @@ const AttachBox = ({ saveFile }) => {
 
   // 드롭된 파일 정보를 화면 뿌려주는 메서드 //////
   const setFileInfo = (fileInfo) => {
-    // 전달된 객체값을 한번에 할당하는 방법(객체 구조분해법)
-    // 구조분해 할당을 하면 객체의 값이 담긴다!
+   
     const { name, size: byteSize, type } = fileInfo;
     // 바이트 단위의 파일크기를 mb단위로 변환한다!
     const size = (byteSize / (1024 * 1024)).toFixed(2) + "mb";
@@ -1073,10 +1053,8 @@ const AttachBox = ({ saveFile }) => {
     // -> 변경시 리랜더링으로 업로드구역에 반영됨!
   }; //////////// setFileInfo 메서드 //////////
 
-  // 파일선택 입력창 클릭시 파일선택으로 상태가 변경될때
-  // 파일정보 업데이트하기 함수 ///
+  // 파일선택 입력창 클릭시 파일선택으로 상태가 변경될때 파일정보 업데이트하기 함수 ///
   const changeUpload = ({ target }) => {
-    // target은 이벤트타겟!
     // 파일정보 읽어오기
     const fileInfo = target.files[0];
     console.log("클릭파일:", fileInfo);
@@ -1084,20 +1062,10 @@ const AttachBox = ({ saveFile }) => {
     // 파일정보셋팅 메서드 호출!
     setFileInfo(fileInfo);
 
-    // 서브밋 저장구역에서 파일정보를 사용하도록
-    // 상위 컴포넌트 변수인 uploadFile에 저장하는
-    // 함수인 updateFileInfo() 를 호출하는 속성인
-    // saveFile() 속성 함수를 사용하여 업데이트한다!
     saveFile(fileInfo);
   }; /////////// changeUpload 함수 ///////////
 
-  /* 
-    [드래그 관련이벤트 구분]
-      onDragEnter : 드래그 대상 영역 안으로 들어갈때
-      onDragLeave : 드래그 대상 영역 밖으로 나갈때
-      onDragOver : 드래그 대상 영역 위에 있을때
-      onDrop : 드래그 대상 영역 안에 드롭될때
-  */
+
   // 리턴 코드 //////////////////////
   return (
     <label
@@ -1107,8 +1075,7 @@ const AttachBox = ({ saveFile }) => {
       onDragOver={controlDragOver}
       onDrop={controlDrop}
     >
-      {/* 파일을 클릭하여 선택창이 뜰때 파일을 선택하면
-      현재 상태가 변경되기때문에 onChange이벤트 속성을씀! */}
+      
       <input type="file" className="file" onChange={changeUpload} />
       {
         // 업로드 정보가 null이 아니면 파일정보 출력
@@ -1129,11 +1096,6 @@ const AttachBox = ({ saveFile }) => {
   );
 }; ///////////// AttachBox 컴포넌트 //////////
 
-/* 
-Object.keys(obj) – 객체의 키만 담은 배열을 반환합니다.
-Object.values(obj) – 객체의 값만 담은 배열을 반환합니다.
-Object.entries(obj) – [키, 값] 쌍을 담은 배열을 반환합니다.
-*/
 
 // 파일정보를 보여주는 파일정보 컴포넌트 ////////
 const FileInfo = ({ uploadedInfo }) => (

@@ -2,7 +2,6 @@
 
 import React, { useContext, useEffect, useState } from "react";
 
-// css 불러오기
 import "../../css/member.scss";
 import { initData } from "../func/mem_fn";
 import { dCon } from "../modules/dCon";
@@ -36,22 +35,19 @@ function Login() {
   const msgId = [
     //필수입력
    "This is a required entry", 
-    //아이디가 존재하지 않습니다
-    "아이디가 존재하지 않습니다", 
+   "아이디가 존재하지 않습니다", 
   ];
 
   // [ 비밀번호관련 메시지 프리셋 ] ////
   const msgPwd = [
     //필수입력
    "This is a required entry", 
-    //비밀번호가 일치하지 않습니다
-    "비밀번호가 일치하지 않습니다", 
+   "비밀번호가 일치하지 않습니다", 
   ];
 
 
 
-  // [3] 에러메시지 상태변수 : 초기값 msgId[0]
-  // -> 기본 메시지가 출력됨
+  // [3] 에러메시지 상태변수 : 초기값 msgId[0] -> 기본 메시지가 출력됨
   const [idMsg, setIdMsg] = useState(msgId[0]);
   const [pwdMsg, setPwdMsg] = useState(msgPwd[0]);
 
@@ -138,20 +134,19 @@ function Login() {
 
       // [회원정보를 로컬스토리지에 저장하기]
 
-      // 1. 로컬스 체크함수 호출(없으면 생성)
+      // 1. 로컬스토리지 체크함수 호출(없으면 생성)
       initData();
 
-      // 2. 로컬스 변수할당
+      // 2. 로컬스토리지 변수할당
       let memData = localStorage.getItem("mem-data");
 
-      // 3. 로컬스 객체변환
+      // 3. 로컬스토리지 객체변환
       memData = JSON.parse(memData);
       console.log(memData);
 
 
       // 4. 아이디 존재 여부 검사하기
-      // 배열.find() -> 있을 경우 레코드 저장. 데이터 확인 후
-      // filter와 달리 배열로 저장하지 않고 값만 저장함 그래서 결과값이 없으면 undefined를 리턴함
+
       let result = memData.find(v=>{
         if(v.uid === userId) return true;
       });

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
 
 
-// 회원가입 CSS 불러오기
+
 import "../../css/member.scss";
 
 // 로컬 스토리지 생성 JS
@@ -32,23 +32,16 @@ function Member() {
 
 
   const msgId = [
-    // 1. 최소 5글자 이상 입력할 것
     "아이디를 최소 5글자 이상 입력해주세요",
-    // 2. 이미 사용중인 아이디임
     "이미 사용중인 아이디입니다.",
-    // 3. 훌륭한 아이디
     "That's a great ID!",
   ];
 
 
   const msgEtc = {
-    // 비밀번호
     pwd: "5 to 15 digits in the form of special characters, characters, and numbers",
-    // 비밀번호확인
     confPwd: "Password verification does not match",
-    // 필수입력
     req: "This is a required entry",
-    // 이메일
     email: "Please enter a valid email format",
   }; ///// msgEtc ///////
 
@@ -217,10 +210,10 @@ function Member() {
       
         initData();
 
-        // 2. 로컬스 변수할당
+        // 2. 로컬스토리지 변수할당
         let memData = localStorage.getItem("mem-data");
 
-        // 3. 로컬스 객체변환
+        // 3. 로컬스토리지 객체변환
         memData = JSON.parse(memData);
         
         // 최대수를 위한 배열값 뽑기 (idx항목)
@@ -239,14 +232,14 @@ function Member() {
         // 5. 데이터 추가하기 : 배열에 데이터 추가 push()
         memData.push(newData);
 
-        // 6. 로컬스에 반영하기 :  문자화해서 넣어야함
+        // 6. 로컬스토리지에 반영하기 : 문자화해서 넣어야함
         localStorage.setItem("mem-data", JSON.stringify(memData));
 
 
         // 7. 회원가입환영 메시지  + 로그인 페이지 이동 
         // 버튼 텍스트에 환영메시지
         document.querySelector(".sbtn").innerText = "반갑습니다 가입을 환영합니다!";
-        // 1초후 페이지 이동 : 라우터 Navigate로 이동함
+        // 1초후 페이지 이동 
         setTimeout(()=>{
             goNav("/login");
         }, 1000); 

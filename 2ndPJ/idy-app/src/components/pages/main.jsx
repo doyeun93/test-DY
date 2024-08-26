@@ -39,18 +39,6 @@ function Main(props) {
             </ul>
           </div>
           <div className="header-img">
-            {/* <div className="header-slide">
-              <ul>
-                {headerdata.map((v,i) => (
-                  <li key={i}>
-                    <Link to="/cookguide">
-                      <img src={process.env.PUBLIC_URL+`/image/${v.imgName}.jpg`} alt="header image" />
-                    </Link>
-                    <span>{v.title}</span>
-                  </li>
-                ))}
-              </ul>
-            </div> */}
             <SwiperGuide />
           </div>
         </header>

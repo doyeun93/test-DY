@@ -4,7 +4,7 @@ import {comboData} from '../data/combodata';
 
 import "../../css/footer_area.scss";
 
-// 제이쿼리
+
 import $ from "jquery";
 
 
@@ -17,7 +17,7 @@ function FooterArea() {
 
     let res = comboData.find(v=>{
       if(v.idx==i) return true;
-    }); /////// find : 선택요소 하위 자손요소를 모두 찾음 /////
+    });
 
     console.log(res);
 
@@ -25,7 +25,7 @@ function FooterArea() {
   };
 
 
-  ///// 코드 리턴구역 ///////////////
+  
     return (
         <footer id="footer-area">
           <div className="footer-info">
