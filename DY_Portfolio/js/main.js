@@ -135,20 +135,19 @@ skill.innerHTML = hcode;
 
 
 
-/////// 프로젝트 영역 //////////
+/////////// 프로젝트 영역 /////////////
 const qsEl = (el, x) => el.querySelector(x);
 const qsaEl = (el, x) => el.querySelectorAll(x);
 const addEvt = (ele, evt, fn) => ele.addEventListener(evt, fn);
   
 
 
-const pbox = document.querySelector(".proj1");
+const pbox1 = document.querySelector(".proj1");
 
-let pcode = "<ul>";
+let pcode1 = "<ul>";
 
-{/* <a href="https://doyeun93.github.io/IDY-PJ-LIVE/main.html"> */}
 for(let i=1; i<=7; i++) {
-    pcode += `
+    pcode1 += `
         <li>
             <a href="./project1.html">
                 <img src="./images/project/p1_${i}.png" 
@@ -158,19 +157,19 @@ for(let i=1; i<=7; i++) {
     `;
 } ///// for /////
 
-pcode += "</ul>";
+pcode1 += "</ul>";
 
-pbox.innerHTML = pcode;
+pbox1.innerHTML = pcode1;
 
-let target = qsEl(pbox,'ul');
+let target1 = qsEl(pbox1,'ul');
 
 
 
-const pbox1 = document.querySelector(".proj2");
+const pbox2 = document.querySelector(".proj2");
 
-let pcode1 = "<ul>";
+let pcode2 = "<ul>";
 for(let i=1; i<=7; i++){
-    pcode1 += `
+    pcode2 += `
         <li>
             <a href="./project2.html">
                 <img src="./images/project/p2_${i}.png" 
@@ -179,50 +178,62 @@ for(let i=1; i<=7; i++){
         </li>
     `;
 }
-pcode1 += "</ul>";
+pcode2 += "</ul>";
 
-pbox1.innerHTML = pcode1;
+pbox2.innerHTML = pcode2;
 
-let target1 = qsEl(pbox1,'ul');
+let target2 = qsEl(pbox2,'ul');
+
+
+
+const pbox3 = document.querySelector(".proj3");
+
+let pcode3 = "<ul>";
+for(let i=1; i<=7; i++){
+    pcode3 += `
+        <li>
+            <a href="./project3.html">
+                <img src="./images/project/p3_${i}.png" 
+                alt="갤러리이미지">
+            </a>
+        </li>
+    `;
+}
+pcode3 += "</ul>";
+
+pbox3.innerHTML = pcode3;
+
+let target3 = qsEl(pbox3,'ul');
+
+
 
 // 기준값 업데이트 함수 : 윈도우 가로폭의 1/4 => li 하나 크기
 // window.innerWidth/4
-const updateCriteria = () => qsaEl(target,"li")[0].offsetWidth;
 const updateCriteria1 = () => qsaEl(target1,"li")[0].offsetWidth;
+const updateCriteria2 = () => qsaEl(target2,"li")[0].offsetWidth;
+const updateCriteria3 = () => qsaEl(target3,"li")[0].offsetWidth;
 
 // 기준값(대상 li의 가로크기값)
-let criteria = updateCriteria();
 let criteria1 = updateCriteria1();
+let criteria2 = updateCriteria2();
+let criteria3 = updateCriteria3();
 
 
 // 리사이즈시 업데이트
 addEvt(window,"resize", ()=> {
-    criteria = updateCriteria(); 
-    criteria1 = updateCriteria1();  
+    criteria1 = updateCriteria1(); 
+    criteria2 = updateCriteria2();  
+    criteria3 = updateCriteria3();  
 });
 
 // 현재 translate 값
-let currVal = 0;
 let currVal1 = 0;
-
-
-function moveGallery(){
-
-    target.style.translate = --currVal + "px";
-    if(currVal <= Math.floor(-criteria)){
-        target.appendChild(qsaEl(target,"li")[0]);
-        target.style.translate =  "0px";
-        currVal = 0;
-    } ///////////////// if 문 /////////
-    
-    // 타임아웃함수로 호출
-    // stopSts 변수값이 false일 때만 실행하기
-    if(!stopSts)
-    setTimeout(moveGallery,6);
-} //////// moveGallery ///////////////
+let currVal2 = 0;
+let currVal3 = 0;
 
 
 function moveGallery1(){
+
     target1.style.translate = --currVal1 + "px";
     if(currVal1 <= Math.floor(-criteria1)){
         target1.appendChild(qsaEl(target1,"li")[0]);
@@ -230,25 +241,55 @@ function moveGallery1(){
         currVal1 = 0;
     } ///////////////// if 문 /////////
     
+    // 타임아웃함수로 호출
+    // stopSts 변수값이 false일 때만 실행하기
     if(!stopSts)
-    setTimeout(moveGallery1,12);
+    setTimeout(moveGallery1,6);
 } //////// moveGallery1 ///////////////
+
+
+function moveGallery2(){
+    target2.style.translate = --currVal2 + "px";
+    if(currVal2 <= Math.floor(-criteria2)){
+        target2.appendChild(qsaEl(target2,"li")[0]);
+        target2.style.translate =  "0px";
+        currVal2 = 0;
+    } ///////////////// if 문 /////////
+    
+    if(!stopSts)
+    setTimeout(moveGallery2,10);
+} //////// moveGallery2 ///////////////
+
+
+
+function moveGallery3(){
+    target3.style.translate = --currVal3 + "px";
+    if(currVal3 <= Math.floor(-criteria3)){
+        target3.appendChild(qsaEl(target3,"li")[0]);
+        target3.style.translate =  "0px";
+        currVal3 = 0;
+    } ///////////////// if 문 /////////
+    
+    if(!stopSts)
+    setTimeout(moveGallery3,14);
+} //////// moveGallery3 ///////////////
 
 
 // 멈춤상태 변수
 let stopSts = false;
 
-addEvt(pbox,"mouseenter",()=>{
+addEvt(pbox1,"mouseenter",()=>{
     //  멈춤상태변수 true변경
     stopSts = true;
 });
 
-addEvt(pbox,"mouseleave",()=>{
+addEvt(pbox1,"mouseleave",()=>{
     //  멈춤상태변수 false 변경
     stopSts = false;
     // 재귀호출함수 호출하기
-    moveGallery();
     moveGallery1();
+    moveGallery2();
+    moveGallery3();
 });
 
 
