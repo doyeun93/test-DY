@@ -146,7 +146,6 @@ const pbox = document.querySelector(".proj1");
 
 let pcode = "<ul>";
 
-
 {/* <a href="https://doyeun93.github.io/IDY-PJ-LIVE/main.html"> */}
 for(let i=1; i<=7; i++) {
     pcode += `
@@ -197,11 +196,9 @@ let criteria1 = updateCriteria1();
 
 
 // 리사이즈시 업데이트
-addEvt(window,"resize",
-()=> {criteria = updateCriteria();  
-});
-addEvt(window,"resize",
-()=> {criteria1 = updateCriteria1();  
+addEvt(window,"resize", ()=> {
+    criteria = updateCriteria(); 
+    criteria1 = updateCriteria1();  
 });
 
 // 현재 translate 값
@@ -210,43 +207,32 @@ let currVal1 = 0;
 
 
 function moveGallery(){
-    // 현재값 1씩 감소
 
     target.style.translate = --currVal + "px";
     if(currVal <= Math.floor(-criteria)){
-        // 1. 맨앞 li 맨뒤로 이동 /  appendChild(맨앞 li)
-        // 맨 앞 li는 새로 구해와야함(계속 변경되기때문에)
         target.appendChild(qsaEl(target,"li")[0]);
-        // 2. translate 값 초기화
         target.style.translate =  "0px";
-        // 3. 하나 크기만큼 나가면 currVal값 초기화
         currVal = 0;
     } ///////////////// if 문 /////////
     
     // 타임아웃함수로 호출
     // stopSts 변수값이 false일 때만 실행하기
     if(!stopSts)
-    setTimeout(moveGallery,10);
+    setTimeout(moveGallery,6);
+} //////// moveGallery ///////////////
 
 
+function moveGallery1(){
     target1.style.translate = --currVal1 + "px";
     if(currVal1 <= Math.floor(-criteria1)){
-        // 1. 맨앞 li 맨뒤로 이동 /  appendChild(맨앞 li)
-        // 맨 앞 li는 새로 구해와야함(계속 변경되기때문에)
         target1.appendChild(qsaEl(target1,"li")[0]);
-        // 2. translate 값 초기화
         target1.style.translate =  "0px";
-        // 3. 하나 크기만큼 나가면 currVal값 초기화
         currVal1 = 0;
     } ///////////////// if 문 /////////
     
-    // 타임아웃함수로 호출
-    // stopSts 변수값이 false일 때만 실행하기
     if(!stopSts)
-    setTimeout(moveGallery,10);
-
-} //////// moveGallery ///////////////
-
+    setTimeout(moveGallery1,12);
+} //////// moveGallery1 ///////////////
 
 
 // 멈춤상태 변수
@@ -262,6 +248,7 @@ addEvt(pbox,"mouseleave",()=>{
     stopSts = false;
     // 재귀호출함수 호출하기
     moveGallery();
+    moveGallery1();
 });
 
 
