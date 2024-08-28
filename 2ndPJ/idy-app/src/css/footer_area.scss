@@ -73,10 +73,11 @@
   
   /* 버튼 */
   .btn-top{
-    position: absolute;
+    position: fixed;
+    top: 90%;
     width: 3rem;
     height: 3rem;
-    right: 4%;
+    right: 2%;
     border: 1px solid #d9d9d9;
     border-radius: 10px;
     background-color: #fff;
@@ -87,20 +88,10 @@
       position: relative;
       width: 100%;
       bottom: 5%;
-      // animation: icon-ani 1.3s ease-in-out infinite;
      }
 
   }
-  
-  
-  // @keyframes icon-ani {
-  //   0%, 100% {
-  //     transform: translateY(0px) scale(0.95);
-  //   }
-  //   50% {
-  //   transform: translateY(-20px) scale(1);
-  //   }
-  // }
+ 
   
 
 
@@ -115,7 +106,6 @@
     display: block;
   }
   .btn-top {
-    margin-top: -3%;
     right: 3%;
   }
 }
@@ -154,9 +144,8 @@
   }
 
   .btn-top {
-    // margin-top: 4%;
-    margin-top: -61%;
-   
+    top: 83%;
+ 
   }
   
   

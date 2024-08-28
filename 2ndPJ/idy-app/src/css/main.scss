@@ -563,10 +563,11 @@ body {
   }
   .header-title {
     top: 38%;
+    left: -3%;
   }
   .header-img {
-    // padding-top: 65%;
-    padding-top: 40%;
+    // padding-top: 40%;
+    padding-top: 53%;
   }
 
   // 연구소 구역
@@ -591,6 +592,7 @@ body {
   .lab-top > ul > li:last-child {
     width: 27%;
     margin: 3% 5%;
+    // margin-left: 1%;
   }
 
   #cook-area {

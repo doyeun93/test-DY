@@ -28,6 +28,18 @@ function FooterArea() {
   
     return (
         <footer id="footer-area">
+          <button className="btn-top">
+              <a href="#" onClick={(e)=>{
+                e.preventDefault();
+                $("html,body").animate({scrollTop:"0px"},0,()=>{
+                  setTimeout(()=>{
+                    $(".header-slide li").css("translate","0 0");
+                  },100);
+                });
+              }}>
+                <img src={process.env.PUBLIC_URL+"/image/ic_top_btn.png" } alt="탑버튼" />
+              </a>
+            </button>
           <div className="footer-info">
             <div className="info-area">
               <ul className="info-top">
@@ -73,18 +85,7 @@ function FooterArea() {
                 </select>
               </ul>
             </div>
-            <button className="btn-top">
-              <a href="#" onClick={(e)=>{
-                e.preventDefault();
-                $("html,body").animate({scrollTop:"0px"},0,()=>{
-                  setTimeout(()=>{
-                    $(".header-slide li").css("translate","0 0");
-                  },100);
-                });
-              }}>
-                <img src={process.env.PUBLIC_URL+"/image/ic_top_btn.png" } alt="탑버튼" />
-              </a>
-            </button>
+            
           </div>
         </footer>
     );
