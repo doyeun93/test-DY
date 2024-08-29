@@ -32,3 +32,24 @@
     }
   }
 }
+
+@media screen and (max-width: 1470px) {
+  .cook-img {
+    padding-top: 8%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .cook-img {
+    padding-top: 14%;
+    height: 300px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .cook-img li {
+    width: 40vw;
+  }
+  .cook-img li span {
+    font-size: 1rem;
+  }
+
+}

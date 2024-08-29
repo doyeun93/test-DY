@@ -5,7 +5,7 @@ html, body {
 
 
 .SwiperGuide {
-    width: 56%;
+    width: 55%;
     height: auto;
   }
   
@@ -90,4 +90,11 @@ html, body {
     opacity: 1;
     transition: .2s ease-in .5s;
    
+  }
+
+  @media screen and (max-width: 450px) {
+    .SwiperGuide {
+      width: 60%;
+    }
+
   }
