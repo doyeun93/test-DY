@@ -14,7 +14,7 @@ function SearchingData({ dt }) {
   const total = dt.length;
   
 
-  // 경로를 맞추기 위해 배열에 이미지명 앞3글자가 있는지 검사함!
+  // 경로를 맞추기 위해 배열에 이미지명 앞3글자가 있는지 검사
   const route = { sub: "sub1", re_: "sub2", sol: "sub2", coo: "sub3" };
   
 

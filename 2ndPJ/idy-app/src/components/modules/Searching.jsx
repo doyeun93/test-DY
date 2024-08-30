@@ -20,9 +20,6 @@ function Searching({ kword }) {
   const [sort, setSort] = useState("asc");
   const [chk,setChk] = useState([true,true]);
 
-  // console.log(guideData);
-  // console.log(recipeData);
-
 
   const selData = [...guideData,...recipeData,...solutionData,...cookingData];
 
@@ -45,11 +42,9 @@ function Searching({ kword }) {
 
       (newVal.indexOf(key)!== -1) 
       &&
-
       (
         (chk[0] ? v.kind == "레시피" : false) ||
         (chk[1] ? v.kind == "솔루션" : false) 
-   
       )
       // true && (true || false || false)
       // -> &&문은 모두 true여야 true고 ||문은 하나만 true여도 true다
@@ -78,7 +73,6 @@ function Searching({ kword }) {
         <div className="schopt">
           {/* 1-1.검색박스 */}
           <div className="searching">
-            {/* 검색버튼 돋보기 아이콘 */}
             <FontAwesomeIcon icon={faSearch} className="schbtn" title="Open search" />
             {/* 입력창 */}
             <input
@@ -105,7 +99,6 @@ function Searching({ kword }) {
         <div className="chkbx">
             <ul>
               <li>
-                {/* 타이틀 */}
                 <h2>
                   전체
                   <span className="spbtn">＋</span>
@@ -116,12 +109,11 @@ function Searching({ kword }) {
                     레시피
                     {/* 숨긴 체크박스 */}
                     <input type="checkbox" id="recipe" className="chkhdn" 
-                    // 체크 박스 체크속성값을 훅(상태관리변수) 연결
+                    // 체크 박스 체크속성값을 상태관리변수 연결
                     checked={chk[0]}
                     // 체크 변경시 change 이벤트 발생
                     onChange = {(e)=>{
                       // 체크박스의 checked 속성은 체크시 ture, 불체크시 false 리턴
-                      // 훅값 업데이트
                       setChk([e.target.checked,chk[1]]);
                     }}/>
                     {/* 디자인노출 라벨 */}
@@ -131,12 +123,11 @@ function Searching({ kword }) {
                     솔루션
                     {/* 숨긴 체크박스 */}
                     <input type="checkbox" id="solution" className="chkhdn" 
-                    // 체크 박스 체크속성값을 훅(상태관리변수) 연결
+                    // 체크 박스 체크속성값을 상태관리변수 연결
                     checked={chk[1]}
                      // 체크 변경시 change 이벤트 발생
                      onChange = {(e)=>{
                       // 체크박스의 checked 속성은 체크시 ture, 불체크시 false 리턴
-                      // 훅값 업데이트
                       setChk([e.target.checked,chk[0]]);
                     }}/>
                     {/* 디자인노출 라벨 */}
