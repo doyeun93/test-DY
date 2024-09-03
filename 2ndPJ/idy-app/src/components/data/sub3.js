@@ -65,7 +65,5 @@ export const cookingData = [
        
     },
    
-    
-
 
 ]
