@@ -11,7 +11,7 @@
 // [ 로컬스토리지 클리어 ] /////////
 const clearData = () => {
     localStorage.clear();
-    console.log("로컬쓰 클리어!");
+    console.log("로컬스토리지 클리어!");
   }; /////////// clearData //////////////
   
   // [ 로컬스토리지 초기체크셋팅! ] ////////////
@@ -27,7 +27,7 @@ const clearData = () => {
                   "uid":"admin",
                   "pwd":"1111",
                   "unm":"Administrator",
-                  "eml":"admin@dc.com"
+                  "eml":"admin@naver.com"
               },
               {
                   "idx": "2",
@@ -35,6 +35,13 @@ const clearData = () => {
                   "pwd":"1111",
                   "unm":"Tom",
                   "eml":"tom@gmail.com"
+              },
+              {
+                  "idx": "3",
+                  "uid":"qwer",
+                  "pwd":"1111",
+                  "unm":"Dodo",
+                  "eml":"dodo@gmail.com"
               }
           ]
       `
