@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { dCon } from "./dCon";
 import $ from "jquery";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 
 import "../../css/scrap.scss";
 import { Link } from "react-router-dom";
@@ -226,17 +224,6 @@ function Scrap(props) {
           title={dataCnt}
           alt="스크랩"
         />
-        {/* <FontAwesomeIcon
-            style={{
-              position: "fixed",
-              bottom: "56%",
-              left: "85%",
-              color: "#15a775",
-              fontSize: "40px",
-              // border: '1px solid #f5f5f5',
-            }}
-            icon={faBookmark}
-          /> */}
         {/* 상품 개수 출력 박스 */}
         <div className="cntBx">{dataCnt}</div>
       </div>
