@@ -1,7 +1,6 @@
-body{
-    background: url(../test/image/tab_a_bg.jpg) no-repeat 100% 100%;
+.aa{
+    background: url(./image/tab_a_bg.jpg) no-repeat 100% 100%;
 }
-
 /* 모달 배경 */
 .modal {
     display: none; /* 기본적으로 숨겨져 있음 */
