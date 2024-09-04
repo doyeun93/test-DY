@@ -680,7 +680,7 @@ const ReadMode = ({ selRecord, sts }) => {
                         <img
                           src={process.env.PUBLIC_URL + "/uploads/" + data.att}
                           alt="image"
-                          style={{ width: "100%" }}
+                          style={{ width: "auto" }}
                         />
                       </div>
                     )}
@@ -808,7 +808,7 @@ const ModifyMode = ({ selRecord }) => {
                         <img
                           src={process.env.PUBLIC_URL + "/uploads/" + data.att}
                           alt="image"
-                          style={{ width: "100%" }}
+                          style={{ width: "auto" }}
                         />
                       </div>
                     )}
