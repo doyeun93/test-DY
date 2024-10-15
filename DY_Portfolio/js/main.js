@@ -134,8 +134,9 @@ skill.innerHTML = hcode;
 
 
 
-
+////////////////////////////////////
 /////////// 프로젝트 영역 /////////////
+///////////////////////////////////
 const qsEl = (el, x) => el.querySelector(x);
 const qsaEl = (el, x) => el.querySelectorAll(x);
 const addEvt = (ele, evt, fn) => ele.addEventListener(evt, fn);

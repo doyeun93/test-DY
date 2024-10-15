@@ -3,9 +3,9 @@
 }
 /* 모달 배경 */
 .modal {
-    display: none; /* 기본적으로 숨겨져 있음 */
+    display: none; 
     position: fixed;
-    z-index: 1; /* 페이지의 다른 콘텐츠 위에 표시 */
+    z-index: 1; 
     left: 0;
     top: 0;
     width: 100%;
@@ -17,10 +17,10 @@
 /* 모달 내용 */
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 중앙 정렬 */
+    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* 너비 조정 */
+    width: 80%; 
 }
 
 /* 닫기 버튼 */
