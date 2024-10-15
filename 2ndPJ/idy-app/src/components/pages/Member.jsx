@@ -39,10 +39,10 @@ function Member() {
 
 
   const msgEtc = {
-    pwd: "5 to 15 digits in the form of special characters, characters, and numbers",
-    confPwd: "Password verification does not match",
-    req: "This is a required entry",
-    email: "Please enter a valid email format",
+    pwd: " 5~15자의 영문 대/소문자, 숫자, 특수문자를 사용해 주세요.",
+    confPwd: "비밀번호가 일치하지않습니다.",
+    req: "필수 항목입니다.",
+    email: "올바른 형식의 이메일이 아닙니다.",
   }; ///// msgEtc ///////
 
 
